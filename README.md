@@ -15,10 +15,8 @@
 ## Descrição
 
 <p align="center">
-<img src="https://pix4free.org/assets/library/2021-01-20/originals/game.jpg" alt="Aliança Oceânica" border="0">
-  Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
-</p>
-
+<img src="https://github.com/2024-2-MCC2/Projeto1/blob/main/imagens/Logo.png" alt="Aliança Oceânica" border="0">
+  Logo by <a href="">CDRR</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> 
 
 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
 <br><br>
