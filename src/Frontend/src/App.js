@@ -6,12 +6,15 @@ import styled from "styled-components";
 import QuadroDeManchetes from "./Components/QuadroDeManchetes";
 import Enfrentamos from "./Components/Enfrentamos";
 import './global.css';
+import PainelDeDoacao from "./Components/PainelDeDoacao";
+import DivDeDoacao from "./Components/DivDeDoacao";
 
 function App(){
   return(
     <div>
       <Header/>
       <Carrossel/>
+      <DivDeDoacao/>
       <Enfrentamos/>
       <QuadroDeManchetes/>
       <Footer/>
