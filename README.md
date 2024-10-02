@@ -66,7 +66,7 @@ Para abrir este projeto você necessita das seguintes ferramentas:
 
 
 ## 📋 Licença/License
-
+Aliança Oceânica © 2024 by FECAP, Caroliny Rossi Bittencourt, Duda Lucena Miguel, Rafael Alves dos Santos Guimarães, Rafael Moraes Marques is licensed under CC BY-SA 4.0 
 
 ## 🎓 Referências
 
