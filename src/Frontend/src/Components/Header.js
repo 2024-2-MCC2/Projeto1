@@ -1,6 +1,8 @@
 import { Button } from "react-bootstrap";
 import NavBar from "./NavBar"
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
+
 
 const HeaderContainer = styled.header`
 display: flex;
@@ -14,6 +16,11 @@ width: 100%;
 position: fixed;
 top: 0;
 z-index: 1000;
+.no-link-style {
+  color: inherit; /* Herda a cor do elemento pai */
+  text-decoration: none; /* Remove o sublinhado */
+}
+
 `
 const Frame1 = styled.div`
 display: flex;
@@ -23,6 +30,7 @@ height: 100%;
 padding: 0 10px;
 //background-color: red;
 p{
+    text-decoration: none;
     font-size: 50px;
     font-weight: bolder;
     align-items: center;
@@ -80,6 +88,7 @@ input:focus{
 `
 const Frame3_2 = styled.div`
 button{
+text-decoration: none;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -106,12 +115,15 @@ span{
 
 }
 `
+
 function Header(){
     return(
         <HeaderContainer>
-            <Frame1>
-                <p>LOGO</p>
-            </Frame1>
+            <Link to="/" className="no-link-style">
+                <Frame1>
+                    <p>LOGO</p>
+                </Frame1>
+            </Link>
             <Frame2>
                 <NavBar/>
             </Frame2>
@@ -123,10 +135,12 @@ function Header(){
                     </button>
                 </Frame3_1>
                 <Frame3_2>
+                <Link to="/DoacaoPage" className="no-link-style">
                     <button classeName="BotaoDeDoar">
-                        <p>DOAR</p>
-                        <span class="material-symbols-outlined">add</span>
+                            <p>DOAR</p>
+                            <span class="material-symbols-outlined">add</span>
                     </button>
+                    </Link>
                 </Frame3_2>
             </Frame3>
         </HeaderContainer>
