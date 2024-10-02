@@ -15,18 +15,18 @@
 ## Descrição
 
 <p align="center">
-<img src="https://pix4free.org/assets/library/2021-01-20/originals/game.jpg" alt="Aliança Oceânica" border="0">
-  Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
-</p>
-
+<img src="https://github.com/2024-2-MCC2/Projeto1/blob/main/imagens/Logo.png" alt="Aliança Oceânica" border="0">
+  Logo by <a href="">CDRR</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> 
 
 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
 <br><br>
 
-## PROTÓTIPO NO FIGMA 
-<img src="https://img.icons8.com/?size=100&id=zfHRZ6i1Wg0U&format=png&color=000000" />
+## <img src="https://img.icons8.com/?size=100&id=zfHRZ6i1Wg0U&format=png&color=000000" width="20" height="20"/> PROTÓTIPO NO FIGMA 
 
- <a href = "https://www.figma.com/design/IsuMlfoVd8VCWlWo8kVclq/Alian%C3%A7a-Oce%C3%A2nica---Prot%C3%B3tipo?node-id=52-917&t=jZHCTz42k0mQOkIo-1">Clique aqui</a>
+
+ <a href = "https://www.figma.com/design/IsuMlfoVd8VCWlWo8kVclq/Alian%C3%A7a-Oce%C3%A2nica---Prot%C3%B3tipo?node-id=52-917&t=jZHCTz42k0mQOkIo-1">Projeto</a>
+ <br>
+ <a href = "https://www.figma.com/proto/IsuMlfoVd8VCWlWo8kVclq/Alian%C3%A7a-Oce%C3%A2nica---Prot%C3%B3tipo?node-id=52-918&node-type=frame&t=HdW5qPesPOIsPtyW-1&scaling=min-zoom&content-scaling=fixed&page-id=52%3A917">Navegavel</a>
 ## 🛠 Estrutura de pastas
 
 -Raiz<br>
@@ -68,7 +68,7 @@ Para abrir este projeto você necessita das seguintes ferramentas:
 
 
 ## 📋 Licença/License
-
+Aliança Oceânica © 2024 by FECAP, Caroliny Rossi Bittencourt, Duda Lucena Miguel, Rafael Alves dos Santos Guimarães, Rafael Moraes Marques is licensed under CC BY-SA 4.0 
 
 ## 🎓 Referências
 
