@@ -21,8 +21,8 @@
 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
 <br><br>
 
-## PROTÓTIPO NO FIGMA 
-<img src="https://img.icons8.com/?size=100&id=zfHRZ6i1Wg0U&format=png&color=000000" />
+## <img src="https://img.icons8.com/?size=100&id=zfHRZ6i1Wg0U&format=png&color=000000" width="20" height="20"/> PROTÓTIPO NO FIGMA 
+
 
  <a href = "https://www.figma.com/design/IsuMlfoVd8VCWlWo8kVclq/Alian%C3%A7a-Oce%C3%A2nica---Prot%C3%B3tipo?node-id=52-917&t=jZHCTz42k0mQOkIo-1">Clique aqui</a>
 ## 🛠 Estrutura de pastas
