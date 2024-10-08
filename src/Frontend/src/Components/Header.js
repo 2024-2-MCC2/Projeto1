@@ -2,6 +2,7 @@ import { Button } from "react-bootstrap";
 import NavBar from "./NavBar"
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
+import Insignia from '../Assets/Logo Branco.png';
 
 
 const HeaderContainer = styled.header`
@@ -10,7 +11,7 @@ align-items: center;
 justify-content: center;
 background-color: #000;
 color: #fff;
-padding: 0 20px;
+padding-right: 20px;
 height: 75px;
 width: 100%;
 position: fixed;
@@ -20,14 +21,13 @@ z-index: 1000;
   color: inherit; /* Herda a cor do elemento pai */
   text-decoration: none; /* Remove o sublinhado */
 }
-
 `
 const Frame1 = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
 height: 100%;
-padding: 0 10px;
+padding: 0 20px;
 //background-color: red;
 p{
     text-decoration: none;
@@ -38,6 +38,11 @@ p{
     padding:0;
     margin:0;
     //background-color: blue;
+}
+.Logo{
+height: 65px;
+width: 100%;
+object-fit: contain;
 }
 `
 const Frame2 = styled.div`
@@ -115,13 +120,12 @@ span{
 
 }
 `
-
 function Header(){
     return(
         <HeaderContainer>
             <Link to="/" className="no-link-style">
                 <Frame1>
-                    <p>LOGO</p>
+                    <img src={Insignia} className="Logo"/>
                 </Frame1>
             </Link>
             <Frame2>

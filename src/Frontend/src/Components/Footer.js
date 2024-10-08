@@ -1,4 +1,6 @@
-import styled from "styled-components";
+import styled from "styled-components"
+import Logo from '../Assets/Logo.png'
+import LogoFecap from "../Assets/LogoFecap.png"
 
 const FooterContainer = styled.div`
 display: flex;
@@ -90,9 +92,16 @@ border-radius: 15px;
 border: none;
 background-color: #2575CF;
 color: #fff;
+img{
+    height: 80%;
+    filter: grayscale(100%) brightness(0) invert(1); 
+}
 &:hover{
     background-color: #fff;
-    color: #2575CF;
+    color: #F55349;
+    img{
+        filter: grayscale(100%) brightness(0); 
+}
 }
 `
 const Instagram_Botton = styled.button`
@@ -104,10 +113,18 @@ border-radius: 15px;
 border: none;
 background-color: #F55349;
 color: #fff;
+img{
+    height: 80%;
+    filter: grayscale(100%) brightness(0) invert(1); 
+}
 &:hover{
     background-color: #fff;
     color: #F55349;
+    img{
+        filter: grayscale(100%) brightness(0); 
 }
+}
+
 `
 const X_Botton = styled.button`
 font-size: 26px;
@@ -117,10 +134,16 @@ height: 55px;
 border-radius: 15px;
 border: none;
 background-color: #000;
-color: #fff;
+img{
+    height: 80%;
+    filter: grayscale(100%) brightness(0) invert(1); 
+}
 &:hover{
     background-color: #fff;
     color: #000;
+    img{
+        filter: grayscale(100%) brightness(0); 
+    }
 }
 `
 //--------------------------------------------------------
@@ -130,6 +153,7 @@ justify-content: space-between;
 align-items: center;
 width: 75%;
 margin-bottom: 50px;
+gap: 30px;
 padding: 0 50px;
 //background-color: red;
 `
@@ -139,18 +163,30 @@ flex-direction: column;
 justify-content: space-around;
 font-size: 25px;
 //background-color: red;
+a{
+text-decoration: none; 
+color: inherit;        
+}
+a:hover{
+text-decoration: underline; 
+}
 `
 const LOGO = styled.div`
-font-size: 100px;
-font-weight: bolder;
+height: 200px;
+img{
+    height: 100%;
+}
 //background-color: red;
 `
 const LogoFECAP = styled.div`
 font-size: 50px;
 font-weight: bolder;
 text-align: center;
-width: 200px;
+height: 200px;
 //background-color: red;
+img{
+    height: 100%;
+}
 `
 //-----------------------------------------------
 const Frame3 = styled.div`
@@ -170,19 +206,29 @@ function Footer(){
                     <InscrevaseBotton>Inscreva-se</InscrevaseBotton>
                 </Frame1_2>
                 <Fram1_3>
-                    <Facebook_Botton href="#">Facebook</Facebook_Botton>
-                    <Instagram_Botton href="#">Instagram</Instagram_Botton>
-                    <X_Botton href="#">X</X_Botton>
+                    <Facebook_Botton href="#">
+                        <img src="https://cdn3.iconfinder.com/data/icons/social-media-black-white-2/512/BW_Facebook_glyph_svg-256.png"/>
+                    </Facebook_Botton>
+                    <Instagram_Botton href="#">
+                        <img src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-256.png"/>
+                    </Instagram_Botton>
+                    <X_Botton href="#">
+                        <img src="https://cdn4.iconfinder.com/data/icons/social-media-black-white-2/1227/X-256.png"/>
+                    </X_Botton>
                 </Fram1_3>
             </Frame1>
             <Frame2>
-                    <LOGO>LOGO</LOGO>
-                    <LogoFECAP href="#">LOGO FECAP</LogoFECAP>
+                    <LOGO>
+                        <img src={Logo}/>
+                    </LOGO>
+                    <LogoFECAP href="#">
+                        <img src={LogoFecap}/>
+                    </LogoFECAP>
                     <Frame2_1>
                         <h3>nosso contato:</h3>
-                        <a>0800 4002-8922</a>
-                        <a>contact@aliancaoceana.com.br</a>
-                        <a>Av. da Liberdade, 532 - Liberdade, São Paulo - SP, </a>
+                        <a href="tel:+55114002-8922">4002-8922</a>
+                        <a href="contact@aliancaoceana.com.br">contact@aliancaoceana.com.br</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Av.+da+Liberdade,+532+-+Liberdade,+São+Paulo+-+SP" target="_blank">Av. da Liberdade, 532 - Liberdade, São Paulo - SP </a>
                     </Frame2_1>
             </Frame2>
             <Frame3>
