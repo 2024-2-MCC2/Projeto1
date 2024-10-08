@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import PainelDeDoacao from "./PainelDeDoacao";
+import React, { useState } from 'react';
+import Cadastro from "../Components/Cadastro";
+import Login from "../Components/Login";
 
 const Frame1 = styled.div`
 display: flex;

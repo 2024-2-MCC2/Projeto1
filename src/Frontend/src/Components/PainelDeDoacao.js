@@ -69,7 +69,7 @@ button:hover{
 }
 `
 
-function PainelDeDoacao(){
+function PainelDeDoacao({abrirLogin}){
 
     const [activePeriod, setActivePeriod] = useState(null);
     const [activeValue, setActiveValue] = useState(null);
@@ -105,7 +105,7 @@ function PainelDeDoacao(){
             ))}
             </Frame1_3>
             <Frame1_4>
-                <button className="Continuar">Continuar</button>
+                <button className="Continuar" onClick={abrirLogin}>Continuar</button>
             </Frame1_4>
         </Frame1>
     )
