@@ -29,7 +29,7 @@
 <img src="https://github.com/2024-2-MCC2/Projeto1/blob/main/imagens/Banner.png?raw=true" border="0">
   Logo by <a href="">CDRR</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> 
 
-De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
+&emsp;&emsp;&emsp;O projeto Aliança Oceânica atua como uma ONG para arrecadar doações financeiras que serão distribuidas entre nossas ONGs parceiras. Temos também, como objettio secundário. o acumulo de capital publicitário com as inscrições de nossos filiados para promoção de campanhas, divulgação de conteudo jornalistico e cientifico voltados as questoes com fogo na Preservação da Vida na Água.
 <br><br>
 
 ## <img src="https://img.icons8.com/?size=100&id=zfHRZ6i1Wg0U&format=png&color=000000" width="20" height="20"/> PROTÓTIPO NO FIGMA 
