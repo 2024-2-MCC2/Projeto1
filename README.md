@@ -57,6 +57,8 @@
 &emsp;&emsp;&emsp;|-->Pages<br>
 |readme.md<br>
 
+<br><br>
+
 <b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
 
 Há também 3 pastas que seguem da seguinte forma:
