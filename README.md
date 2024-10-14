@@ -63,9 +63,13 @@ Há também 3 pastas que seguem da seguinte forma:
 
 ## 💻 Configuração para Desenvolvimento
 
-Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
+Para visualizar esse processo, baixe src do projeto localizada no seguinte link:
+```sh
+https://github.com/2024-2-MCC2/Projeto1/tree/main/src
+```
 
 Para abrir este projeto você necessita das seguintes ferramentas:
+
 
 
 
