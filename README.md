@@ -63,12 +63,7 @@ Há também 3 pastas que seguem da seguinte forma:
 
 ## 💻 Configuração para Desenvolvimento
 
-Para visualizar esse processo, baixe src do projeto localizada no seguinte link:
-```sh
-https://github.com/2024-2-MCC2/Projeto1/tree/main/src
-```
-
-Para abrir este projeto você necessita das seguintes ferramentas:
+Para abrir este projeto você necessita das seguintes ferramentas: Visual Studio Code, Node.js, 
 
 
 
