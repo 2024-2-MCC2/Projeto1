@@ -42,8 +42,10 @@ De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
 
 -Raiz<br>
 |-->documentos<br>
-&emsp;|-->antigos<br>
-&emsp;|Documentação.docx<br>
+&emsp;|-->Entrega 1<br>
+&emsp;|-->Entrega 2<br>
+&emsp;|-->Entrega 3<br>
+&emsp;|-->Entrega 4<br>
 |-->imagens<br>
 |-->src<br>
 &emsp;|-->Backend<br>
