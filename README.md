@@ -15,7 +15,7 @@
 ## Descrição
 
 <p align="center">
-<img src="https://github.com/2024-2-MCC2/Projeto1/blob/main/imagens/Logo.png" alt="Aliança Oceânica" border="0">
+<img src="https://github.com/2024-2-MCC2/Projeto1/blob/main/imagens/Banner.png?raw=true" border="0">
   Logo by <a href="">CDRR</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> 
 
 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
