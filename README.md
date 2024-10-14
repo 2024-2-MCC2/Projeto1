@@ -8,18 +8,9 @@
 
 ## Grupo: CDRR
 
-## Integrantes: 
-<a href="">Caroliny Rossi Bittencourt</a><br>
-<a href="">Duda Lucena Miguel</a><br>
-<a href="">Rafael Alves dos Santos Guimarães</a><br>
-<a href="">Rafael Moraes Marques</a><br>
+## Integrantes: <a href="">Caroliny Rossi Bittencourt</a>, <a href="">Duda Lucena Miguel</a>, <a href="">Rafael Alves dos Santos Guimarães</a>, <a href="">Rafael Moraes Marques</a>
 
-## Professores Orientadores: 
-<a href="">David de Oliveira Lemes</a><br>
-<a href="">Francisco de Souza Escobaro</a><br>
-<a href="">Katia Milani Lara Bossi</a><br>
-<a href="">Renata Muniz Do Nascimento</a><br>
-<a href="">Victor Rosetti Quiroz</a><br>
+## Professores Orientadores: <a href="">David de Oliveira Lemes</a>, <a href="">Francisco de Souza Escobaro</a>, <a href="">Katia Milani Lara Bossi</a>, <a href="">Renata Muniz Do Nascimento</a>, <a href="">Victor Rosetti Quiroz</a>
 
 
 
