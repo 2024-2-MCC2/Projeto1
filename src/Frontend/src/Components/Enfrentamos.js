@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Polution from "../Assets/Poluição-icon.png"
 
 const Frame1  = styled.div`
 display: flex;
@@ -43,7 +44,6 @@ button span{
 button:hover{
     background-color: #FDDE7D;
     border:  1px solid #000;
-
 }
 `
 function Enfrentamos(){

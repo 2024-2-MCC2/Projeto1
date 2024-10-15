@@ -4,12 +4,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Carrossel from "../Components/Carrossel";
 import QuadroDeManchetes from "../Components/QuadroDeManchetes";
 import Enfrentamos from "../Components/Enfrentamos";
+import NoticiasTopic from "../Components/NoticiasTopic";
+import NoticiasList from "../Components/NoticiasList";
 
 function Home(){
     return(
       <div>
         <Header/>
         <Carrossel/>
+        <NoticiasList/>
         <Enfrentamos/>
         <QuadroDeManchetes/>
         <Footer/>

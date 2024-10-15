@@ -217,7 +217,6 @@ font-weight: bolder;
     text-decoration: underline;
 }
 `
-
 function NavBar(){
     return(
         <NavBarContainer>
