@@ -6,19 +6,21 @@
 
 # Aliança Oceânica
 
-## CDRR
+## Grupo: CDRR
 
 ## Integrantes: <a href="">Caroliny Rossi Bittencourt</a>, <a href="">Duda Lucena Miguel</a>, <a href="">Rafael Alves dos Santos Guimarães</a>, <a href="">Rafael Moraes Marques</a>
 
-## Professores Orientadores: <a href="">David de Oliveira Lemes</a>, <a href="">Victor Rosetti Quiroz</a>, <a href="">Renata Muniz Do Nascimento</a>, <a href="">Katia Milani Lara Bossi</a>, <a href="">Francisco de Souza Escobaro</a>
+## Professores Orientadores: <a href="">David de Oliveira Lemes</a>, <a href="">Francisco de Souza Escobaro</a>, <a href="">Katia Milani Lara Bossi</a>, <a href="">Renata Muniz Do Nascimento</a>, <a href="">Victor Rosetti Quiroz</a>
+
+
 
 ## Descrição
 
 <p align="center">
-<img src="https://github.com/2024-2-MCC2/Projeto1/blob/main/imagens/Logo.png" alt="Aliança Oceânica" border="0">
+<img src="https://github.com/2024-2-MCC2/Projeto1/blob/main/imagens/Banner.png?raw=true" border="0">
   Logo by <a href="">CDRR</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> 
 
-De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
+&emsp;&emsp;&emsp;O projeto Aliança Oceânica atua como uma ONG para arrecadar doações financeiras que serão distribuidas entre nossas ONGs parceiras. Temos também, como objettio secundário. o acumulo de capital publicitário com as inscrições de nossos filiados para promoção de campanhas, divulgação de conteudo jornalistico e cientifico voltados as questoes com fogo na Preservação da Vida na Água.
 <br><br>
 
 ## <img src="https://img.icons8.com/?size=100&id=zfHRZ6i1Wg0U&format=png&color=000000" width="20" height="20"/> PROTÓTIPO NO FIGMA 
@@ -30,29 +32,29 @@ De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
 ## 🛠 Estrutura de pastas
 
 -Raiz<br>
-|<br>
 |-->documentos<br>
-  &emsp;|-->antigos<br>
-  &emsp;|Documentação.docx<br>
-|-->executáveis<br>
-  &emsp;|-->windows<br>
-  &emsp;|-->android<br>
-  &emsp;|-->HTML<br>
+&emsp;|-->Entrega 1<br>
+&emsp;|-->Entrega 2<br>
+&emsp;|-->Entrega 3<br>
+&emsp;|-->Entrega 4<br>
 |-->imagens<br>
 |-->src<br>
-  &emsp;|-->Backend<br>
-  &emsp;|-->Frontend<br>
+&emsp;|-->Backend<br>
+&emsp;|-->Frontend<br>
+&emsp;&emsp;|-->public<br>
+&emsp;&emsp;|-->src<br>
+&emsp;&emsp;&emsp;|-->Assets<br>
+&emsp;&emsp;&emsp;|-->Components<br>
+&emsp;&emsp;&emsp;|-->Pages<br>
 |readme.md<br>
 
-A pasta raiz contem dois arquivos que devem ser alterados:
+<br><br>
 
 <b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
 
-Há também 4 pastas que seguem da seguinte forma:
+Há também 3 pastas que seguem da seguinte forma:
 
 <b>documentos</b>: Toda a documentação estará nesta pasta.
-
-<b>executáveis</b>: Binários e executáveis do projeto devem estar nesta pasta.
 
 <b>imagens</b>: Imagens do sistema
 
@@ -61,9 +63,8 @@ Há também 4 pastas que seguem da seguinte forma:
 
 ## 💻 Configuração para Desenvolvimento
 
-Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
+Para abrir este projeto você necessita das seguintes ferramentas: Visual Studio Code, Node.js, 
 
-Para abrir este projeto você necessita das seguintes ferramentas:
 
 
 
