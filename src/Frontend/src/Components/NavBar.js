@@ -79,16 +79,19 @@ const B1_Frame1_1_1 = styled.div`
 display: flex;
 flex-direction: column;
 min-width: 100px;
+gap: 10px;
 `
 const B1_Frame1_1_2 = styled.div`
 display: flex;
 flex-direction: column;
 min-width: 100px;
+gap: 10px;
 `
 const B1_Frame1_1_3 = styled.div`
 display: flex;
 flex-direction: column;
 width: 200px;
+gap: 10px;
 `
 const B1_Frame1_2 = styled.div`
 font-size: 32px;
@@ -192,16 +195,19 @@ const B3_Frame1_1_1 = styled.div`
 display: flex;
 flex-direction: column;
 min-width: 100px;
+gap: 10px;
 `
 const B3_Frame1_1_2 = styled.div`
 display: flex;
 flex-direction: column;
 min-width: 100px;
+gap: 10px;
 `
 const B3_Frame1_1_3 = styled.div`
 display: flex;
 flex-direction: column;
 min-width: 100px;
+gap: 10px;
 `
 const B3_Frame1_2 = styled.div`
 font-size: 32px;
@@ -211,7 +217,6 @@ font-weight: bolder;
     text-decoration: underline;
 }
 `
-
 function NavBar(){
     return(
         <NavBarContainer>
