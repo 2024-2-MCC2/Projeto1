@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
+
 
 
 const NavBarContainer = styled.nav`
@@ -7,6 +9,10 @@ display: flex;
 align-items: center;
 justify-content: center;
 //background-color: blue;
+.no-link-style {
+  color: inherit; /* Herda a cor do elemento pai */
+  text-decoration: none; /* Remove o sublinhado */
+}
 `
 
 const Menu = styled.div`
@@ -221,40 +227,42 @@ function NavBar(){
     return(
         <NavBarContainer>
             <Menu>   
-                <Button>
-                    BUTTON 1
-                    <Dropdown className="dropdown">
-                        <B1_Frame1>
-                            <B1_Frame1_1>
-                                <B1_Frame1_1_1>
-                                    <p>Tópico 1</p>
-                                    <ul>
-                                        <li href="#">item 1</li>
-                                        <li href="#">item 2</li>
-                                        <li href="#">item 3</li>
-                                        <li href="#">item 4</li>
-                                        <li href="#">item 5</li>
-                                    </ul>
-                                </B1_Frame1_1_1>
-                                <B1_Frame1_1_2>
-                                    <p>Tópico 2</p>
-                                    <ul>
-                                        <li href="#">item 1</li>
-                                        <li href="#">item 2</li>
-                                        <li href="#">item 3</li>
-                                    </ul>
-                                </B1_Frame1_1_2>
-                                <B1_Frame1_1_3>
-                                    <p>Sobre Nós</p>
-                                    <p>blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla</p>
-                                </B1_Frame1_1_3>
-                            </B1_Frame1_1>
-                            <B1_Frame1_2>
-                                Saiba mais sobre isso
-                            </B1_Frame1_2>
-                        </B1_Frame1>
-                    </Dropdown>
-                </Button>
+                <Link to="/SobreNos" className="no-link-style">
+                    <Button>
+                        SOBRE NÓS
+                        <Dropdown className="dropdown">
+                            <B1_Frame1>
+                                <B1_Frame1_1>
+                                    <B1_Frame1_1_1>
+                                        <p>Tópico 1</p>
+                                        <ul>
+                                            <li href="#">item 1</li>
+                                            <li href="#">item 2</li>
+                                            <li href="#">item 3</li>
+                                            <li href="#">item 4</li>
+                                            <li href="#">item 5</li>
+                                        </ul>
+                                    </B1_Frame1_1_1>
+                                    <B1_Frame1_1_2>
+                                        <p>Tópico 2</p>
+                                        <ul>
+                                            <li href="#">item 1</li>
+                                            <li href="#">item 2</li>
+                                            <li href="#">item 3</li>
+                                        </ul>
+                                    </B1_Frame1_1_2>
+                                    <B1_Frame1_1_3>
+                                        <p>Sobre Nós</p>
+                                        <p>blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla</p>
+                                    </B1_Frame1_1_3>
+                                </B1_Frame1_1>
+                                <B1_Frame1_2>
+                                    Saiba mais sobre isso
+                                </B1_Frame1_2>
+                            </B1_Frame1>
+                        </Dropdown>
+                    </Button>
+                </Link>
                 <Button>
                     BUTTON 2
                     <Dropdown className="dropdown">
