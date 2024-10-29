@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 const Frame1 = styled.div`
 display: flex;
@@ -11,6 +12,10 @@ padding: 40px;
 width: 600px;
 height: 700px;
 background-color: #D9D9D9;
+.no-link-style {
+  color: inherit; /* Herda a cor do elemento pai */
+  text-decoration: none; /* Remove o sublinhado */
+}
 `
 const Frame1_1 = styled.div`
 border-bottom: 3px solid #0460C9;
@@ -105,7 +110,9 @@ function PainelDeDoacao({abrirLogin}){
             ))}
             </Frame1_3>
             <Frame1_4>
-                <button className="Continuar" onClick={abrirLogin}>Continuar</button>
+                <Link to="/LoginPage" className="no-link-style">
+                    <button className="Continuar" onClick={abrirLogin}>Continuar</button>
+                </Link>
             </Frame1_4>
         </Frame1>
     )

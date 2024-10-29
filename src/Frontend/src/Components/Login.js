@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Frame1 = styled.div`
 display: flex;
@@ -9,6 +10,7 @@ align-items: center;
 gap: 30px;
 background-color: #D9D9D9;
 padding: 50px;
+margin-top: 75px;
 h2{
     color: #0460C9;
     border-bottom: 3px solid #0460C9;
@@ -19,6 +21,10 @@ h2{
 .FacaCadastro:hover{
     text-decoration: underline;
     cursor: pointer;
+}
+.no-link-style {
+  color: inherit; /* Herda a cor do elemento pai */
+  text-decoration: none; /* Remove o sublinhado */
 }
 `
 const FormsContainer = styled.form`
@@ -103,7 +109,9 @@ function Login(){
                 </InputContainer>
             </FormsContainer>
             <Button type ="submit">Entrar</Button>
-            <p className="FacaCadastro" >Não tem conta? Cadastre-se</p>
+                <Link to="/CadastroPage" className="no-link-style">
+                    <p className="FacaCadastro" >Não tem conta? Cadastre-se</p>
+                </Link>
         </Frame1>
     )
 }

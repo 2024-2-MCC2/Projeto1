@@ -5,10 +5,7 @@ import AnimaisList from "../Components/AnimaisList";
 
 const Container =  styled.div`
 `
-
-
 function AnimalPage(){
-
     return (
       <Container>
         <Header/>

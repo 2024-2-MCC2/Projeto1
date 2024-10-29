@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Cleave from 'cleave.js/react';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Frame1 = styled.div`
 display: flex;
@@ -10,6 +11,7 @@ align-items: center;
 gap: 30px;
 background-color: #D9D9D9;
 padding: 50px;
+margin-top: 75px;
 h2{
     color: #0460C9;
     border-bottom: 3px solid #0460C9;
@@ -20,6 +22,10 @@ h2{
 .FacaLogin:hover{
     text-decoration: underline;
     cursor: pointer;
+}
+.no-link-style {
+  color: inherit; /* Herda a cor do elemento pai */
+  text-decoration: none; /* Remove o sublinhado */
 }
 `
 const FormsContainer = styled.form`
@@ -245,7 +251,9 @@ function Cadastro({toggleForm}){
                 </InputContainer>
             </FormsContainer>
             <Button type ="submit">Cadastre-se</Button>
-            <p className="FacaLogin">Já tem conta? Faça Login</p>
+                <Link to="/LoginPage" className="no-link-style">
+                    <p className="FacaLogin">Já tem conta? Faça Login</p>
+                </Link>
         </Frame1>
     )
 }
