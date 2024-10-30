@@ -35,7 +35,7 @@ Pais_Do_Filiado VARCHAR (100)
 CREATE TABLE Doacao (
 Id_Doacao INT AUTO_INCREMENT PRIMARY KEY,
 Id_Filiado INT,
-Valor_Da_Doacao DOUBLE NOT NULL,
+Valor_Da_Doacao DECIMAL(10,2) NOT NULL,
 Forma_Pagamento_Doacao VARCHAR (100),
 Data_Da_Doacao DATE,
 Hora_Da_Doacao TIME,
