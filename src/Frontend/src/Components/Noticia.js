@@ -50,6 +50,7 @@ pre{
     font-size: 20px;
     white-space: pre-wrap;
     word-wrap: break-word;
+    text-indent: 2em;
 }
 `
 const Frame3 = styled.div`
@@ -69,7 +70,6 @@ button{
     background-color: #84BEFF;
     border: none;
 }
-
 `
 //------------------------------------------------------------------
 function Noticia({ Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia, Texto }) {
