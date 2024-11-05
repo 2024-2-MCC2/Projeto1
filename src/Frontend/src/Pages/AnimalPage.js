@@ -7,7 +7,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 const Container =  styled.div`
 `
-
 function AnimalPage(){
   const { id } = useParams(); // Pegando o ID da temporada da URL
     const navigate = useNavigate();
