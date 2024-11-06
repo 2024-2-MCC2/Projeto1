@@ -132,12 +132,7 @@ function Header(){
                 <NavBar/>
             </Frame2>
             <Frame3>
-                <Frame3_1>
-                    <input className="SearchBar" type="text" class="text-box" placeholder="Buscar..." />
-                    <button>
-                        <span class="material-symbols-outlined">search</span>
-                    </button>
-                </Frame3_1>
+                
                 <Frame3_2>
                 <Link to="/DoacaoPage" className="no-link-style">
                     <button classeName="BotaoDeDoar">

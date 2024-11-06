@@ -7,14 +7,13 @@ import Enfrentamos from "../Components/Enfrentamos";
 import NoticiasTopic from "../Components/NoticiasTopic";
 import NoticiasList from "../Components/NoticiasList";
 import Noticia from "../Components/Noticia"
-import Teste from "../Components/Testes";
+
 
 function Home(){
     return(
       <div>
         <Header/>
         <Carrossel/>
-       
         <Enfrentamos/>
         <QuadroDeManchetes/>
         <Footer/>

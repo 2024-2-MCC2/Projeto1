@@ -7,13 +7,14 @@ justify-content: center;
 align-items: center;
 position: relative;
 width: 100%; 
+height: 100%;
 background: #FFFFFF;
 flex-direction: column;
 padding: 0px;
 gap: 25px;
 height: 1513px;
 box-sizing: border-box;
-overflow-x: hidden;
+overflow: hidden;
 img {
   width: 100%;
   height: auto;
@@ -26,28 +27,34 @@ flex-direction: row;
 align-items: center;
 padding: 0px;
 width: 100%; 
-height: 586px;
+height: 600px;
 background: #D9D9D9;
 flex: none;
 order: 0;
 flex-grow: 0;
 `
 const Frame1_1 = styled.div`
-width: 667px;
-height: 586px;
+width: 70%;
+height: 100%;
 background: #888888;
 flex: none;
 order: 0;
 flex-grow: 0;
+overflow: hidden;
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 `
 const Frame1_2 = styled.div`
-display: flex;
+display: inline-block;
 flex-direction: column;
 align-items: flex-start;
 padding: 80px 20px;
 gap: 20px;
-width: 613px;
-height: 586px;
+width: 30%;
+height: 100%;
 flex: none;
 order: 1;
 align-self: stretch;
@@ -92,7 +99,6 @@ flex-grow: 0;
 const Frame1_2_2 = styled.div`
 width: 260px;
 height: 76px;
-font-weight: 400;
 font-size: 16px;
 line-height: 19px;
 color: #000000;
@@ -127,7 +133,6 @@ flex-grow: 1;
 h1{
 width: 632px;
 height: 39px;
-font-weight: 700;
 font-size: 32px;
 line-height: 39px;
 color: #000000;
@@ -141,7 +146,6 @@ width: 632px;
 height: 228px;
 font-family: 'Inter';
 font-style: normal;
-font-weight: 400;
 font-size: 16px;
 line-height: 19px;
 color: #000000;
@@ -158,6 +162,12 @@ background: #D9D9D9;
 flex: none;
 order: 1;
 flex-grow: 0;
+overflow: hidden;
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 `
 const Frame3 = styled.div`
 display: flex;
@@ -189,7 +199,6 @@ flex-grow: 0;
 h1{
 width: 555px;
 height: 39px;
-font-weight: 600;
 font-size: 32px;
 line-height: 39px;
 text-align: center;
@@ -202,7 +211,6 @@ flex-grow: 0;
 p{
 width: 555px;
 height: 266px;
-font-weight: 400;
 font-size: 16px;
 line-height: 19px;
 text-align: center;
@@ -220,15 +228,14 @@ align-items: flex-start;
 padding: 0px;
 gap: 20px;
 margin: 0 auto;
-width: 550px;
-height: 325px;
+width: 100%;
+height: 100%;
 flex: none;
 order: 1;
 flex-grow: 0;
 h1{
 width: 550px;
 height: 39px;
-font-weight: 600;
 font-size: 32px;
 line-height: 39px;
 text-align: center;
@@ -241,7 +248,6 @@ flex-grow: 0;
 p{
 width: 550px;
 height: 266px;
-font-weight: 400;
 font-size: 16px;
 line-height: 19px;
 text-align: center;
@@ -262,15 +268,15 @@ function AnimaisList({Nome, Nome_Cientifico,Localizacao, Populacao, Peso, Compri
                 </Frame1_1>
                 <Frame1_2>
                     <Frame1_2_1>
-                        <h2>{Nome}</h2>
-                        <p>{Nome_Cientifico}</p>
+                        <h2>Nome: {Nome}</h2>
+                        <p>Nome Cientifico: {Nome_Cientifico}</p>
                     </Frame1_2_1>
                     <Frame1_2_2>
-                        <p>{Habitat}</p>
-                        <p>{Localizacao}</p>
-                        <p>{Comprimento}</p>
-                        <p>{Peso}</p>
-                        <p>{Populacao}</p>
+                        <p>Habitat: {Habitat}</p>
+                        <p>Localização: {Localizacao}</p>
+                        <p>Comprimento: {Comprimento}</p>
+                        <p>Peso: {Peso}</p>
+                        <p>População: {Populacao}</p>
                     </Frame1_2_2>
                 </Frame1_2>
             </Frame1>
