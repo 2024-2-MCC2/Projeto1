@@ -1,7 +1,4 @@
-import Header from "../Components/Header"
-import Footer from "../Components/Footer"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import QuadroDeManchetes from "../Components/QuadroDeManchetes";
 import '../global.css';
 import SobreNos from "../Components/SobreNos";
 import styled from 'styled-components';
