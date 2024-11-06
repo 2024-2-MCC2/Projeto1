@@ -33,6 +33,12 @@ import Tubarao_Martelo from '../Assets/Fotos_Animal/Tubarao_Martelo.jpg';
 import Vaquita from '../Assets/Fotos_Animal/Vaquita.jpg';
 
 const Container = styled.div`
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+margin-top: 75px;
+width: 100%;
 `;
 
 function AnimaisPage() {
@@ -163,13 +169,9 @@ function AnimaisPage() {
             imagem_Animal: Polvo_Gigante,
         },
     ];
-
-    const Animal = Animais[id]
     return (
         <Container>
-            <Header />
             <Animais Animais={AnimaisData} />
-            <Footer />
         </Container>
     )
 }

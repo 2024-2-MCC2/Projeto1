@@ -22,6 +22,15 @@ z-index: 1000;
   text-decoration: none; /* Remove o sublinhado */
 }
 `
+const Container = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100%;
+width: 100%;
+min-width: fit-content;
+max-width: 1920px;
+`
 const Frame1 = styled.div`
 display: flex;
 align-items: center;
@@ -62,7 +71,7 @@ span{
     justify-content: center;
 };
 `
-const Frame3_1 =styled.div`
+const Frame3_1 = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
@@ -70,7 +79,6 @@ gap: 10px;
 background-color: #fff;
 border-radius: 25px;
 padding: 0 10px;
-
 button{
     background-color: rgb(0,0,0,0);
     border: none;
@@ -92,7 +100,12 @@ input:focus{
 }
 `
 const Frame3_2 = styled.div`
-button{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+`
+const DoarButton = styled.button`
 text-decoration: none;
 display: flex;
 justify-content: center;
@@ -102,9 +115,8 @@ height: 45px;
 border-radius: 5px;
 background-color: #9E0000;
 border: none;
-}
-button:hover{
-background-color: #FF0000;
+&:hover{
+    background-color: #FF0000;
 }
 p{
     color: #fff;
@@ -120,28 +132,62 @@ span{
 
 }
 `
-function Header(){
-    return(
+const AreaDoFiliadoButton = styled.button`
+text-decoration: none;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+height: 45px;
+border-radius: 5px;
+background-color: #154F91;
+border: none;
+&:hover{
+    background-color: #2575CF;
+}
+p{
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 0 5px;
+}
+span{
+    color:  #fff;
+    font-size: 32px;
+    border-left: 0.5px solid #fff;
+    padding-left: 5px;
+
+}
+`
+function Header() {
+    return (
         <HeaderContainer>
-            <Link to="/" className="no-link-style">
-                <Frame1>
-                    <img src={Insignia} className="Logo"/>
-                </Frame1>
-            </Link>
-            <Frame2>
-                <NavBar/>
-            </Frame2>
-            <Frame3>
-                
-                <Frame3_2>
-                <Link to="/DoacaoPage" className="no-link-style">
-                    <button classeName="BotaoDeDoar">
-                            <p>DOAR</p>
-                            <span class="material-symbols-outlined">add</span>
-                    </button>
-                    </Link>
-                </Frame3_2>
-            </Frame3>
+            <Container>
+                <Link to="/" className="no-link-style">
+                    <Frame1>
+                        <img src={Insignia} className="Logo" />
+                    </Frame1>
+                </Link>
+                <Frame2>
+                    <NavBar />
+                </Frame2>
+                <Frame3>
+                    <Frame3_2>
+                        <Link to="/Doacao" className="no-link-style">
+                            <DoarButton>
+                                <p>DOAR</p>
+                                <span class="material-symbols-outlined">add</span>
+                            </DoarButton>
+                        </Link>
+                        <Link to="/Login" className="no-link-style">
+                            <AreaDoFiliadoButton>
+                                <p>ÁREA DO FILIADO</p>
+                                <span class="material-symbols-outlined">arrow_forward_ios</span>
+                            </AreaDoFiliadoButton>
+                        </Link>
+                    </Frame3_2>
+                </Frame3>
+            </Container>
         </HeaderContainer>
     );
 }

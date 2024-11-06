@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+
+const AboutUsContainer  = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`
+
 const Frame1 = styled.div`
   display: flex;
   flex-direction: row;
@@ -15,14 +23,10 @@ const Frame1 = styled.div`
   height: auto;
   padding-top: 75px;
 `
-
-
 const Frama1_1 = styled.div`
 max-width: fit-content;
 max-height: fit-content;
 `
-
-
 const Frama1_2 = styled.div`
   display: flex;
   flex-direction: column;
@@ -75,8 +79,6 @@ button{
     }
 }
 `
-
-
 const Frame2 = styled.div`
   display: flex;
   flex-direction: row;
@@ -88,8 +90,6 @@ const Frame2 = styled.div`
   height: 435px;
   background-color: lightgrey;
 `
-
-
 const Frama2_1 = styled.div`
   display: flex;
   flex-direction: column;
@@ -123,9 +123,6 @@ const Frame2_1_3 = styled.div`
   text-align: center;
   color: rgba(0, 0, 0, 1);
 `
-
-
-
 const Frama2_2 = styled.div`
   display: flex;
   flex-direction: column;
@@ -158,9 +155,6 @@ const Frame2_2_3 = styled.div`
   text-align: center;
   color: rgba(0, 0, 0, 1);
 `
-
-
-
 const Frama2_3 = styled.div`
   display: flex;
   flex-direction: column;
@@ -193,12 +187,6 @@ const Frame2_3_3 = styled.div`
   text-align: center;
   color: rgba(0, 0, 0, 1);
 `
-
-
-
-
-
-
 const Frame3 = styled.div`
   display: flex;
   flex-direction: row;
@@ -213,13 +201,9 @@ const Frame3 = styled.div`
   width: 100%;
   height: auto;
 `
-
-
 const Frama3_1 = styled.div`
 
 `
-
-
 const Frama3_2 = styled.div`
   display: flex;
   flex-direction: column;
@@ -247,9 +231,6 @@ const Frame3_2_2 = styled.div`
   text-align: left;
   color: rgba(0, 0, 0, 1);
 `
-
-
-
 const Frame4 = styled.div`
   display: flex;
   flex-direction: row;
@@ -266,9 +247,6 @@ const Frame4 = styled.div`
   height: 435px;
   background-color: lightgrey;
 `
-
-
-
 const Frama4_1 = styled.div`
   display: flex;
   flex-direction: column;
@@ -318,8 +296,6 @@ const Frame4_1_3 = styled.div`
   }
 }
 `
-
-
 const Frama4_2 = styled.div`
   display: flex;
   flex-direction: column;
@@ -351,120 +327,103 @@ const Frame4_2_3 = styled.div`
   color: rgba(0, 0, 0, 1);
 `
 
-function AboutUs(){
-    return(
-        <>       
-        <Frame1>
-            <Frama1_1>
-                <img src = "https://raw.githubusercontent.com/2024-2-MCC2/Projeto1/refs/heads/main/imagens/image-20-2.png"/>               
-            </Frama1_1>
-            <Frama1_2>
-                <Frama1_2_1>
-                    <text>
-                    Quem é a Aliança Oceânica?
-                    </text>
-                </Frama1_2_1>
-                <Frama1_2_2>
-                    <text>Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos.
-                    Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos.Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos.Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos.  </text>
-                </Frama1_2_2>
-                <Frama1_2_3>
-                    <button>Nos ajude a salvar o mundo!</button>                    
-                </Frama1_2_3>
-            </Frama1_2>
-        </Frame1>
+function AboutUs() {
+  return (
+    <AboutUsContainer>
+      <Frame1>
+        <Frama1_1>
+          <img src="https://raw.githubusercontent.com/2024-2-MCC2/Projeto1/refs/heads/main/imagens/image-20-2.png" />
+        </Frama1_1>
+        <Frama1_2>
+          <Frama1_2_1>
+            <text>
+              Quem é a Aliança Oceânica?
+            </text>
+          </Frama1_2_1>
+          <Frama1_2_2>
+            <text>Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos.
+              Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos.Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos.Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos. Aqui vai quem nós somos.  </text>
+          </Frama1_2_2>
+          <Frama1_2_3>
+            <button>Nos ajude a salvar o mundo!</button>
+          </Frama1_2_3>
+        </Frama1_2>
+      </Frame1>
+      <Frame2>
+        <Frama2_1>
+          <Frame2_1_1>
+            <img src="https://placehold.co/116x116/png" />
+          </Frame2_1_1>
+          <Frame2_1_2>
+            <text>+10</text>
+          </Frame2_1_2>
+          <Frame2_1_3>
+            <text>espécies que visamos proteger.</text>
+          </Frame2_1_3>
+        </Frama2_1>
+        <Frama2_2>
+          <Frame2_2_1>
+            <img src="https://placehold.co/116x116/png" />
+          </Frame2_2_1>
+          <Frame2_2_2>
+            <text>N causas</text>
+          </Frame2_2_2>
+          <Frame2_2_3>
+            <text>que defendemos por todo o Brasil.</text>
+          </Frame2_2_3>
+        </Frama2_2>
+        <Frama2_3>
+          <Frame2_3_1>
+            <img src="https://placehold.co/116x116/png" />
+          </Frame2_3_1>
+          <Frame2_3_2>
+            <text>+8000</text>
+          </Frame2_3_2>
+          <Frame2_3_3>
+            <text>precisava de um dado aqui e não sabia o que colocar.</text>
+          </Frame2_3_3>
+        </Frama2_3>
+      </Frame2>
+      <Frame3>
+        <Frama3_1>
+          <img src="https://raw.githubusercontent.com/2024-2-MCC2/Projeto1/refs/heads/main/imagens/image-22-2.png" />
+        </Frama3_1>
+        <Frama3_2>
+          <Frame3_2_1>
+            <text>O que fazemos?</text>
+          </Frame3_2_1>
+          <Frame3_2_2>
+            <text>Aqui vai o que fazemos. Aqui vai o que fazemos. Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos. </text>
+          </Frame3_2_2>
+        </Frama3_2>
+      </Frame3>
+      <Frame4>
+        <Frama4_1>
+          <Frame4_1_1>
+            <text>Vida Marinha</text>
+          </Frame4_1_1>
+          <Frame4_1_2>
+            <text>Aqui explicamos sobre a ODS 14 e como ela impacta o mundo. Aqui explicamos sobre a ODS 14 e como ela impacta o mundo. Aqui explicamos sobre a ODS 14 e como ela impacta o mundo. Aqui explicamos sobre a ODS 14 e como ela impacta o mundo. Aqui explicamos sobre a ODS 14 e como ela impacta o mundo. Aqui explicamos sobre a ODS 14 e como ela impacta o mundo. Aqui explicamos </text>
+          </Frame4_1_2>
+          <Frame4_1_3>
+            <button>Saiba Mais</button>
+          </Frame4_1_3>
+        </Frama4_1>
+        <Frama4_2>
+          <Frame4_2_1>
+            <img src="https://placehold.co/116x116/png" />
+          </Frame4_2_1>
+          <Frame4_2_2>
+            <text>ODS 14</text>
+          </Frame4_2_2>
+          <Frame4_2_3>
+            <text>Proteger a vida marinha</text>
+          </Frame4_2_3>
+        </Frama4_2>
+      </Frame4>
+    </AboutUsContainer>
 
-{/*  Apenas para separação por que eu sou o tal do mula :)*/}
-
-
-        <Frame2>
-            <Frama2_1>
-                <Frame2_1_1>
-                <img src = "https://placehold.co/116x116/png"/>
-                </Frame2_1_1>
-                <Frame2_1_2>
-                    <text>+10</text>
-                </Frame2_1_2>
-                <Frame2_1_3>
-                    <text>espécies que visamos proteger.</text>
-                </Frame2_1_3>
-            </Frama2_1>
-
-            <Frama2_2>
-                <Frame2_2_1>
-                <img src = "https://placehold.co/116x116/png"/>
-                </Frame2_2_1>
-                <Frame2_2_2>
-                    <text>N causas</text>
-                </Frame2_2_2>
-                <Frame2_2_3>
-                    <text>que defendemos por todo o Brasil.</text>
-                </Frame2_2_3>
-            </Frama2_2>
-
-            <Frama2_3>
-                <Frame2_3_1>
-                <img src = "https://placehold.co/116x116/png"/>
-                </Frame2_3_1>
-                <Frame2_3_2>
-                    <text>+8000</text>
-                </Frame2_3_2>
-                <Frame2_3_3>
-                    <text>precisava de um dado aqui e não sabia o que colocar.</text>
-                </Frame2_3_3>                
-            </Frama2_3>
-        </Frame2>
-
-{/*  Apenas para separação por que eu sou o tal do mula :)*/}
-
-        <Frame3>
-            <Frama3_1>
-            <img src = "https://raw.githubusercontent.com/2024-2-MCC2/Projeto1/refs/heads/main/imagens/image-22-2.png"/>             
-            </Frama3_1>
-
-            <Frama3_2>
-                <Frame3_2_1>
-                    <text>O que fazemos?</text>
-                </Frame3_2_1>
-                <Frame3_2_2>
-                    <text>Aqui vai o que fazemos. Aqui vai o que fazemos. Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos. </text>
-                </Frame3_2_2>
-            </Frama3_2>
-        </Frame3>
-
-{/*  Apenas para separação por que eu sou o tal do mula :)*/}
-
-
-        <Frame4>
-            <Frama4_1>
-                <Frame4_1_1>
-                    <text>Vida Marinha</text>
-                </Frame4_1_1>
-                <Frame4_1_2>
-                    <text>Aqui explicamos sobre a ODS 14 e como ela impacta o mundo. Aqui explicamos sobre a ODS 14 e como ela impacta o mundo. Aqui explicamos sobre a ODS 14 e como ela impacta o mundo. Aqui explicamos sobre a ODS 14 e como ela impacta o mundo. Aqui explicamos sobre a ODS 14 e como ela impacta o mundo. Aqui explicamos sobre a ODS 14 e como ela impacta o mundo. Aqui explicamos </text>
-                </Frame4_1_2>
-                <Frame4_1_3>
-                    <button>Saiba Mais</button>
-                </Frame4_1_3>
-            </Frama4_1>
-
-
-
-            <Frama4_2>
-                <Frame4_2_1>
-                <img src = "https://placehold.co/116x116/png"/>        
-                </Frame4_2_1>
-                <Frame4_2_2>
-                  <text>ODS 14</text>
-                </Frame4_2_2>
-                <Frame4_2_3>
-                  <text>Proteger a vida marinha</text>
-                </Frame4_2_3>
-            </Frama4_2>            
-        </Frame4>
-        </>
-        
-    );
+  );
 
 }
 

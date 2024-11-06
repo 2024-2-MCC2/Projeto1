@@ -10,7 +10,7 @@ align-items: center;
 gap: 30px;
 background-color: #D9D9D9;
 padding: 50px;
-margin-top: 75px;
+width: 100%;
 h2{
     color: #0460C9;
     border-bottom: 3px solid #0460C9;
@@ -109,7 +109,7 @@ function Login(){
                 </InputContainer>
             </FormsContainer>
             <Button type ="submit">Entrar</Button>
-                <Link to="/CadastroPage" className="no-link-style">
+                <Link to="/Cadastro" className="no-link-style">
                     <p className="FacaCadastro" >Não tem conta? Cadastre-se</p>
                 </Link>
         </Frame1>

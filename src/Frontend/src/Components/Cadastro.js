@@ -11,7 +11,7 @@ align-items: center;
 gap: 30px;
 background-color: #D9D9D9;
 padding: 50px;
-margin-top: 75px;
+width: 100%;
 h2{
     color: #0460C9;
     border-bottom: 3px solid #0460C9;
@@ -251,7 +251,7 @@ function Cadastro({toggleForm}){
                 </InputContainer>
             </FormsContainer>
             <Button type ="submit">Cadastre-se</Button>
-                <Link to="/LoginPage" className="no-link-style">
+                <Link to="/Login" className="no-link-style">
                     <p className="FacaLogin">Já tem conta? Faça Login</p>
                 </Link>
         </Frame1>

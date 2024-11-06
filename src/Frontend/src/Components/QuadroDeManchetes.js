@@ -4,14 +4,18 @@ import Manchete from "./Manchetes";
 const QuadroDeManchetesContainer = styled.div`
 display: flex;
 flex-direction: column;
-padding: 20px 50px;
+justify-content: center;
+align-items: center;
+padding: 0 50px;
 width: 100%;
+//background-color: green;
 `
 const Frame1 = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: bottom;
 margin-bottom: 20px;
+width: 1280px;
 //background-color: yellow;
 `
 const Frame1_1 = styled.div`
@@ -36,12 +40,11 @@ p{
 }
 `
 const Frame2 = styled.div`
-display: inline-block;
-//background-color: green;
-`
-const Frame2_1 = styled.div`
 display: flex;
+align-items: center;
 justify-content: space-between;
+width: 1280px;
+//background-color: red;
 `
 
 function QuadroDeManchetes(){
@@ -56,7 +59,6 @@ function QuadroDeManchetes(){
                 </Frame1_2>
             </Frame1>
             <Frame2>
-                <Frame2_1>
                     <Manchete 
                     imagem="https://placehold.co/250x250/000000/FFF" 
                     info="info" 
@@ -81,7 +83,6 @@ function QuadroDeManchetes(){
                     titulo="Titulo da notícia 4" 
                     lead="Aqui vai um breve resumo blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla"
                     />
-                </Frame2_1>
             </Frame2>
         </QuadroDeManchetesContainer>
     )

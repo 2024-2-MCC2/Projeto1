@@ -1,28 +1,27 @@
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
 
-
-
 const NavBarContainer = styled.nav`
 height: 75px;
 display: flex;
 align-items: center;
 justify-content: center;
+width: 100%;
 //background-color: blue;
-.no-link-style {
-  color: inherit; /* Herda a cor do elemento pai */
-  text-decoration: none; /* Remove o sublinhado */
+.link-style-button{
+  color: inherit;
+  text-decoration: none; 
+  width: fit-content;
+  height: 100%;
 }
 `
-
 const Menu = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
 height: 100%;
-//background-color: red;
+min-width: fit-content;
 `
-
 const Button = styled.h2`
 display: flex;
 justify-content: center;
@@ -34,6 +33,7 @@ font-size: 32px;
 font-weight: bold;
 position: relative;
 margin: 0;
+min-width: fit-content;
 &:hover{
     background-color: #fff;
     color: #06C7F2;
@@ -47,296 +47,66 @@ const Dropdown = styled.div`
   display: none;
   position: absolute;
   background-color: #fff;
-  padding: 10px;
   top: 100%;
   left: 0;
+  min-width: 100%;
   width: fit-content;
   z-index: 1;
-`
-//--------------------------------------------------------------------------------------------------------------------------------------
-const B1_Frame1 = styled.div`
-display: inline-block;
-flex-direction: column;
-font-size: 16px;
-color: #000;
-li{
-    padding-bottom: 10px;
-    text-decoration: none;
-    list-style-type: none;
-}
-li:Hover{
-    text-decoration: underline;
-}
-ul{
-    padding-left: 0;
-    margin-left: 0;
-}
-p{
-    font-weight: bolder;
-    overflow-wrap: break-word;
-}
-`
-const B1_Frame1_1 = styled.div`
-display: flex;
-justify-content: space-between;
-gap: 20px;
-`
-const B1_Frame1_1_1 = styled.div`
-display: flex;
-flex-direction: column;
-min-width: 100px;
-gap: 10px;
-`
-const B1_Frame1_1_2 = styled.div`
-display: flex;
-flex-direction: column;
-min-width: 100px;
-gap: 10px;
-`
-const B1_Frame1_1_3 = styled.div`
-display: flex;
-flex-direction: column;
-width: 200px;
-gap: 10px;
-`
-const B1_Frame1_2 = styled.div`
-font-size: 32px;
-font-weight: bolder;
-&:Hover{
-    color: #06C7F2;
-    text-decoration: underline;
+  .link-style-menu{
+  color: inherit;
+  text-decoration: none; 
+  width: 100%;
+  height: 100%;
 }
 `
 //--------------------------------------------------------------------------------------------------------------------------------------
-
-
 const B2_Frame1 = styled.div`
-display: inline-block;
-flex-direction: column;
-font-size: 16px;
-color: #000;
-li{
-    padding-bottom: 10px;
-    text-decoration: none;
-    list-style-type: none;
-}
-li:Hover{
-    text-decoration: underline;
-}
-ul{
-    padding-left: 0;
-    margin-left: 0;
-}
-p{
-    font-size: 17px;
-    font-weight: bolder;
-    overflow-wrap: break-word;
-}
-`
-const B2_Frame1_1 = styled.div`
-display: flex;
-justify-content: space-between;
-gap: 20px;
-`
-const B2_Frame1_1_1 = styled.div`
 display: flex;
 flex-direction: column;
-min-width: 100px;
-`
-const B2_Frame1_1_2 = styled.div`
-display: flex;
-flex-direction: column;
+justify-content: center;
 align-items: center;
-min-width: 200px;
-p{
-    margin-bottom: 10px;
-}
-`
-const B2_Frame1_1_2_1 = styled.div`
-display: flex;
-justify-content: space-between;
-min-width: 200px;
-img{
-    width: 40px;
-}
-`
-const B2_Frame1_2 = styled.div`
-font-size: 32px;
-font-weight: bolder;
-&:Hover{
-    color: #06C7F2;
-    text-decoration: underline;
-}
-`
-//--------------------------------------------------------------------------------------------------------------------------------------
-const B3_Frame1 = styled.div`
-display: inline-block;
-flex-direction: column;
-font-size: 16px;
 color: #000;
-li{
-    padding-bottom: 10px;
-    text-decoration: none;
-    list-style-type: none;
-}
-li:Hover{
-    text-decoration: underline;
-}
-ul{
-    padding-left: 0;
-    margin-left: 0;
-}
-p{
-    font-size: 17px;
-    font-weight: bolder;
-    overflow-wrap: break-word;
-}
+width: 100%;
 `
-const B3_Frame1_1 = styled.div`
+const BotaoMenu = styled.div`
+padding: 10px;
+font-size: 20px;
 display: flex;
-justify-content: space-between;
-gap: 20px;
-`
-const B3_Frame1_1_1 = styled.div`
-display: flex;
-flex-direction: column;
-min-width: 100px;
-gap: 10px;
-`
-const B3_Frame1_1_2 = styled.div`
-display: flex;
-flex-direction: column;
-min-width: 100px;
-gap: 10px;
-`
-const B3_Frame1_1_3 = styled.div`
-display: flex;
-flex-direction: column;
-min-width: 100px;
-gap: 10px;
-`
-const B3_Frame1_2 = styled.div`
-font-size: 32px;
-font-weight: bolder;
-&:Hover{
-    color: #06C7F2;
-    text-decoration: underline;
+justify-content: start;
+align-items: center;
+width: 100%;
+&:hover{
+    background-color: #06C7F2;
+    color: #fff;
+    cursor: pointer;
 }
 `
-function NavBar(){
-    return(
+
+function NavBar() {
+    return (
         <NavBarContainer>
-            <Menu>   
-                <Link to="/SobreNos" className="no-link-style">
-                    <Button>
-                        SOBRE NÓS
-                        <Dropdown className="dropdown">
-                            <B1_Frame1>
-                                <B1_Frame1_1>
-                                    <B1_Frame1_1_1>
-                                        <p>Tópico 1</p>
-                                        <ul>
-                                            <li href="#">item 1</li>
-                                            <li href="#">item 2</li>
-                                            <li href="#">item 3</li>
-                                            <li href="#">item 4</li>
-                                            <li href="#">item 5</li>
-                                        </ul>
-                                    </B1_Frame1_1_1>
-                                    <B1_Frame1_1_2>
-                                        <p>Tópico 2</p>
-                                        <ul>
-                                            <li href="#">item 1</li>
-                                            <li href="#">item 2</li>
-                                            <li href="#">item 3</li>
-                                        </ul>
-                                    </B1_Frame1_1_2>
-                                    <B1_Frame1_1_3>
-                                        <p>Sobre Nós</p>
-                                        <p>blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla</p>
-                                    </B1_Frame1_1_3>
-                                </B1_Frame1_1>
-                                <B1_Frame1_2>
-                                    Saiba mais sobre isso
-                                </B1_Frame1_2>
-                            </B1_Frame1>
-                        </Dropdown>
-                    </Button>
+            <Menu>
+                <Link to="/SobreNos" className="link-style-button">
+                    <Button>SOBRE NÓS</Button>
                 </Link>
                 <Button>
-                    BUTTON 2
+                    NOSSO CONTEÚDO
                     <Dropdown className="dropdown">
-                    <B2_Frame1>
-                        <B2_Frame1_1>
-                            <B2_Frame1_1_1>
-                                <ul>
-                                    <li href="#">item 1</li>
-                                    <li href="#">item 2</li>
-                                    <li href="#">item 3</li>
-                                    <li href="#">item 4</li>
-                                    <li href="#">item 5</li>
-                                    <li href="#">item 6</li>
-                                    <li href="#">item 7</li>
-                                    <li href="#">item 8</li>
-                                </ul>
-                            </B2_Frame1_1_1>
-                            <B2_Frame1_1_2>
-                                <p>Conecte-se conosco</p>
-                                    <B2_Frame1_1_2_1>
-                                        <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"></img>
-                                        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"></img>
-                                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"></img>
-                                        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"></img>
-                                    </B2_Frame1_1_2_1>
-                            </B2_Frame1_1_2>
-                        </B2_Frame1_1>
-                        <B2_Frame1_2>
-                            Veja tudo
-                        </B2_Frame1_2>
-                    </B2_Frame1>
+                        <B2_Frame1>
+                            <Link to="/CatalogoDeNoticias" className="link-style-menu">
+                                <BotaoMenu>Catálogo de notícias</BotaoMenu>
+                            </Link>
+                            <Link to="/Animais" className="link-style-menu">
+                                <BotaoMenu href="#">Animais em Extinção</BotaoMenu>
+                            </Link>
+                            <Link to="/SobreNos" className="link-style-menu">
+                                <BotaoMenu href="#">ONGs Parceiras</BotaoMenu>
+                            </Link>
+                        </B2_Frame1>
                     </Dropdown>
                 </Button>
-                <Button>
-                    BUTTON 3
-                    <Dropdown className="dropdown">
-                        <B3_Frame1>
-                            <B3_Frame1_1>
-                                <B3_Frame1_1_1>
-                                    <p>Tópico 1</p>
-                                    <ul>
-                                        <li href="#">item 1</li>
-                                        <li href="#">item 2</li>
-                                        <li href="#">item 3</li>
-                                        <li href="#">item 4</li>
-                                        <li href="#">item 5</li>
-                                    </ul>
-                                </B3_Frame1_1_1>
-                                <B3_Frame1_1_2>
-                                    <p>Tópico 2</p>
-                                    <ul>
-                                        <li href="#">item 1</li>
-                                        <li href="#">item 2</li>
-                                        <li href="#">item 3</li>
-                                        <li href="#">item 4</li>
-                                    </ul>
-                                </B3_Frame1_1_2>
-                                <B3_Frame1_1_3>
-                                    <p>Tópico 3</p>
-                                    <ul>
-                                        <li href="#">item 1</li>
-                                        <li href="#">item 2</li>
-                                        <li href="#">item 3</li>
-                                    </ul>
-                                </B3_Frame1_1_3>
-                            </B3_Frame1_1>
-                            <B3_Frame1_2>
-                                Descubra mais quem somos
-                            </B3_Frame1_2>
-                        </B3_Frame1>
-                    </Dropdown>
-                </Button>
-            </Menu>
-        </NavBarContainer>
+            </Menu >
+        </NavBarContainer >
     )
 }
 export default NavBar

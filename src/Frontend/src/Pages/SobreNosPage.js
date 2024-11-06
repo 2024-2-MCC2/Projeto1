@@ -3,19 +3,23 @@ import Footer from "../Components/Footer"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import QuadroDeManchetes from "../Components/QuadroDeManchetes";
 import '../global.css';
-import AboutUs from "../Components/AboutUs";
+import SobreNos from "../Components/SobreNos";
 import styled from 'styled-components';
 
 const Container = styled.div`
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+margin-top: 75px;
+width: 100%;
 `;
 
-function SobreNos(){
+function SobreNosPage(){
   return(
     <Container>
-      <Header/>
-      <AboutUs/>    
-      <Footer/>
+      <SobreNos/>    
     </Container>
   );
 }
-export default SobreNos
+export default SobreNosPage

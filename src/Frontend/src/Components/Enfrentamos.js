@@ -8,6 +8,7 @@ justify-content: center;
 align-items: center;
 padding: 20px;
 gap: 20px;
+width: 100%;
 `
 const Frame1_1  = styled.div`
 display: flex;

@@ -4,16 +4,20 @@ import Header from "../Components/Header";
 import DivDeDoacao from "../Components/DivDeDoacao";
 import React, { useState } from 'react';
 
-const DoacaoPageContainer = styled.div``;
-
+const Container = styled.div`
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+margin-top: 75px;
+width: 100%;
+`;
 function DoacaoPage(){
 
   return (
-    <DoacaoPageContainer>
-      <Header/>
+    <Container>
       <DivDeDoacao/>
-      <Footer/>
-    </DoacaoPageContainer>
+    </Container>
   );
 }
 

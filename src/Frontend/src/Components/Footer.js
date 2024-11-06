@@ -10,6 +10,7 @@ align-items: center;
 background-color: #202020;
 color: #fff;
 padding: 50px;
+width: 100%;
 `
 //-------------------------------------------------------------
 const Frame1 = styled.div`
@@ -18,6 +19,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 margin-bottom: 50px;
+width: 1280px;
 `
 const Frame1_1 = styled.div`
 h2{
@@ -156,6 +158,7 @@ margin-bottom: 50px;
 gap: 30px;
 padding: 0 50px;
 //background-color: red;
+width: 1280px;
 `
 const Frame2_1 = styled.div`
 display: flex;
@@ -191,6 +194,10 @@ img{
 //-----------------------------------------------
 const Frame3 = styled.div`
 font-size: 22px;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 1280px;
 `
 
 function Footer(){

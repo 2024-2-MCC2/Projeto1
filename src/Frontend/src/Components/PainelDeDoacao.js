@@ -74,12 +74,12 @@ button:hover{
 }
 `
 
-function PainelDeDoacao({abrirLogin}){
+function PainelDeDoacao({ abrirLogin }) {
 
     const [activePeriod, setActivePeriod] = useState(null);
     const [activeValue, setActiveValue] = useState(null);
 
-    return(
+    return (
         <Frame1>
             <Frame1_1>
                 <p>Valor destinado a causa</p>
@@ -89,30 +89,28 @@ function PainelDeDoacao({abrirLogin}){
                     isActive={activePeriod === 'Uma vez'}
                     onClick={() => setActivePeriod('Uma vez')}
                 >
-                Uma vez
+                    Uma vez
                 </StyledButton>
                 <StyledButton
                     isActive={activePeriod === 'Mensal'}
                     onClick={() => setActivePeriod('Mensal')}
                 >
-                Mensal
+                    Mensal
                 </StyledButton>
             </Frame1_2>
             <Frame1_3>
-            {['R$5', 'R$10', 'R$25', 'R$50', 'R$75', 'R$100'].map((value) => (
-                <StyledButton
-                    key={value}
-                    isActive={activeValue === value}
-                    onClick={() => setActiveValue(value)}
-                >
-                {value}
-                </StyledButton>
-            ))}
+                {['R$5', 'R$10', 'R$25', 'R$50', 'R$75', 'R$100'].map((value) => (
+                    <StyledButton
+                        key={value}
+                        isActive={activeValue === value}
+                        onClick={() => setActiveValue(value)}
+                    >
+                        {value}
+                    </StyledButton>
+                ))}
             </Frame1_3>
             <Frame1_4>
-                <Link to="/LoginPage" className="no-link-style">
-                    <button className="Continuar" onClick={abrirLogin}>Continuar</button>
-                </Link>
+                <button className="Continuar" onClick={abrirLogin}>Continuar</button>
             </Frame1_4>
         </Frame1>
     )

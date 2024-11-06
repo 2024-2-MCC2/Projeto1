@@ -1,7 +1,7 @@
-import Cadastro from "../Components/Cadastro";
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
+import Noticia from "../Components/Noticia";
 
 const Container = styled.div`
 display: flex;
@@ -12,12 +12,12 @@ margin-top: 75px;
 width: 100%;
 `;
 
-function cadastroPage(){
+function NoticiaPage(){
     return(
         <Container>
-            <Cadastro/>
+            <Noticia/>
         </Container>
     )
 }
 
-export default cadastroPage;
+export default NoticiaPage;

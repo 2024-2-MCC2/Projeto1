@@ -31,9 +31,14 @@ import Vaquita from '../Assets/Fotos_Animal/Vaquita.jpg';
 
 import { useParams, useNavigate } from 'react-router-dom';
 
-const Container =  styled.div`
+const Container = styled.div`
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
 margin-top: 75px;
-`
+width: 100%;
+`;
 
 function AnimalPage(){
   const { id } = useParams(); // Pegando o ID da temporada da URL
@@ -358,7 +363,6 @@ function AnimalPage(){
 
     return (
       <Container>
-        <Header/>
         <AnimaisList
           Nome = {Animal.Nome}
           Nome_Cientifico = {Animal.Nome_Cientifico}
@@ -372,7 +376,6 @@ function AnimalPage(){
           imagem_Animal = {Animal.imagem_Animal}
           imagem_Habitat = {Animal.imagem_Habitat}
         />
-        <Footer/>
       </Container>
     );
   }
