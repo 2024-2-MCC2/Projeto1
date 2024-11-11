@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import styled from "styled-components";
 import Noticia from "../Components/Noticia";
 
@@ -13,6 +12,12 @@ width: 100%;
 `;
 
 function NoticiaPage(){
+
+    useEffect(() => {
+        // Rola para o topo da página quando o componente é montado
+        window.scrollTo(0, 0);
+      }, []);
+
     return(
         <Container>
             <Noticia/>

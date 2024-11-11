@@ -1,7 +1,4 @@
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import styled from "styled-components";
 import NoticiasList from "../Components/NoticiasList";
 
@@ -16,6 +13,12 @@ width: 100%;
 `;
 
 function CatalogoDeNoticias(){
+
+    useEffect(() => {
+        // Rola para o topo da página quando o componente é montado
+        window.scrollTo(0, 0);
+      }, []);
+
     return(
         <Container>
             <NoticiasList/>

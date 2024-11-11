@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import React, { useState } from 'react';
 
-const Container = styled.div`
+const NoticiaContainer = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
 max-width: 1280px;
 gap: 25px;
-padding: 0 50px;
+padding: 20px 50px;
 `
 const Frame1 = styled.div`
 display: flex;
@@ -33,7 +33,6 @@ align-items: center;
 gap: 10px;
 width: 100%;
 p{
-    
     font-size: 16px;
     font-weight: bold;
 }
@@ -101,7 +100,7 @@ function Noticia({ Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkU
     };
 
     return (
-        <Container>
+        <NoticiaContainer>
             <Frame1>
                 <h1 href="titulo">{Titulo || "Titulo da Notícia"}</h1>
                 <Frame1_1>
@@ -122,7 +121,7 @@ function Noticia({ Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkU
                     <span class="material-symbols-outlined">content_copy</span>
                 </button>
             </Frame3>
-        </Container>
+        </NoticiaContainer>
     );
 }
 

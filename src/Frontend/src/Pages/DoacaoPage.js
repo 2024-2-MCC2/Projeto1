@@ -1,8 +1,6 @@
 import styled from "styled-components";
-import Footer from "../Components/Footer";
-import Header from "../Components/Header";
+import React, { useEffect } from 'react';
 import DivDeDoacao from "../Components/DivDeDoacao";
-import React, { useState } from 'react';
 
 const Container = styled.div`
 display: flex;
@@ -13,6 +11,11 @@ margin-top: 75px;
 width: 100%;
 `;
 function DoacaoPage(){
+
+  useEffect(() => {
+    // Rola para o topo da página quando o componente é montado
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Container>

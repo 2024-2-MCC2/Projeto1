@@ -1,8 +1,5 @@
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
+import React, { useEffect } from 'react';
 import Login from "../Components/Login";
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -14,7 +11,13 @@ margin-top: 75px;
 width: 100%;
 `;
 
-function loginPage(){
+function LoginPage(){
+
+    useEffect(() => {
+        // Rola para o topo da página quando o componente é montado
+        window.scrollTo(0, 0);
+      }, []);
+
     return(
         <Container>
             <Login/>
@@ -22,4 +25,4 @@ function loginPage(){
     )
 }
 
-export default loginPage;
+export default LoginPage;

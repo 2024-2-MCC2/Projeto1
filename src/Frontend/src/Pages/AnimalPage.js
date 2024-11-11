@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import Footer from "../Components/Footer";
-import Header from "../Components/Header";
+import React, { useEffect } from 'react';
 import AnimaisList from "../Components/AnimaisList";
 import ImagemExemplo from '../Assets/PlaceHold.png';
 
@@ -41,6 +40,12 @@ width: 100%;
 `;
 
 function AnimalPage(){
+
+    useEffect(() => {
+        // Rola para o topo da página quando o componente é montado
+        window.scrollTo(0, 0);
+      }, []);
+
   const { id } = useParams(); // Pegando o ID da temporada da URL
     const navigate = useNavigate();
 
