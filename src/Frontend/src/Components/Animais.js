@@ -1,19 +1,18 @@
 import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
 
-const Container = styled.div`
+const AnimaisContainer = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
 width: 1280px;
-margin-top: 75px;
 margin-bottom: 50px;
 `
 const Frame_1 = styled.div`
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 `
-const AnimalContainer = styled.div`
+const AnimalIMG = styled.div`
 display: inline-block;
 overflow: hidden;
 position: relative;
@@ -33,7 +32,7 @@ h2{
     color: #fff;
     text-align: center;
 }
-${AnimalContainer}:hover &{
+${AnimalIMG}:hover &{
     opacity: 1;
     background-color: rgb(0,0,0,50%);
 }
@@ -59,10 +58,10 @@ align-items: center;
 function Animais({ Animais }) {
     const navigate = useNavigate(); // Hook para navegação
     return (
-        <Container>
+        <AnimaisContainer>
             <Frame_1>
                 {Animais.map((Animal) => (
-                    <AnimalContainer key={Animal.id}>
+                    <AnimalIMG key={Animal.id}>
                         <Frame_1_1>
                             <Button onClick={() => navigate(`/Animal/${Animal.id}`)}>
                                 <span class="material-symbols-outlined">arrow_forward_ios</span>
@@ -70,10 +69,10 @@ function Animais({ Animais }) {
                             <h2>{Animal.Nome}</h2>
                         </Frame_1_1>
                         <Imagem src={Animal.imagem_Animal} />
-                    </AnimalContainer>
+                    </AnimalIMG>
                 ))}
             </Frame_1>
-        </Container>
+        </AnimaisContainer>
     )
 }
 

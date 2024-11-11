@@ -63,6 +63,8 @@ display: flex;
 justify-content: center;
 align-items: center;
 background-color: #D9D9D9;
+width: 100%;
+max-width: 1920px;
 `
 const Frame_4_1 = styled.div`
 padding: 20px;
