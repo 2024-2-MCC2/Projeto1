@@ -1,14 +1,16 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+const ContainerNoticiasTopic = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
 gap: 10px;
 padding: 10px;
 border: 1px solid #948E8E;
-width: 1000px;
-height: 220px;
+width: 100%;
+height: 100%;
+min-height: 250px;
+
 &:Hover{
     border: 1px solid #06C7F2;
     .tipo{
@@ -17,15 +19,18 @@ height: 220px;
     .Titulo{
     text-decoration: underline;
     }
+    cursor: pointer;
 }
-
 `
 const Frame1 = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
 height: 100%;
+width: 33%;
+overflow: hidden;
 img{
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
@@ -35,7 +40,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 height: 100%;
-width: 100%;
+width: 77%;
 `
 const Frame2_1 = styled.div`
 display: flex;
@@ -73,27 +78,29 @@ p{
 }
 `
 
-function NoticiasTopic( {imagem, titulo, lead, fonte, data, tempoDeLeitura}){
+function NoticiasTopic( {Imagem, Titulo, Chamada, Fonte, Data, TempoDeLeitura, onClick}){
+    
+    
     return(
-        <Container>
+        <ContainerNoticiasTopic onClick ={onClick}>
             <Frame1>
-                <img src={imagem || "https://placehold.co/250x200/000000/FFF"}/>
+                <img src={Imagem || "https://placehold.co/250x200/000000/FFF"}/>
             </Frame1>
             <Frame2>
                 <Frame2_1>
                     <p className="tipo">blog • #hashtag #hashtag #hashtag</p>
                 </Frame2_1>
                 <Frame2_2>
-                    <h2 className="Titulo">{titulo || "Titulo da Notícia"}</h2>
+                    <h2 className="Titulo">{Titulo || "Titulo da Notícia"}</h2>
                 </Frame2_2>
                 <Frame2_3>
-                    <p>{lead ||"blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla..."}</p>
+                    <p>{Chamada ||"blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla..."}</p>
                 </Frame2_3>
                 <Frame2_4>
-                    <p>{fonte || "fonte"} • {data || "01 de janeiro de 2024"} • {tempoDeLeitura || "x"} min</p>
+                    <p>{Fonte || "fonte"} • {Data || "01 de janeiro de 2024"} • {TempoDeLeitura || "x"} min</p>
                 </Frame2_4>
             </Frame2>
-        </Container>
+        </ContainerNoticiasTopic>
     )
 }
 export default NoticiasTopic

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import NoticiasTopic from "./NoticiasTopic";
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
 display: flex;
@@ -23,45 +24,27 @@ padding: 20px 0;
 width: 1000px;
 `
 
-function NoticiasList(){
-    return(
+function NoticiasList({NoticiasData}) {
+
+    const navigate = useNavigate();
+
+    return (
         <Container>
             <h1>Biblioteca de Notícias</h1>
             <ListaDeNoticias>
-                <NoticiasTopic
-                    imagem = ""
-                    titulo = "" 
-                    lead = ""
-                    fonte = ""
-                    data = ""
-                    tempoDeLeitura =""
-                />
-                <NoticiasTopic
-                    imagem = ""
-                    titulo = "" 
-                    lead = ""
-                    fonte = ""
-                    data = ""
-                    tempoDeLeitura =""
-                />
-                <NoticiasTopic
-                    imagem = ""
-                    titulo = "" 
-                    lead = ""
-                    fonte = ""
-                    data = ""
-                    tempoDeLeitura =""
-                />
-                <NoticiasTopic
-                    imagem = ""
-                    titulo = "" 
-                    lead = ""
-                    fonte = ""
-                    data = ""
-                    tempoDeLeitura =""
-                />
+                {NoticiasData.map((Noticia) => (
+                    <NoticiasTopic 
+                        onClick={() => navigate(`/Noticia/${Noticia.id}`)}
+                        Imagem={Noticia.Imagem}
+                        Titulo={Noticia.Titulo}
+                        Chamada={Noticia.Chamada}
+                        Fonte={Noticia.Entidade}
+                        Data={Noticia.Data}
+                        TempoDeLeitura={Noticia.tempoDeLeitura}
+                    />
+                ))}
             </ListaDeNoticias>
-            
+
         </Container>
     )
 }

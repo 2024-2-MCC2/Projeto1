@@ -71,13 +71,16 @@ const Frame3 = styled.div`
   padding: 20px;
   span {
     padding: 0 0 0 10px;
-    border-left: 1px solid #000000;
   }
   button {
     align-items: center;
     justify-content: center;
     background-color: #84BEFF;
     border: none;
+  }
+  p{
+    border-right: 1px solid #000000;
+    padding-right: 10px;
   }
 `;
 function Noticia({ Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, Imagem, Referencia, Texto }) {
@@ -168,8 +171,11 @@ function Noticia({ Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, Image
         <h1 href="titulo">{Titulo || "Titulo da Notícia"}</h1>
         <Frame1_1>
           <p>{Entidade || "Entidade"}</p>
+          <p>•</p>
           <p>{Autor || "Autor"}</p>
+          <p>•</p>
           <p>{Data}</p>
+          <p>•</p>
           <p>{TempoDeLeitura || "x"} min</p>
         </Frame1_1>
         <p>{Chamada || "BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA"}</p>

@@ -39,6 +39,16 @@ function NoticiaPage() {
   const { id } = useParams(); // Pegando o ID da temporada da URL
   const navigate = useNavigate();
 
+  useEffect(() => {
+    window.scrollTo(
+        {
+            top: 0,
+            left: 0,
+            behavior: 'auto'
+        });
+}, []);
+
+
   const Noticias = {
     1: {
       Titulo: "Navio do Greenpeace resgata baleia presa em equipamentos de pesca",
@@ -180,10 +190,6 @@ function NoticiaPage() {
     }, []);
 */
 
-  useEffect(() => {
-    // Rola para o topo da página quando o componente é montado
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <Container>
