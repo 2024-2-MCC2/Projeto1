@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React, { useEffect } from 'react';
-import DivDeDoacao from "../Components/DivDeDoacao";
+import Doacao from "../Components/Doacao";
 
 const Container = styled.div`
 display: flex;
@@ -19,7 +19,7 @@ function DoacaoPage(){
 
   return (
     <Container>
-      <DivDeDoacao/>
+      <Doacao/>
     </Container>
   );
 }

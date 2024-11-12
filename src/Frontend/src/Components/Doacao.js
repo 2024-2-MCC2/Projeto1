@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import PainelDeDoacao from "./PainelDeDoacao";
 import React, { useState } from 'react';
-import Cadastro from "../Components/Cadastro";
-import Login from "../Components/Login";
+
 
 
 const Frame1 = styled.div`
@@ -74,7 +73,7 @@ p{
 }
 `
 
-function DivDeDoacao(){
+function Doacao(){
     return(
         <Frame1>
             <Frame1_1>
@@ -107,4 +106,4 @@ function DivDeDoacao(){
         </Frame1>
     )
 }
-export default DivDeDoacao;
+export default Doacao;

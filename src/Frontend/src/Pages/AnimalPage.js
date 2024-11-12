@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import React, { useEffect } from 'react';
-import AnimaisList from "../Components/AnimaisList";
+import { useParams, useNavigate } from 'react-router-dom';
+import BioAnimal from "../Components/BioAnimail";
 import ImagemExemplo from '../Assets/PlaceHold.png';
-
+//IMAGENS DOS ANIMAIS ------------------------------------------------------------------
 import Baleia_Azul from '../Assets/Fotos_Animal/Baleia_Azul.jpg';
 import Pinguim_Galapagos from '../Assets/Fotos_Animal/Pinguim_Galapagos.jpg';
 import Urso_Polar from '../Assets/Fotos_Animal/Urso_Polar.jpg';
@@ -27,8 +28,32 @@ import Tubarao_Baleia from '../Assets/Fotos_Animal/Tubarao_Baleia.jpg';
 import Tubarao_Branco from '../Assets/Fotos_Animal/Tubarao_Branco.jpg';
 import Tubarao_Martelo from '../Assets/Fotos_Animal/Tubarao_Martelo.jpg';
 import Vaquita from '../Assets/Fotos_Animal/Vaquita.jpg';
+//IMAGEM DOS HABITATS-----------------------------------------------------------
+import Baleia_Azul_Habitat from '../Assets/Fotos_Habitat/Baleia_Azul_Habitat.jpg';
+import Pinguim_Galapagos_Habitat from '../Assets/Fotos_Habitat/Pinguim_Galapagos_Habitat.jpg';
+import Urso_Polar_Habitat from '../Assets/Fotos_Habitat/Urso_Polar_Habitat.jpg';
+import Cavalo_Marinho_Habitat from '../Assets/Fotos_Habitat/Cavalo_Marinho_Habitat.jpg';
+import Foca_Monge_Habitat from '../Assets/Fotos_Habitat/Foca_Monge_Habitat.jpg';
+import Foca_Habitat from '../Assets/Fotos_Habitat/Foca_Habitat.jpg';
+import Golfinho_Habitat from '../Assets/Fotos_Habitat/Golfinho_Habitat.jpg';
+import Iguana_Marinha_Habitat from '../Assets/Fotos_Habitat/Iguana_Marinha_Habitat.jpg';
+import Leao_Marinho_Habitat from '../Assets/Fotos_Habitat/Leao_Marinho_Habitat.jpg';
+import Lontra_Marinha_Habitat from '../Assets/Fotos_Habitat/Lontra_Marinha_Habitat.jpg';
+import Peixe_Boi_Habitat from '../Assets/Fotos_Habitat/Peixe_Boi_Habitat.jpg';
+import Peixe_Napoleao_Habitat from '../Assets/Fotos_Habitat/Peixe_Napoleao_Habitat.jpg';
+import Peixe_Palhaco_Habitat from '../Assets/Fotos_Habitat/Peixe_Palhaco_Habitat.jpg';
+import Polvo_Dumbo_Habitat from '../Assets/Fotos_Habitat/Polvo_Dumbo_Habitat.jpg';
+import Polvo_Gigante_Habitat from '../Assets/Fotos_Habitat/Polvo_Gigante_Habitat.jpg';
+import Raia_Manta_Habitat from '../Assets/Fotos_Habitat/Raia_Manta_Habitat.jpg';
+import Tartaruga_Cabecuda_Habitat from '../Assets/Fotos_Habitat/Tartaruga_Cabecuda_Habitat.jpg';
+import Tartaruga_Couro_Habitat from '../Assets/Fotos_Habitat/Tartaruga_Couro_Habitat.jpg';
+import Tartaruga_Oliva_Habitat from '../Assets/Fotos_Habitat/Tartaruga_Oliva_Habitat.jpg';
+import Tartaruga_Verde_Habitat from '../Assets/Fotos_Habitat/Tartaruga_Verde_Habitat.jpg';
+import Tubarao_Baleia_Habitat from '../Assets/Fotos_Habitat/Tubarao_Baleia_Habitat.jpg';
+import Tubarao_Branco_Habitat from '../Assets/Fotos_Habitat/Tubarao_Branco_Habitat.jpg';
+import Tubarao_Martelo_Habitat from '../Assets/Fotos_Habitat/Tubarao_Martelo_Habitat.jpg';
+import Vaquita_Habitat from '../Assets/Fotos_Habitat/Vaquita_Habitat.jpg';
 
-import { useParams, useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
 display: flex;
@@ -49,7 +74,7 @@ function AnimalPage(){
   const { id } = useParams(); // Pegando o ID da temporada da URL
     const navigate = useNavigate();
 
-  const Animais = {
+    const Animais = {
    
         1: {
             Nome: "Baleia Azul", 
@@ -62,7 +87,7 @@ function AnimalPage(){
             Ameacas: "Caça histórica, mudança climática", 
             Importancia: "Equilíbrio marinho", 
             imagem_Animal: Baleia_Azul, 
-            imagem_Habitat: ImagemExemplo 
+            imagem_Habitat: Baleia_Azul_Habitat 
         },
         2: {
             Nome: "Pinguim de Galápagos", 
@@ -75,7 +100,7 @@ function AnimalPage(){
             Ameacas: "Mudanças climáticas, escassez de alimentos",
             Importancia: "Indicador da saúde do ecossistema marinho da região",
             imagem_Animal: Pinguim_Galapagos, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat:Pinguim_Galapagos_Habitat
         },
         3: {
             Nome: "Urso Polar", 
@@ -88,7 +113,7 @@ function AnimalPage(){
             Ameacas: "Mudança climática, perda de habitat", 
             Importancia: "Indicador de mudanças climáticas", 
             imagem_Animal: Urso_Polar, 
-            imagem_Habitat: ImagemExemplo 
+            imagem_Habitat: Urso_Polar_Habitat 
         },
         4: {
             Nome: "Leão Marinho", 
@@ -101,7 +126,7 @@ function AnimalPage(){
             Ameacas: "Pesca excessiva, poluição",
             Importancia: "Controla populações de peixes e ajuda no equilíbrio marinho",
             imagem_Animal: Leao_Marinho, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Leao_Marinho_Habitat
         },
         5: {
             Nome: "Tartaruga Couro", 
@@ -114,7 +139,7 @@ function AnimalPage(){
             Ameacas: "Captura acidental, poluição plástica",
             Importancia: "Mantém a saúde dos ecossistemas marinhos ao consumir águas-vivas" ,
             imagem_Animal: Tartaruga_couro, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Tartaruga_Couro_Habitat
         },
         6: {
             Nome: "Tartaruga Cabeçuda", 
@@ -127,7 +152,7 @@ function AnimalPage(){
             Ameacas: "Captura acidental, perda de habitat",
             Importancia: "Contribui para a saúde de recifes de coral e bancos de algas" ,
             imagem_Animal: Tartaruga_cabecuda, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Tartaruga_Cabecuda_Habitat
         },
         7: {
             Nome: "Tartaruga Verde", 
@@ -140,7 +165,7 @@ function AnimalPage(){
             Ameacas: "Caça, poluição marinha",
             Importancia: "Regula o crescimento de algas e mantém o ecossistema marinho" ,
             imagem_Animal: Tartaruga_verde, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Tartaruga_Verde_Habitat
         },
         8: {
             Nome: "Tartaruga Ridley Oliva", 
@@ -153,7 +178,7 @@ function AnimalPage(){
             Ameacas: "Captura acidental, caça de ovos",
             Importancia: "Contribui para a saúde das zonas costeiras ao controlar populações de pequenos invertebrados" ,
             imagem_Animal: Tartaruga_oliva, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Tartaruga_Oliva_Habitat
         },
         9: {
             Nome: "Foca", 
@@ -166,7 +191,7 @@ function AnimalPage(){
             Ameacas: "Mudança climática, poluição",
             Importancia: "Regula populações de peixes, contribuindo para o equilíbrio ecológico" ,
             imagem_Animal: Foca, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Foca_Habitat
         },
         10: {
             Nome:  "Polvo Dumbo", 
@@ -179,7 +204,7 @@ function AnimalPage(){
             Ameacas: "Exploração de recursos do fundo do mar",
             Importancia: "Indicador da saúde dos ecossistemas profundos",
             imagem_Animal: Polvo_Dumbo, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Polvo_Dumbo_Habitat
         },
         11: {
             Nome:  "Iguana Marinha", 
@@ -192,7 +217,7 @@ function AnimalPage(){
             Ameacas: "Introdução de predadores, mudança climática",
             Importancia: "Ajuda a manter o equilíbrio nas algas marinhas das Galápagos",
             imagem_Animal: Iguana_Marinha, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Iguana_Marinha_Habitat
         },
         12: {
             Nome:  "Peixe Napoleão", 
@@ -205,7 +230,7 @@ function AnimalPage(){
             Ameacas: "Pesca ilegal, destruição dos recifes",
             Importancia: "Controla a população de organismos nocivos aos recifes",
             imagem_Animal: Peixe_Napoleao, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Peixe_Napoleao_Habitat
         },
         13: {
             Nome:  "Peixe Palhaço", 
@@ -218,7 +243,7 @@ function AnimalPage(){
             Ameacas: "Destruição dos recifes, coleta para aquários",
             Importancia: "Possui uma relação simbiótica com anêmonas, contribuindo para o equilíbrio ecológico",
             imagem_Animal: Peixe_Palhaco, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Peixe_Palhaco_Habitat
         },
         14: {
             Nome:  "Lontra Marinha", 
@@ -231,7 +256,7 @@ function AnimalPage(){
             Ameacas: "Derramamento de petróleo, poluição",
             Importancia: "Essencial para manter a saúde de florestas de algas marinhas",
             imagem_Animal: Lontra_Marinha, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Lontra_Marinha_Habitat
         },
         15: {
             Nome:  "Peixe Boi", 
@@ -244,7 +269,7 @@ function AnimalPage(){
             Ameacas: "Colisões com embarcações, poluição",
             Importancia: "Controla o crescimento de plantas aquáticas, ajudando no equilíbrio aquático",
             imagem_Animal:Peixe_Boi, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Peixe_Boi_Habitat
         },
         16: {
             Nome:  "Golfinho", 
@@ -257,7 +282,7 @@ function AnimalPage(){
             Ameacas: "Captura acidental, poluição",
             Importancia: "Espécie-chave na cadeia alimentar marinha" ,
             imagem_Animal: Golfinho, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Golfinho_Habitat
         },
         17: {
             Nome:  "Tubarão Branco", 
@@ -270,7 +295,7 @@ function AnimalPage(){
             Ameacas: "Pesca e captura acidental",
             Importancia: "Predador de topo, essencial para o controle de populações marinhas",
             imagem_Animal: Tubarao_Branco, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Tubarao_Branco_Habitat
         },
         18: {
             Nome:  "Vaquita", 
@@ -283,7 +308,7 @@ function AnimalPage(){
             Ameacas: "Captura acidental em redes de pesca",
             Importancia: "Indicador da saúde ecológica das águas do Golfo da Califórnia",
             imagem_Animal: Vaquita, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Vaquita_Habitat
         },
         19: {
             Nome:  "Foca Monge do Havaí", 
@@ -296,7 +321,7 @@ function AnimalPage(){
             Ameacas: "Perda de habitat, poluição",
             Importancia: "Indicador da saúde dos ecossistemas costeiros havaianos",
             imagem_Animal: Foca_Monge, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Foca_Monge_Habitat
         },
         20: {
             Nome:  "Tubarão Martelo", 
@@ -309,7 +334,7 @@ function AnimalPage(){
             Ameacas: "Pesca excessiva",
             Importancia: "Controle de populações de peixes, equilibrando ecossistemas marinhos",
             imagem_Animal: Tubarao_Martelo, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Tubarao_Martelo_Habitat
         },
         21: {
             Nome:  "Cavalo Marinho", 
@@ -322,7 +347,7 @@ function AnimalPage(){
             Ameacas: "Pesca ilegal, poluição",
             Importancia: "Importante para o equilíbrio ecológico de recifes de coral",
             imagem_Animal: Cavalo_Marinho, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Cavalo_Marinho_Habitat
         },
         22: {
             Nome:  "Tubarão Baleia", 
@@ -335,7 +360,7 @@ function AnimalPage(){
             Ameacas: "Pesca acidental e caça",
             Importancia: "Essencial para o equilíbrio de plâncton e pequenos peixes no oceano",
             imagem_Animal: Tubarao_Baleia, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Tubarao_Baleia_Habitat
         },
         23: {
             Nome:  "Raia Manta", 
@@ -348,7 +373,7 @@ function AnimalPage(){
             Ameacas: "Pesca ilegal, perda de habitat",
             Importancia: "Ajuda a manter o equilíbrio do plâncton marinho",
             imagem_Animal: Raia_Manta, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Raia_Manta
         },
         24: {
             Nome:  "Polvo gigante do pacífico", 
@@ -361,14 +386,14 @@ function AnimalPage(){
             Ameacas: "Pesca e poluição",
             Importancia: "Controla populações de pequenos peixes e crustáceos" ,
             imagem_Animal: Polvo_Gigante, 
-            imagem_Habitat: ImagemExemplo
+            imagem_Habitat: Polvo_Gigante_Habitat
         },
   };
   const Animal = Animais[id]
 
     return (
       <Container>
-        <AnimaisList
+        <BioAnimal
           Nome = {Animal.Nome}
           Nome_Cientifico = {Animal.Nome_Cientifico}
           Localizacao ={Animal.Localizacao}

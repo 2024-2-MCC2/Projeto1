@@ -4,11 +4,11 @@ const cors = require('cors')
 const path = require('path')
 
 app.use(cors({
-   origin: 'http://localhost:3000',
+   origin: 'http://localhost:3002',
    optionsSuccessStatus: 200 
 }))
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5001
 app.get('/', (req, res)=>{
     res.send('Hello World!')
 })

@@ -1,9 +1,9 @@
 
 import React, { useEffect } from 'react';
 import styled from "styled-components";
-import Animais from "../Components/Animais";
+import AnimaisList from "../Components/AnimaisList";
 import { useParams, useNavigate } from 'react-router-dom';
-
+//IMAGENS DOS ANIMAIS ------------------------------------------------------------------
 import ImagemExemplo from '../Assets/PlaceHold.png';
 import Baleia_Azul from '../Assets/Fotos_Animal/Baleia_Azul.jpg';
 import Pinguim_Galapagos from '../Assets/Fotos_Animal/Pinguim_Galapagos.jpg';
@@ -29,6 +29,7 @@ import Tubarao_Baleia from '../Assets/Fotos_Animal/Tubarao_Baleia.jpg';
 import Tubarao_Branco from '../Assets/Fotos_Animal/Tubarao_Branco.jpg';
 import Tubarao_Martelo from '../Assets/Fotos_Animal/Tubarao_Martelo.jpg';
 import Vaquita from '../Assets/Fotos_Animal/Vaquita.jpg';
+import BioAnimal from '../Components/BioAnimail';
 
 const Container = styled.div`
 display: flex;
@@ -175,7 +176,7 @@ function AnimaisPage() {
     ];
     return (
         <Container>
-            <Animais Animais={AnimaisData} />
+            <AnimaisList Animais={AnimaisData} />
         </Container>
     )
 }
