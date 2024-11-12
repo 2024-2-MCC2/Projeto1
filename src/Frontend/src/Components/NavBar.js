@@ -99,7 +99,7 @@ function NavBar() {
                             <Link to="/Animais" className="link-style-menu">
                                 <BotaoMenu href="#">Animais em Extinção</BotaoMenu>
                             </Link>
-                            <Link to="/SobreNos" className="link-style-menu">
+                            <Link to="/ONGsParceiras" className="link-style-menu">
                                 <BotaoMenu href="#">ONGs Parceiras</BotaoMenu>
                             </Link>
                         </B2_Frame1>

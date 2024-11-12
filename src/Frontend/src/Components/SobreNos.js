@@ -5,13 +5,14 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+max-width: 1920px;
 width: 100%;
 .titulo{
     font-size: 40px;
     font-weight: bold;
 }
 .paragrafo{
-    font-size: 20px;
+    font-size: auto;
 }
 .destaque{
     font-size: 70px;
@@ -23,14 +24,32 @@ display: flex;
 justify-content: center;
 align-items: center;
 width: 100%;
-max-width: 1920px;
 p{
     text-align: justify;
 }
 `
 const Frame_1_1 = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 100%;
+overflow: hidden;
+background-color: red;
+img{
+    width: 100%;
+    //height: 100%;
+    object-fit: cover;
+}
+
 `
 const Frame_1_2 = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 100%;
 padding: 40px;
 `
 const Frame_2 = styled.div`
@@ -123,7 +142,7 @@ function SobreNos() {
                 </Frame_3_1>
                 <Frame_3_2>
                     <p className="titulo">O que fazemos?</p>
-                    <p className="paragrafo">qui vai o que fazemos. Aqui vai o que fazemos. Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.</p>
+                    <p className="paragrafo">Aqui vai o que fazemos. Aqui vai o que fazemos. Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.  Aqui vai o que fazemos.</p>
                 </Frame_3_2>
             </Frame_3>
             <Frame_4>

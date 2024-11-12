@@ -176,7 +176,6 @@ function Noticia({ Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, Image
       </Frame1>
       <Frame2>
         <img src={Imagem} />
-        
         <pre>{conteudo}</pre>
       </Frame2>
       <Frame3>

@@ -11,6 +11,7 @@ import NoticiaPage from "./Pages/NoticiaPage";
 import CatalogoDeNoticias from "./Pages/CatalogoDeNoticias";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import ONGsPage from "./Pages/ONGsPage";
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/Noticia/:id" element={<NoticiaPage />} />
           <Route path="/Animais" element={<AnimaisPage />} />
           <Route path="/CatalogoDeNoticias" element={<CatalogoDeNoticias />} />
+          <Route path="/ONGsParceiras" element={<ONGsPage/>} />
         </Routes>
       </main>
       <Footer />

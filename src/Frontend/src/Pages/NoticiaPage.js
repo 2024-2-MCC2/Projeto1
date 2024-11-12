@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
 import styled from "styled-components";
 import NoticiaDIV from "../Components/Noticia";
-import axios from 'axios'
+import axios from 'axios';
 
 import Noticia_1 from "../Assets/Fotos_Noticias/Noticia_1.jpg"
 import Noticia_2 from "../Assets/Fotos_Noticias/Noticia_2.jpg"
