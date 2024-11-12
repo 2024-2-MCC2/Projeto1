@@ -48,12 +48,17 @@ const Frame2 = styled.div`
   width: 100%;
   overflow-wrap: break-word;
   word-break: break-word;
+  gap: 20px;
   pre {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     white-space: pre-wrap;
     word-wrap: break-word;
     text-indent: 2em;
+  }
+  img{
+    width: 100%;
+    border: 1px solid #000;
   }
 `;
 
@@ -75,10 +80,32 @@ const Frame3 = styled.div`
     border: none;
   }
 `;
-function Noticia({Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, Imagem, Referencia}) {
-//function Noticia() {
-  const [conteudo, setConteudo] = useState('');
+function Noticia({ Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, Imagem, Referencia, Texto }) {
+  //function Noticia() {
   const [textoParaCopiar, setTextoParaCopiar] = useState(Referencia);
+
+  const copiarTexto = () => {
+    navigator.clipboard.writeText(textoParaCopiar)
+      .then(() => {
+        alert('Texto copiado: ' + textoParaCopiar);
+      })
+      .catch(err => {
+        console.error('Erro ao copiar o texto: ', err);
+      });
+  };
+
+  const [conteudo, setConteudo] = useState('');
+
+  useEffect(() => {
+    // Fetch the content of the imported text file
+    fetch(Texto)
+      .then(response => response.text())
+      .then(text => {
+        setConteudo(text);
+      })
+      .catch(err => console.error('Erro ao carregar o arquivo:', err));
+  }, []);
+
   /*
   const { id } = useParams();
   const navigate = useNavigate();
@@ -99,33 +126,6 @@ function Noticia({Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, Imagem
 
     fetchedNoticias(); // Chama a função para buscar as notícias
   }, [id]);
-*/
-  
-  const copiarTexto = () => {
-    navigator.clipboard.writeText(textoParaCopiar)
-      .then(() => {
-        alert('Texto copiado: ' + textoParaCopiar);
-      })
-      .catch(err => {
-        console.error('Erro ao copiar o texto: ', err);
-      });
-  };
-
-  const lerArquivo = (event) => {
-    const arquivo = event.target.files[0];
-
-    if (arquivo) {
-      const leitor = new FileReader();
-
-      leitor.onload = (e) => {
-        setConteudo(e.target.result);
-      };
-
-      leitor.readAsText(arquivo);
-    }
-  };
-
-  /*
   // Se estiver carregando, exibe uma mensagem
   if (loading) {
     return <p>Carregando...</p>;
@@ -135,8 +135,7 @@ function Noticia({Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, Imagem
   if (!Noticias) {
     return <p>Nenhuma notícia encontrada.</p>;
   }
-  */
-/*
+
     return (
         <NoticiaContainer>
             <Frame1>
@@ -163,33 +162,32 @@ function Noticia({Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, Imagem
     );
     */
 
-    
-    return (
-        <NoticiaContainer>
-            <Frame1>
-                <h1 href="titulo">{Titulo || "Titulo da Notícia"}</h1>
-                <Frame1_1>
-                    <p>{Entidade || "Entidade"}</p>
-                    <p>{Autor || "Autor"}</p>
-                    <p>{Data}</p>
-                    <p>{TempoDeLeitura || "x"} min</p>
-                </Frame1_1>
-                <p>{Chamada || "BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA"}</p>
-            </Frame1>
-            <Frame2>
-              <img src={Imagem}/>
-                <input type="file" accept=".txt" onChange={lerArquivo} />
-                <pre>{conteudo}</pre>
-            </Frame2>
-            <Frame3>
-                <p>{Referencia || "Referencia Bibliografica ABNT"}</p>
-                <button onClick={copiarTexto}>
-                    <span class="material-symbols-outlined">content_copy</span>
-                </button>
-            </Frame3>
-        </NoticiaContainer>
-    );
-    
+  return (
+    <NoticiaContainer>
+      <Frame1>
+        <h1 href="titulo">{Titulo || "Titulo da Notícia"}</h1>
+        <Frame1_1>
+          <p>{Entidade || "Entidade"}</p>
+          <p>{Autor || "Autor"}</p>
+          <p>{Data}</p>
+          <p>{TempoDeLeitura || "x"} min</p>
+        </Frame1_1>
+        <p>{Chamada || "BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA"}</p>
+      </Frame1>
+      <Frame2>
+        <img src={Imagem} />
+        
+        <pre>{conteudo}</pre>
+      </Frame2>
+      <Frame3>
+        <p>{Referencia || "Referencia Bibliografica ABNT"}</p>
+        <button onClick={copiarTexto}>
+          <span class="material-symbols-outlined">content_copy</span>
+        </button>
+      </Frame3>
+    </NoticiaContainer>
+  );
+
 }
 
 export default Noticia;

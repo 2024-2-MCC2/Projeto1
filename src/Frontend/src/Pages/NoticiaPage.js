@@ -41,7 +41,6 @@ function NoticiaPage() {
 
   const Noticias = {
     1: {
-
       Titulo: "Navio do Greenpeace resgata baleia presa em equipamentos de pesca",
       Entidade: "Greenpeace",
       Autor: "Laís Modelli",
@@ -54,7 +53,6 @@ function NoticiaPage() {
       Texto: TextoNoticia_1
     },
     2: {
-
       Titulo: "Cientistas detectam branqueamento de corais pela primeira vez em recifes de águas profundas do Atlântico Sul",
       Entidade: "WWF-Brasil",
       Autor: "Por WWF-Brasil ",
@@ -67,7 +65,6 @@ function NoticiaPage() {
       Texto: TextoNoticia_2
     },
     3: {
-
       Titulo: "Santuários oceânicos são essenciais para proteção da vida marinha",
       Entidade: "Greenpeace",
       Autor: "Lu Sudré",
@@ -80,7 +77,6 @@ function NoticiaPage() {
       Texto: TextoNoticia_3
     },
     4: {
-
       Titulo: "Qualidade da água melhora e tartarugas marinhas da Baía de Guanabara estão mais saudáveis",
       Entidade: "CNN",
       Autor: "Renato Spyrro",
@@ -93,7 +89,6 @@ function NoticiaPage() {
       Texto: TextoNoticia_4
     },
     5: {
-
       Titulo: "Oceanos têm mais de 170 trilhões de partículas de plástico, diz estudo",
       Entidade: "CNN",
       Autor: "Laura Paddison",
@@ -106,7 +101,6 @@ function NoticiaPage() {
       Texto: TextoNoticia_5
     },
     6: {
-
       Titulo: "Poluição plástica nos oceanos quadruplicará até 2050",
       Entidade: "WWF e WWF-BRASIL",
       Autor: "WWF e WWF-BRASIL",
@@ -119,7 +113,6 @@ function NoticiaPage() {
       Texto: TextoNoticia_6
     },
     7: {
-
       Titulo: "Aquecimento e aumento dos níveis do Oceano Pacífico atingem níveis alarmantes, diz ONU",
       Entidade: " National Geographic Brasil",
       Autor: " National Geographic Brasil",
@@ -132,7 +125,6 @@ function NoticiaPage() {
       Texto: TextoNoticia_7
     },
     8: {
-
       Titulo: "Sem marco regulatório, litoral brasileiro seguirá ameaçado, alerta Greenpeace Brasil",
       Entidade: "Greenpeace",
       Autor: "Vinicius Oliveira",
@@ -145,7 +137,6 @@ function NoticiaPage() {
       Texto: TextoNoticia_8
     },
     9: {
-
       Titulo: "Greenpeace Brasil e IEPA lançam dados consolidados de estudo que demonstra impactos de possível vazamento de óleo na Bacia da Foz do Amazonas",
       Entidade: "Greenpeace",
       Autor: "Vinicius Oliveira",
@@ -158,7 +149,6 @@ function NoticiaPage() {
       Texto: TextoNoticia_9
     },
     10: {
-
       Titulo: "Brasil lança por ano 1,3 milhão de toneladas de plástico no oceano",
       Entidade: "Agência Brasil",
       Autor: "Fabíola Sinimbú - Repórter da Agência Brasil",
@@ -206,6 +196,7 @@ function NoticiaPage() {
         Chamada={Noticia.Chamada}
         Imagem = {Noticia.Imagem}
         Referencia={Noticia.Referencia}
+        Texto = {Noticia.Texto}
       />
     </Container>
   )
