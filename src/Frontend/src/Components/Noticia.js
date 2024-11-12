@@ -75,10 +75,11 @@ const Frame3 = styled.div`
     border: none;
   }
 `;
-
-function Noticia() {
+function Noticia({Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, Imagem, Referencia}) {
+//function Noticia() {
   const [conteudo, setConteudo] = useState('');
-  const [textoParaCopiar, setTextoParaCopiar] = useState("Referencia Bibliografica ABNT");
+  const [textoParaCopiar, setTextoParaCopiar] = useState(Referencia);
+  /*
   const { id } = useParams();
   const navigate = useNavigate();
   const [Noticias, setNoticias] = useState(null);
@@ -98,7 +99,8 @@ function Noticia() {
 
     fetchedNoticias(); // Chama a função para buscar as notícias
   }, [id]);
-
+*/
+  
   const copiarTexto = () => {
     navigator.clipboard.writeText(textoParaCopiar)
       .then(() => {
@@ -123,6 +125,7 @@ function Noticia() {
     }
   };
 
+  /*
   // Se estiver carregando, exibe uma mensagem
   if (loading) {
     return <p>Carregando...</p>;
@@ -132,7 +135,8 @@ function Noticia() {
   if (!Noticias) {
     return <p>Nenhuma notícia encontrada.</p>;
   }
-
+  */
+/*
     return (
         <NoticiaContainer>
             <Frame1>
@@ -147,7 +151,7 @@ function Noticia() {
             </Frame1>
             <Frame2>
                 <input type="file" accept=".txt" onChange={lerArquivo} />
-                <pre>{conteudo}</pre> {/* Renderiza o conteúdo do arquivo */}
+                <pre>{conteudo}</pre> 
             </Frame2>
             <Frame3>
                 <p>{Noticias.Referencia || "Referencia Bibliografica ABNT"}</p>
@@ -157,8 +161,9 @@ function Noticia() {
             </Frame3>
         </NoticiaContainer>
     );
+    */
 
-    /*
+    
     return (
         <NoticiaContainer>
             <Frame1>
@@ -172,6 +177,7 @@ function Noticia() {
                 <p>{Chamada || "BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA"}</p>
             </Frame1>
             <Frame2>
+              <img src={Imagem}/>
                 <input type="file" accept=".txt" onChange={lerArquivo} />
                 <pre>{conteudo}</pre>
             </Frame2>
@@ -183,7 +189,7 @@ function Noticia() {
             </Frame3>
         </NoticiaContainer>
     );
-    */
+    
 }
 
 export default Noticia;
