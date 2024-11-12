@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 //Div mãe
-const LinkMaisNoticias = styled.div`
+const ContainerMaisNoticias = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -24,7 +24,6 @@ div p:hover{
 }
 `
 
-//Div da img
 const Frame1 = styled.div`
 max-width: 320px;
 width: 100%;
@@ -37,7 +36,6 @@ img{
 }
 `
 
-//Div do texto debaixo
 const Frame2 = styled.div`
 flex-direction: column;
 align-items: center;
@@ -45,32 +43,28 @@ justify-content: left;
 width: 100%;
 `
 
-//Div do título do texto
 const Frame2_1 = styled.div`
 //background-color: red;
 width: 100%;
 `
-
-//Div das Hashtags
 const Frame2_2 = styled.div`
-//background-color: red;
-`
 
-function QuadroNoticias({imagem, titulo, hashtag}){
+`
+function QuadroNoticias({Imagem, Titulo, Entidade, OnClick}){
     return(
-        <LinkMaisNoticias>
+        <ContainerMaisNoticias OnClick = {OnClick}>
             <Frame1>
-              <img className="capa" src = {imagem}></img>
+              <img className="capa" src = {Imagem}></img>
             </Frame1>
             <Frame2>
                 <Frame2_1>
-                    <h2>{titulo || "Título"}</h2>
+                    <h2>{Titulo || "Título"}</h2>
                 </Frame2_1>
                 <Frame2_2>
-                    <p>{hashtag || "Hashtags"}</p>
+                    <p>{Entidade || "entidade"}</p>
                 </Frame2_2>
             </Frame2>
-        </LinkMaisNoticias>
+        </ContainerMaisNoticias>
     )
 }
 

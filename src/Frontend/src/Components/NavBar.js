@@ -86,9 +86,6 @@ function NavBar() {
     return (
         <NavBarContainer>
             <Menu>
-                <Link to="/SobreNos" className="link-style-button">
-                    <Button>SOBRE NÓS</Button>
-                </Link>
                 <Button>
                     NOSSO CONTEÚDO
                     <Dropdown className="dropdown">

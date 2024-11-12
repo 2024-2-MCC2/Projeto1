@@ -58,7 +58,8 @@ const Frame2 = styled.div`
   }
   img{
     width: 100%;
-    border: 1px solid #000;
+    border: 10px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   }
 `;
 

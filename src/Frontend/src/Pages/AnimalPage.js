@@ -2,7 +2,7 @@ import styled from "styled-components";
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import BioAnimal from "../Components/BioAnimail";
-import ImagemExemplo from '../Assets/PlaceHold.png';
+import CarrosselDeAnimais from "../Components/CarrosselDeAnimais";
 //IMAGENS DOS ANIMAIS ------------------------------------------------------------------
 import Baleia_Azul from '../Assets/Fotos_Animal/Baleia_Azul.jpg';
 import Pinguim_Galapagos from '../Assets/Fotos_Animal/Pinguim_Galapagos.jpg';
@@ -406,6 +406,7 @@ function AnimalPage(){
           imagem_Animal = {Animal.imagem_Animal}
           imagem_Habitat = {Animal.imagem_Habitat}
         />
+        <CarrosselDeAnimais/>
       </Container>
     );
   }

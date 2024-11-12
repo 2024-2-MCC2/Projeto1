@@ -4,6 +4,8 @@ import Carrossel from "../Components/Carrossel";
 import QuadroDeManchetes from "../Components/QuadroDeManchetes";
 import Enfrentamos from "../Components/Enfrentamos";
 import React, { useEffect } from 'react';
+import SobreNos from "../Components/SobreNos";
+
 
 const Container = styled.div`
 display: flex;
@@ -24,7 +26,7 @@ function Home(){
     return(
       <Container>
         <Carrossel/>
-        <Enfrentamos/>
+        <SobreNos/>
         <QuadroDeManchetes/>
       </Container>
     );

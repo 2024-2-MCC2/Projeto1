@@ -42,10 +42,6 @@ button span{
     height: 45px;
     width: 45px;
 }
-button:hover{
-    background-color: #FDDE7D;
-    border:  1px solid #000;
-}
 `
 function Enfrentamos(){
     return(
