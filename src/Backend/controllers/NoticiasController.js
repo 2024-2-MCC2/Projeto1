@@ -4,7 +4,7 @@ exports.createNoticia = async(req, res) =>{
     const {Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia} = req.body
     const Texto = req.file.filename
     try{
-        const [result] = await db.query('INSERT INTO noticias (Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia, Texto) VALUES(?, ?, ?)', [Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia, Texto])
+        const [result] = await db.query('INSERT INTO noticias (Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia, Texto) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)', [Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia, Texto])
     } catch (err){
         console.error(err)
         res.status(500).send(err.message)
@@ -35,8 +35,8 @@ exports.getNoticiaByID = async(req, res) =>{
 }
 exports.updateNoticia = async(req, res) =>{
     const id = req.params.id
-    const {nome, texto} = req.body
-    const foto = req.file ? req.file.filename : null    
+    const {Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia} = req.body
+    const Texto = req.file ? req.file.filename : null    
     try{
         const fields = []
         const values = []
