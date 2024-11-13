@@ -9,7 +9,6 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-margin: 100px;
 padding: 50px;
 gap: 60px;
 `
