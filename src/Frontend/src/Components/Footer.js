@@ -201,6 +201,16 @@ width: 1280px;
 `
 
 function Footer(){
+
+    const redFacebook = () => {
+        window.open('https://github.com/2024-2-MCC2/Projeto1', "_blank"); // Abre o link em uma nova aba
+    };
+    const redIntagram = () => {
+        window.open('https://github.com/2024-2-MCC2/Projeto1', "_blank"); // Abre o link em uma nova aba
+    };
+    const redTwitter = () => {
+        window.open('https://github.com/2024-2-MCC2/Projeto1', "_blank"); // Abre o link em uma nova aba
+    };
     return(
         <FooterContainer>
             <Frame1>
@@ -213,13 +223,13 @@ function Footer(){
                     <InscrevaseBotton>Inscreva-se</InscrevaseBotton>
                 </Frame1_2>
                 <Fram1_3>
-                    <Facebook_Botton href="#">
+                    <Facebook_Botton onClick={redFacebook}>
                         <img src="https://cdn3.iconfinder.com/data/icons/social-media-black-white-2/512/BW_Facebook_glyph_svg-256.png"/>
                     </Facebook_Botton>
-                    <Instagram_Botton href="#">
+                    <Instagram_Botton onClick={redIntagram}>
                         <img src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-256.png"/>
                     </Instagram_Botton>
-                    <X_Botton href="#">
+                    <X_Botton onClick={redIntagram}>
                         <img src="https://cdn4.iconfinder.com/data/icons/social-media-black-white-2/1227/X-256.png"/>
                     </X_Botton>
                 </Fram1_3>
