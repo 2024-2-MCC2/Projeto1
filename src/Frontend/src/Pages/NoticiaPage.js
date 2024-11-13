@@ -173,23 +173,6 @@ function NoticiaPage() {
   };
   const Noticia = Noticias[id]
 
-  /*
-  const [Noticias, setNoticias] = useState([]);
-
-  useEffect(() => {
-      const fetchNoticia = async () => {
-        try {
-          const response = await axios.get('http://localhost:5001/api/Noticias')
-          setNoticias(response.data);
-        } catch (error) {
-          console.error('Erro ao buscar personagens', error);
-        }
-      };
-  
-      fetchNoticia();
-    }, []);
-*/
-
 
   return (
     <Container>

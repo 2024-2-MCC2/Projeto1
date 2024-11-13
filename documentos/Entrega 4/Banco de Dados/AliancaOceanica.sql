@@ -28,3 +28,19 @@ Importancia varchar(255) not null,
 imagem_Animal varchar(255) not null, 
 imagem_Habitat varchar(255) not null
 );
+
+INSERT INTO Noticias (Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia, Texto, Imagem) VALUES
+(
+"Navio do Greenpeace resgata baleia presa em equipamentos de pesca",
+"Greenpeace", 
+"Laís Modelli", 
+2023-11-07, 
+2, 
+"Mais de 300 mil golfinhos e baleias morrem todos os anos ao se prenderem em emaranhados da indústria pesqueira. É inaceitável que atividades econômicas prosperem às custas de vidas.", "https://www.greenpeace.org/brasil/blog/navio-do-greenpeace-resgata-baleia-jubarte-presa-em-equipamentos-de-pesca/", 
+"GREENPEACE. Navio do Greenpeace resgata baleia jubarte presa em equipamentos de pesca. Disponível em: https://www.greenpeace.org/brasil/blog/navio-do-greenpeace-resgata-baleia-jubarte-presa-em-equipamentos-de-pesca/. Acesso em: 24 set. 2024.", 
+"uploads/Navio do Greenpeace resgata baleia presa em equipamentos de pesca.txt", 
+"uploads/Noticia_1"
+);
+
+Select * FROM Noticias;
+Select * FROM Animais;

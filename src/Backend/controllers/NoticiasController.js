@@ -5,7 +5,7 @@ exports.createNoticia = async(req, res) =>{
     const Texto = req.file.filename
     const Imagem = req.file.filename
     try{
-        const [result] = await db.query('INSERT INTO noticias (Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia, Texto, Imagem) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia, Texto, Imagem])
+        const [result] = await db.query('INSERT INTO Noticias (Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia, Texto, Imagem) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia, Texto, Imagem])
     } catch (err){
         console.error(err)
         res.status(500).send(err.message)
@@ -23,7 +23,7 @@ exports.getAllNoticia = async(req, res) =>{
 exports.getNoticiaByID = async(req, res) =>{
     const id = req.params.id
     try{
-        const [noticias] = await db.query('SELECT * FROM noticias WHERE id =?', [id])
+        const [noticias] = await db.query('SELECT * FROM Noticias WHERE id =?', [id])
         if(noticias.length >0){
             res.status(200).json(noticias[0])
         } else {
@@ -82,7 +82,7 @@ exports.updateNoticia = async(req, res) =>{
             return res.status(400).send('Nenhum campo para atualizar')
         }
         values.push(id)
-        const query = `UPDATE noticias SET ${fields.join(', ')} WHERE id = ?`
+        const query = `UPDATE Noticias SET ${fields.join(', ')} WHERE id = ?`
         const [result] = await db.query(query, values)
         if(result.affectedRows > 0){
             res.status(200).send('Noticia atualizada com sucesso')

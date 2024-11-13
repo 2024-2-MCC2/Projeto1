@@ -85,7 +85,6 @@ const Frame3 = styled.div`
   }
 `;
 function Noticia({ Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, Imagem, Referencia, Texto }) {
-  //function Noticia() {
   const [textoParaCopiar, setTextoParaCopiar] = useState(Referencia);
 
   const copiarTexto = () => {
@@ -110,61 +109,6 @@ function Noticia({ Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, Image
       .catch(err => console.error('Erro ao carregar o arquivo:', err));
   }, []);
 
-  /*
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const [Noticias, setNoticias] = useState(null);
-  const [loading, setLoading] = useState(true); // Estado de carregamento
-
-  useEffect(() => {
-    const fetchedNoticias = async () => {
-      try {
-        const response = await axios.get(`http://localhost:5001/api/personagens/${id}`);
-        setNoticias(response.data);
-      } catch (error) {
-        console.error('Erro ao buscar o personagem', error);
-      } finally {
-        setLoading(false); // Finaliza o carregamento
-      }
-    };
-
-    fetchedNoticias(); // Chama a função para buscar as notícias
-  }, [id]);
-  // Se estiver carregando, exibe uma mensagem
-  if (loading) {
-    return <p>Carregando...</p>;
-  }
-
-  // Se não houver notícias, exibe uma mensagem
-  if (!Noticias) {
-    return <p>Nenhuma notícia encontrada.</p>;
-  }
-
-    return (
-        <NoticiaContainer>
-            <Frame1>
-                <h1 href="titulo">{Noticias.Titulo || "Titulo da Notícia"}</h1>
-                <Frame1_1>
-                    <p>{Noticias.Entidade || "Entidade"}</p>
-                    <p>{Noticias.Autor || "Autor"}</p>
-                    <p>{Noticias.Data}</p>
-                    <p>{Noticias.TempoDeLeitura || "x"} min</p>
-                </Frame1_1>
-                <p>{Noticias.Chamada || "BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA"}</p>
-            </Frame1>
-            <Frame2>
-                <input type="file" accept=".txt" onChange={lerArquivo} />
-                <pre>{conteudo}</pre> 
-            </Frame2>
-            <Frame3>
-                <p>{Noticias.Referencia || "Referencia Bibliografica ABNT"}</p>
-                <button onClick={copiarTexto}>
-                    <span class="material-symbols-outlined">content_copy</span>
-                </button>
-            </Frame3>
-        </NoticiaContainer>
-    );
-    */
 
   return (
     <NoticiaContainer>
