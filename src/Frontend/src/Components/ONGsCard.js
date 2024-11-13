@@ -51,17 +51,18 @@ const ONGButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center; /* Centraliza a imagem dentro do botão */
-    width: 200px;
+    width: 100%;
     height: 200px;
-    border-radius: 100%;
     border-radius: 100%;
     border: 3px solid #000;
     overflow: hidden;
-    padding: 0;
+    position: relative;
     img {
-        display: inline-block;
-        position: relative;
-        object-fit: cover;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 100%; /* Mantém a borda arredondada da imagem */
     }
 `;
 const Frame2_1 = styled.div`
@@ -95,7 +96,7 @@ function ONGsCard({ ONGsData }) {
             <Frame2>
                 {ONGsData.map((ONG) => (
                     <Frame2_1 key={ONG.id}>
-                        <ONGButton onClick={() => navigate(`/ONGsParceiras/${ONG.id}`)}>
+                        <ONGButton onClick={() => navigate(`/ONGs/${ONG.id}`)}>
                             <img src={ONG.Imagem} />
                         </ONGButton>
                         <Legenda href="Legenda">{ONG.Nome}</Legenda>

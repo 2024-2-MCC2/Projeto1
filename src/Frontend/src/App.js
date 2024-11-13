@@ -17,6 +17,7 @@ import Footer from "./Components/Footer";
 import ONGsPage from "./Pages/ONGsPage";
 import TestePage from "./Pages/TestePage";
 import TesteListPage from "./Pages/TesteListPage";
+import DescricaoONGs from "./Pages/DescricaoONG";
 
 function App() {
 
@@ -36,8 +37,9 @@ function App() {
           <Route path="/Animais" element={<AnimaisPage />} />
           <Route path="/CatalogoDeNoticias" element={<CatalogoDeNoticias />} />
           <Route path="/ONGsParceiras" element={<ONGsPage/>} />
+          <Route path="ONGs/:id" element={<DescricaoONGs/>}/>       
           <Route path="/TesteList" element={<TesteListPage/>} /> 
-          <Route path="/Teste/:id" element={<TestePage/>} />          
+          <Route path="/Teste/:id" element={<TestePage/>} />   
         </Routes>
       </main>
       <Footer />

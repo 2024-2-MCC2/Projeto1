@@ -21,7 +21,7 @@ import SaveOurSeasFoundation from "../Assets/imgsOngs/SaveOurSeasFoundation.jpg"
 import SeaShepherd from "../Assets/imgsOngs/SeaShepherd.png"
 import SurfriderFoundation from "../Assets/imgsOngs/SurfriderFoundation.jpg"
 import TheOceanCleanup from "../Assets/imgsOngs/TheOceanCleanup.jpg"
-import WildlifeConservationSociety from "../Assets/imgsOngs/WildlifeConservationSociety.png"
+import WCS from "../Assets/imgsOngs/WCS.png"
 
 
 const Container = styled.div`
@@ -42,104 +42,104 @@ function ONGsPage () {
 
     const ONGsData = [
         {
-            id: 1,
+            id: 13,
             Nome: 'Blue Marine Foundation',
             Imagem: BlueMarineFoundation
         },
         {  
-            id: 2,
+            id: 15,
             Nome: 'Coral Restoration Foundation',
             Imagem: CoralRestorationFoundation
         },
         {   
-            id: 3,
+            id: 7,
             Nome: 'Instituto Baleia Jubarte',
             Imagem: InstitutoBaleiaJubarte
         },
         {  
-            id: 4,
+            id: 10,
             Nome: 'Instituto Ecológico Aqualung',
             Imagem: InstitutoEcologicoAqualung
         },
         {
-            id: 5,
+            id: 9,
             Nome: 'Instituto Ilhabela Sustentável',
             Imagem: InstitutoIlhaBelaSustentavel
         },
         {   
-            id: 6,
+            id: 8,
             Nome: 'Instituto Mar Adentro',
             Imagem: InstitutoMarAdentro
         },
         {   
-            id: 7,
+            id: 12,
             Nome: 'Marine Conservation Institute',
             Imagem: MarineConservationInstitute
         },
         {  
-            id: 8,
+            id: 16,
             Nome: 'Mission Blue',
             Imagem: MissionBlue
         },
         {   
-            id: 9,
+            id: 4,
             Nome: 'Oceana',
             Imagem: Oceana
         },
         {   
-            id: 10,
+            id: 1,
             Nome: 'Ocean Conservancy',
             Imagem: OceanConservacy
         },
         {   
-            id: 11,
+            id: 17,
             Nome: 'Plastic Pollution Coalition',
             Imagem: PlasticPollutionCoalition
         },
         {   
-            id: 12,
+            id: 14,
             Nome: 'Project AWARE',
             Imagem: ProjetoAware
         },
         {   
-            id: 13,
+            id: 11,
             Nome: 'Projeto Coral Vivo',
             Imagem: ProjetoCoralVivo
         },
         {   
-            id: 14,
+            id: 6,
             Nome: 'Projeto Tamar',
             Imagem: ProjetoTamar
         },
         {   
-            id: 15,
+            id: 19,
             Nome: 'Reef Check Foundation',
             Imagem: ReefCheckFoundation
         },
         {
-            id: 16,
+            id: 20,
             Nome: 'Save Our Seas Foundation',
             Imagem: SaveOurSeasFoundation
         },
         {
-            id: 17,
+            id: 2,
             Nome: 'Sea Shepherd',
             Imagem: SeaShepherd
         },
         {
-            id: 18,
+            id: 3,
             Nome: 'Surfrider Foundation',
             Imagem: SurfriderFoundation
         },
         {
-            id: 19,
+            id: 5,
             Nome: 'The Ocean Cleanup',
             Imagem: TheOceanCleanup
         },
         {
-            id: 20,
+            id: 18,
             Nome: 'Wildlife Conservation Society',
-            Imagem: WildlifeConservationSociety
+            Imagem: WCS
         },
     ]
 

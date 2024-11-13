@@ -35,6 +35,7 @@ const ButtonCarrossel_1 = styled.div`
   h2{
     font-size: 35px;
     text-align: center;
+    padding: 0;
   }
 `; 
 // -------------------------------------------------------------------------------------
@@ -57,6 +58,7 @@ const ButtonCarrossel_2 = styled.div`
   h2{
     font-size: 35px;
     text-align: center;
+    padding: 0;
   }
 `; 
 //---------------------------------------------------------------------------------------------
@@ -79,6 +81,7 @@ const ButtonCarrossel_3 = styled.div`
   h2{
     font-size: 35px;
     text-align: center;
+    padding: 0;
   }
 `; 
 //--------------------------------------------------------------------------------
@@ -142,17 +145,14 @@ function Carrossel() {
           </Link> 
           <LogoCarrossel_2 src={Logo} alt="Logo" />
         </CarouselItem>
-
         <CarouselItem>
         <video className="d-block w-100" autoPlay loop muted>
             <source src={video_pinguim} type="video/mp4" />
             Seu navegador não suporta o elemento de vídeo.
           </video>
           <CarouselCaption>
-          {/* <h3>Slide 1</h3> */}
-       
           </CarouselCaption>
-          <Link to="/SobreNosPage" className="no-link-style">
+          <Link to="/ONGsParceiras" className="no-link-style">
               <ButtonCarrossel_3 variant="primary">
                   <h2>ONGs PARCEIRAS</h2>
               </ButtonCarrossel_3>
