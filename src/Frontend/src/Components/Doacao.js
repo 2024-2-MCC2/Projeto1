@@ -66,10 +66,14 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 gap: 10px;
+img{ 
+    max-width: 360px;
+}
 p{
     max-width: 360px;
     overflow-wrap: break-word;
     word-break: break-word;
+    text-align: justify;
 }
 `
 
@@ -98,8 +102,8 @@ function Doacao(){
             </Frame1_2>
             <Frame1_3>
                 <Frame1_3_1>
-                    <img src="https://placehold.co/360x200/000000/FFF"></img>
-                    <p>Breve resumo da ação da nossa ONG blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla </p>
+                    <img src="https://raw.githubusercontent.com/2024-2-MCC2/Projeto1/refs/heads/main/imagens/image-20-2.png"></img>
+                    <p className="paragrafo">A Aliança Oceânica é uma ONG dedicada à preservação da vida aquática e à promoção de um uso sustentável dos ecossistemas marinhos e de água doce. Nossa missão é divulgar conhecimento científico e conscientizar sobre causas e ações relacionadas à proteção desses ambientes, mobilizando doações que são direcionadas a ONGs parceiras. Além disso, buscamos fortalecer nossa influência junto a autoridades governamentais, atuando como uma ponte para viabilizar projetos de desenvolvimento sustentável que conciliem o uso socioeconômico e a conservação ecológica dos ecossistemas aquáticos em escala global. </p>
                 </Frame1_3_1>
                 <PainelDeDoacao/>
             </Frame1_3>
