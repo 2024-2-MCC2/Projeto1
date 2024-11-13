@@ -5,7 +5,7 @@ exports.createAnimal = async(req, res) =>{
    const imagem_Habitat = req.file.filename
    const imagem_Animal = req.file.filename
     try{
-        const [result] = await db.query('INSERT INTO animais (Nome, Nome_Cientifico, Localizacao, Populacao, Peso, Comprimento, Habitat, Ameacas, Importancia, imagem_Animal, imagem_Habitat) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [Nome, Nome_Cientifico, Localizacao, Populacao, Peso, Comprimento, Habitat, Ameacas, Importancia, imagem_Animal, imagem_Habitat])
+        const [result] = await db.query('INSERT INTO Animais (Nome, Nome_Cientifico, Localizacao, Populacao, Peso, Comprimento, Habitat, Ameacas, Importancia, imagem_Animal, imagem_Habitat) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [Nome, Nome_Cientifico, Localizacao, Populacao, Peso, Comprimento, Habitat, Ameacas, Importancia, imagem_Animal, imagem_Habitat])
     } catch (err){
         console.error(err)
         res.status(500).send(err.message)
@@ -23,7 +23,7 @@ exports.getAllAnimal = async(req, res) =>{
 exports.getAnimalByID = async(req, res) =>{
     const id = req.params.id
     try{
-        const [animais] = await db.query('SELECT * FROM animais WHERE id =?', [id])
+        const [animais] = await db.query('SELECT * FROM Animais WHERE id =?', [id])
         if(noticias.length >0){
             res.status(200).json(animais[0])
         } else {
@@ -90,7 +90,7 @@ exports.updateAnimal = async(req, res) =>{
             return res.status(400).send('Nenhum campo para atualizar')
         }
         values.push(id)
-        const query = `UPDATE animais SET ${fields.join(', ')} WHERE id = ?`
+        const query = `UPDATE Animais SET ${fields.join(', ')} WHERE id = ?`
         const [result] = await db.query(query, values)
         if(result.affectedRows > 0){
             res.status(200).send('Animal atualizada com sucesso')
@@ -105,7 +105,7 @@ exports.updateAnimal = async(req, res) =>{
 exports.deleteAnimal = async(req, res) =>{
     const id = req.params.id    
     try{
-        const [result] = await db.query('DELETE FROM animais WHERE id = ?', [id])
+        const [result] = await db.query('DELETE FROM Animais WHERE id = ?', [id])
         if(result.affectedRows > 0){
             res.status(200).send('Animal deletado com sucesso')
         } else {

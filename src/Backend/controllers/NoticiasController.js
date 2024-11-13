@@ -3,8 +3,9 @@ const db = require('../db')
 exports.createNoticia = async(req, res) =>{
     const {Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia} = req.body
     const Texto = req.file.filename
+    const Imagem = req.file.filename
     try{
-        const [result] = await db.query('INSERT INTO noticias (Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia, Texto) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)', [Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia, Texto])
+        const [result] = await db.query('INSERT INTO noticias (Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia, Texto, Imagem) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia, Texto, Imagem])
     } catch (err){
         console.error(err)
         res.status(500).send(err.message)
@@ -36,6 +37,7 @@ exports.getNoticiaByID = async(req, res) =>{
 exports.updateNoticia = async(req, res) =>{
     const id = req.params.id
     const {Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia} = req.body
+    const Imagem = req.file ? req.file.filename : null  
     const Texto = req.file ? req.file.filename : null    
     try{
         const fields = []
@@ -71,6 +73,10 @@ exports.updateNoticia = async(req, res) =>{
         if(Referencia){
             fields.push('Referencia = ?')
             values.push(Referencia)
+        }
+        if(Imagem){
+            fields.push('Imagem = ?')
+            values.push(Imagem)
         }
         if(fields.length === 0){
             return res.status(400).send('Nenhum campo para atualizar')
