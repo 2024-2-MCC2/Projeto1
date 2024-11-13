@@ -1,3 +1,4 @@
+/*
 const db = require('../db')
 
 exports.createNoticia = async(req, res) =>{
@@ -108,3 +109,4 @@ exports.deleteNoticia = async(req, res) =>{
         res.status(500).send(err.message)
     }
 }
+*/

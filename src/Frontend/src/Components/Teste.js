@@ -1,20 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styled from "styled-components";
 
-function Teste() {
-    const { id } = useParams();  // Obtém o ID da URL
-    const [Noticia, setNoticia] = useState(null);
-
-    useEffect(() => {
-        // Faz uma requisição para obter os dados do usuário pelo ID
-        axios.get(`http://localhost:5002/api/Noticias/${id}`)
-            .then(response => setNoticia(response.data))
-            .catch(error => console.error('Erro ao buscar dados do usuário:', error));
-    }, [id]);
-
-    if (!Noticia) return <p>Carregando...</p>;
+function Teste({Noticia}) {
 
     return (
         <div>
