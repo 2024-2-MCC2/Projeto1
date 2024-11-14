@@ -84,34 +84,36 @@ background-color: none;
 color: #0460C9;
 border: none;
 `
-function Login(){
+function Login() {
 
-    const [showPassword, setShowPassword] = useState(false); 
+    const [showPassword, setShowPassword] = useState(false);
 
     const togglePasswordVisibility = () => {
         setShowPassword(prevState => !prevState);
     };
 
-    return(
+    return (
         <Frame1>
             <h2>Login</h2>
             <FormsContainer>
                 <InputContainer>
                     <label>E-mail:</label>
-                    <input type="email"/>
+                    <input type="email" />
                 </InputContainer>
                 <InputContainer>
                     <p>Senha:</p>
-                    <input type={showPassword ? "text" : "password"} />  
+                    <input type={showPassword ? "text" : "password"} />
                     <ShowButton type="button" onClick={togglePasswordVisibility}>
-                        {showPassword ? <span class="material-symbols-outlined">visibility</span> : <span class="material-symbols-outlined">visibility_off</span>} 
+                        {showPassword ? <span class="material-symbols-outlined">visibility</span> : <span class="material-symbols-outlined">visibility_off</span>}
                     </ShowButton>
                 </InputContainer>
             </FormsContainer>
-            <Button type ="submit">Entrar</Button>
-                <Link to="/Cadastro" className="no-link-style">
-                    <p className="FacaCadastro" >Não tem conta? Cadastre-se</p>
-                </Link>
+            <Link to="/Multer" className="no-link-style">
+                <Button type="submit">Entrar</Button>
+            </Link>
+            <Link to="/Cadastro" className="no-link-style">
+                <p className="FacaCadastro" >Não tem conta? Cadastre-se</p>
+            </Link>
         </Frame1>
     )
 }
