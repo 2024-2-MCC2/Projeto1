@@ -18,6 +18,7 @@ import ONGsPage from "./Pages/ONGsPage";
 import TestePage from "./Pages/TestePage";
 import TesteListPage from "./Pages/TesteListPage";
 import DescricaoONGs from "./Pages/DescricaoONG";
+import MulterNoticiasPage from "./Pages/MulterNoticiasPage";
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
           <Route path="/Animais" element={<AnimaisPage />} />
           <Route path="/CatalogoDeNoticias" element={<CatalogoDeNoticias />} />
           <Route path="/ONGsParceiras" element={<ONGsPage/>} />
+          <Route path="/Multer" element={<MulterNoticiasPage/>} />
           <Route path="ONGs/:id" element={<DescricaoONGs/>}/>       
           <Route path="/TesteList" element={<TesteListPage/>} /> 
           <Route path="/Teste/:id" element={<TestePage/>} />   

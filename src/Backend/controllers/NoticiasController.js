@@ -1,4 +1,3 @@
-/*
 const db = require('../db')
 
 exports.createNoticia = async(req, res) =>{
@@ -14,7 +13,7 @@ exports.createNoticia = async(req, res) =>{
 }
 exports.getAllNoticia = async(req, res) =>{
     try{
-        const [noticias] = await db.query('SELECT * FROM noticias')
+        const [noticias] = await db.query('SELECT * FROM Noticias')
         res.status(200).json(noticias)
     } catch (err){
         console.error(err)
@@ -109,4 +108,3 @@ exports.deleteNoticia = async(req, res) =>{
         res.status(500).send(err.message)
     }
 }
-*/
