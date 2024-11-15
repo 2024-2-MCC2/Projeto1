@@ -2,29 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styled from "styled-components";
+import api from "../Service/api"
 
 function Teste() {
 
-    const { id } = useParams();  // Obtém o ID da URL
-    const navigate = useNavigate();
-    const [Noticia, setNoticia] = useState(null);
-  
-    useEffect(() => {
-      const fetchedNoticia = async () =>{
-        try{
-          const response = await axios.get(`http://localhost:5003/api/Noticias/${id}`)
-          setNoticia(response.data)
-        } catch (error){
-          console.error('Erro ao buscar a Noticia', error)
-        }
-      }
-      setNoticia(fetchedNoticia);
-    }, [id]);
-  
-  
-    if (!Noticia) {
-      return <div>Noticia não encontrada.</div>;
-    }
+  const { id } = useParams();
+  const [Noticia, setNoticia] = useState(null);
+
+  useEffect(() => {
+      api.get(`/Noticias/${id}`)
+          .then((response) => setNoticia(response.data))
+          .catch((error) => console.error(error));
+  }, [id]);
+
+  if (!Noticia) return <p>Carregando...</p>
 
     return (
         <div>

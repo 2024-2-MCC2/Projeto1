@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
+import api from "../Service/api"
 
 const Container = styled.div`
 display: flex;
@@ -14,15 +15,13 @@ width: 100%;
 
 function TesteList() {
 
-    const [Noticias, setNoticias] = useState([]);
+    const [Noticias, setDados] = useState([]);
 
     useEffect(() => {
-        // Faz uma requisição para obter a lista de usuários
-        axios.get('http://localhost:5003/api/Noticias')
-            .then(response => setNoticias(response.data))
-            .catch(error => console.error('Erro ao buscar usuários:', error));
+        api.get("/Noticias")
+            .then((response) => setDados(response.data))
+            .catch((error) => console.error(error));
     }, []);
-
 
     return (
         <Container>

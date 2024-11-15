@@ -15,14 +15,6 @@ width: 100%;
 
 function TesteListPage(){
     
-    const [Noticias, setNoticias] = useState([]);
-
-    useEffect(() => {
-        // Faz uma requisição para obter a lista de usuários
-        axios.get('http://localhost:5003/api/Noticias')
-            .then(response => setNoticias(response.data))
-            .catch(error => console.error('Erro ao buscar usuários:', error));
-    }, []);
     return (
         <Container>
             <TesteList/>

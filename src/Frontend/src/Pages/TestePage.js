@@ -15,8 +15,6 @@ width: 100%;
 
 function TestePage() {
 
-    
-
     return (
         <Container>
             <Teste/>
