@@ -1,21 +1,49 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const noticiasController = require('../controllers/NoticiasController');
-const upload = require('../config/multerConfig');
+const fs = require("fs");
+const path = require("path");
+const db = require("../db");
 
-// Criar uma nova notícia
-router.post('/', upload.single('Texto'), noticiasController.createNoticia);
+// Rota para buscar o conteúdo de um arquivo específico
+router.get("/:id/conteudo", (req, res) => {
+    const { id } = req.params;
 
-// Atualizar uma notícia existente
-router.put('/:id', upload.single('Texto'), noticiasController.updateNoticia);
+    db.query("SELECT Texto FROM Noticias WHERE id = ?", [id], (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
 
-// Recuperar todas as notícias
-router.get('/', noticiasController.getAllNoticia);
+        if (result.length === 0) {
+            return res.status(404).json({ message: "Notícia não encontrada" });
+        }
 
-// Recuperar uma notícia específica pelo ID
-router.get('/:id', noticiasController.getNoticiaByID);
+        const filePath = path.join(__dirname, "../../frontend/public", result[0].Texto);
 
-// Deletar uma notícia pelo ID
-router.delete('/:id', noticiasController.deleteNoticia);
+        fs.readFile(filePath, "utf8", (err, data) => {
+            if (err) {
+                return res.status(500).json({ message: "Erro ao ler o arquivo", error: err });
+            }
+
+            res.json({ content: data });
+        });
+    });
+});
+
+// Rota para buscar os detalhes de uma notícia
+router.get("/:id", (req, res) => {
+    const { id } = req.params;
+
+    db.query("SELECT * FROM Noticias WHERE id = ?", [id], (err, result) => {
+        if (err) return res.status(500).send(err);
+
+        if (result.length === 0) {
+            return res.status(404).json({ message: "Notícia não encontrada" });
+        }
+
+        const noticia = result[0];
+        noticia.TextoURL = `http://localhost:3000/${noticia.Texto}`; // URL completa
+        res.json(noticia);
+    });
+});
 
 module.exports = router;

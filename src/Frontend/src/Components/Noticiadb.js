@@ -2,6 +2,7 @@ import styled from "styled-components";
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import api from "../Service/api"
 
 const NoticiaContainer = styled.div`
   display: flex;
@@ -83,35 +84,30 @@ const Frame3 = styled.div`
 
 
 function Noticiadb() {
-  
-  
+
   const { id } = useParams();
-  const navigate = useNavigate();
-  
-  const [loading, setLoading] = useState(true); // Estado de carregamento
-  const [noticiasData, setnoticaisData] = useState([]);
-  const [textoParaCopiar, setTextoParaCopiar] = useState(noticiasData.Referencia);
+  const [Noticia, setNoticia] = useState(null);
   const [conteudo, setConteudo] = useState('');
-  
-  
 
-    useEffect(() => {
-        axios.get('http://localhost:5002/api/Noticias')
-            .then(response => setnoticaisData(response.data))
-            .catch(error => console.error('Erro ao buscar dados:', error));
-    }, []);
-  
-
-  //---------------------------------------------------------------------------------------------------------
   useEffect(() => {
-    // Fetch the content of the imported text file
-    fetch(`http://localhost:5002/${noticiasData.Texto}`)
-      .then(response => response.text())
-      .then(text => {
-        setConteudo(text);
-      })
-      .catch(err => console.error('Erro ao carregar o arquivo:', err));
-  }, [noticiasData]);
+    api.get(`/Noticias/${id}`)
+      .then((response) => setNoticia(response.data))
+      .catch((error) => console.error(error));
+  }, [id]);
+
+  const [textoParaCopiar, setTextoParaCopiar] = useState(Noticia.Referencia);
+  
+  useEffect(() => {
+    if (Noticia) {
+      // Fetch the content of the imported text file
+      fetch(`http://localhost:5000/${Noticia.Texto}`)
+        .then(response => response.text())
+        .then(text => {
+          setConteudo(text);
+        })
+        .catch(err => console.error('Erro ao carregar o arquivo:', err));
+    }
+  }, [Noticia]);
 
   const copiarTexto = () => {
     navigator.clipboard.writeText(textoParaCopiar)
@@ -123,38 +119,31 @@ function Noticiadb() {
       });
   };
 
-  // Se estiver carregando, exibe uma mensagem
-  
-  // Se não houver notícias, exibe uma mensagem
-  if (!noticiasData) {
-    return <p>Nenhuma notícia encontrada.</p>;
-  }
 
+  return (
+    <NoticiaContainer>
+      <Frame1>
+        <h1 href="titulo">{Noticia.Titulo || "Titulo da Notícia"}</h1>
+        <Frame1_1>
+          <p>{Noticia.Entidade || "Entidade"}</p>
+          <p>{Noticia.Autor || "Autor"}</p>
+          <p>{Noticia.Data}</p>
+          <p>{Noticia.TempoDeLeitura || "x"} min</p>
+        </Frame1_1>
+        <p>{Noticia.Chamada || "BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA"}</p>
+      </Frame1>
+      <Frame2>
+        <pre>{conteudo}</pre>
+      </Frame2>
+      <Frame3>
+        <p>{Noticia.Referencia || "Referencia Bibliografica ABNT"}</p>
+        <button onClick={copiarTexto}>
+          <span class="material-symbols-outlined">content_copy</span>
+        </button>
+      </Frame3>
+    </NoticiaContainer>
+  );
 
-    return (
-        <NoticiaContainer>
-            <Frame1>
-                <h1 href="titulo">{noticiasData.Titulo || "Titulo da Notícia"}</h1>
-                <Frame1_1>
-                    <p>{noticiasData.Entidade || "Entidade"}</p>
-                    <p>{noticiasData.Autor || "Autor"}</p>
-                    <p>{noticiasData.Data}</p>
-                    <p>{noticiasData.TempoDeLeitura || "x"} min</p>
-                </Frame1_1>
-                <p>{noticiasData.Chamada || "BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA"}</p>
-            </Frame1>
-            <Frame2>
-                <pre>{conteudo}</pre> 
-            </Frame2>
-            <Frame3>
-                <p>{noticiasData.Referencia || "Referencia Bibliografica ABNT"}</p>
-                <button onClick={copiarTexto}>
-                    <span class="material-symbols-outlined">content_copy</span>
-                </button>
-            </Frame3>
-        </NoticiaContainer>
-    );
-    
 
 }
 

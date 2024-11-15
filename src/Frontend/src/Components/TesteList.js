@@ -16,6 +16,7 @@ width: 100%;
 function TesteList() {
 
     const [Noticias, setDados] = useState([]);
+    
 
     useEffect(() => {
         api.get("/Noticias")

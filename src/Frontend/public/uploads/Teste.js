@@ -85,34 +85,30 @@ function Teste() {
 
   const { id } = useParams();
   const [Noticia, setNoticia] = useState(null);
-  const [Conteudo, setConteudo] = useState(null);
-  const [Erro, setErro] = useState(null);
+  const [conteudo, setConteudo] = useState('');
 
-  // Buscar os detalhes da notícia
   useEffect(() => {
-    api.get(`/Noticias/${id}`)
-      .then((response) => setNoticia(response.data))
-      .catch((error) => {
-        console.error(error);
-        setErro("Erro ao carregar os detalhes da notícia.");
-      });
+      api.get(`/Noticias/${id}`)
+          .then((response) => setNoticia(response.data))
+          .catch((error) => console.error(error));
   }, [id]);
 
   useEffect(() => {
-    // Consome a rota do backend para obter o conteúdo do arquivo
-    api.get(`/Noticias/${id}/conteudo`)
-      .then((response) => setConteudo(response.data.content))
-      .catch((error) => {
-        console.error("Erro ao carregar o conteúdo:", error);
-        setErro("Erro ao carregar o conteúdo da notícia.");
-      });
-  }, [id]);
+    if (Noticia) {
+      // Fetch the content of the imported text file
+      fetch(`http://localhost:5000/${Noticia.Texto}`)
+        .then(response => response.text())
+        .then(text => {
+          setConteudo(text);
+        })
+        .catch(err => console.error('Erro ao carregar o arquivo:', err));
+    }
+  }, [Noticia]);
 
-  if (Erro) return <p>{Erro}</p>;
-  if (!Noticia || !Conteudo) return <p>Carregando...</p>;
+  if (!Noticia) return <p>Carregando...</p>
 
-  return (
-    <NoticiaContainer>
+    return (
+      <NoticiaContainer>
       <Frame1>
         <h1 href="titulo">{Noticia.Titulo || "Titulo da Notícia"}</h1>
         <Frame1_1>
@@ -124,7 +120,7 @@ function Teste() {
         <p>{Noticia.Chamada || "BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA"}</p>
       </Frame1>
       <Frame2>
-        <pre>{Conteudo}</pre>
+        <pre>{conteudo}</pre>
       </Frame2>
       <Frame3>
         <p>{Noticia.Referencia || "Referencia Bibliografica ABNT"}</p>
@@ -133,7 +129,7 @@ function Teste() {
         </button>
       </Frame3>
     </NoticiaContainer>
-  );
+    );
 };
 
 export default Teste;
