@@ -171,7 +171,7 @@ p{
 }
 `
 
-function ADM({ NoticiasData }) {
+function ADM({ NoticiasData, onCreate, onUpdate, onDelete }) {
 
     const [openDiv, setOpenDiv] = useState(null);
     const [modalState, setModalState] = useState(null); // null, "edit", ou "add"
@@ -267,6 +267,7 @@ function ADM({ NoticiasData }) {
                 <ModalDeEditar
                     currentNoticia={currentNoticia}
                     onClose={closeModal}
+                    onUpdate={onUpdate}
                 />
             )}
 
@@ -274,7 +275,8 @@ function ADM({ NoticiasData }) {
             {modalState === "add" && (
                 <ModalDeAdicionar
                     isOpen={modalState === "add"}
-                    onClose={closeModal} />
+                    onClose={closeModal} 
+                    onCreate={onCreate}/>
             )}
             {/* Modal de Deletar */}
             {modalState === "delete" && (
@@ -282,6 +284,7 @@ function ADM({ NoticiasData }) {
                 currentNoticia={currentNoticia}
                 isOpen={modalState === "delete"}
                 onClose={closeModal}
+                onDelete={onDelete}
                 />
             )}
 

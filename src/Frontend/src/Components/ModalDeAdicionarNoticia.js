@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React, { useState } from 'react';
 
 const Overlay = styled.div`
 position: fixed;
@@ -125,65 +126,104 @@ p{
 }
 `
 
-function ModalDeAdicionarlNoticias({ isOpen, onClose }) {
+function ModalDeAdicionarlNoticias({ isOpen, onClose, onCreate }) {
+    const [formData, setFormData] = useState({
+        Titulo: '',
+        Entidade: '',
+        Autor: '',
+        Data: '',
+        TempoDeLeitura: '',
+        Chamada: '',
+        LinkURL: '',
+        Referencia: '',
+        Imagem: null, // Para arquivos
+        Texto: null // Para arquivos
+    });
+
+    const handleChange = (e) => {
+        const { name, value, files } = e.target;
+
+        if (files) {
+            // Atualiza arquivos (Imagem ou Texto)
+            setFormData({ ...formData, [name]: files[0] });
+        } else {
+            // Atualiza campos de texto
+            setFormData({ ...formData, [name]: value });
+        }
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Converte os dados para FormData se houver arquivos
+        const data = new FormData();
+        Object.entries(formData).forEach(([key, value]) => {
+            data.append(key, value);
+        });
+
+        // Chama a função passada por props
+        onCreate(data);
+    };
+
     return (
         <Overlay isOpen={isOpen}>
             <Modal>
                 <Frame_1>
-                    <h2>Cadastrar um nova noticia</h2>
+                    <h2>Cadastrar uma nova notícia</h2>
                     <CloseButton onClick={onClose}>
-                        <span class="material-symbols-outlined">close</span>
+                        <span className="material-symbols-outlined">close</span>
                     </CloseButton>
                 </Frame_1>
                 <Frame_2>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <InputContainer>
                             <label>Título:</label>
-                            <Input placeholder="Título" />
+                            <Input type="text" name="Titulo" value={formData.Titulo} onChange={handleChange} placeholder="Título" />
                         </InputContainer>
                         <InputContainer>
                             <label>Entidade:</label>
-                            <Input placeholder="Entidade" />
+                            <Input type="text" name="Entidade" value={formData.Entidade} onChange={handleChange} placeholder="Entidade" />
                         </InputContainer>
                         <InputContainer>
                             <label>Autor:</label>
-                            <Input placeholder="Autor" />
+                            <Input type="text" name="Autor" value={formData.Autor} onChange={handleChange} placeholder="Autor" />
                         </InputContainer>
                         <InputContainer>
                             <label>Data:</label>
-                            <Input placeholder="Data" />
+                            <Input type="text" name="Data" value={formData.Data} onChange={handleChange} placeholder="Data" />
                         </InputContainer>
                         <InputContainer>
-                            <label>TempoDeLeitura:</label>
-                            <Input placeholder="Tempo de Leitura" />
+                            <label>Tempo de Leitura:</label>
+                            <Input type="text" name="TempoDeLeitura" value={formData.TempoDeLeitura} onChange={handleChange} placeholder="Tempo de Leitura" />
                         </InputContainer>
                         <InputContainer>
                             <label>Chamada:</label>
-                            <Input placeholder="Chamada" />
+                            <Input type="text" name="Chamada" value={formData.Chamada} onChange={handleChange} placeholder="Chamada" />
                         </InputContainer>
                         <InputContainer>
                             <label>Link:</label>
-                            <Input placeholder="Link" />
+                            <Input type="text" name="LinkURL" value={formData.LinkURL} onChange={handleChange} placeholder="Link ou URL" />
                         </InputContainer>
                         <InputContainer>
-                            <label>Referencia:</label>
-                            <Input placeholder="Referência" />
+                            <label>Referência:</label>
+                            <Input type="text" name="Referencia" value={formData.Referencia} onChange={handleChange} placeholder="Referência" />
                         </InputContainer>
                         <InputContainer>
                             <label>Imagem:</label>
-                            <Input type='file' />
+                            <Input name="Imagem" type="file" onChange={handleChange} />
                         </InputContainer>
                         <InputContainer>
                             <label>Texto:</label>
-                            <Input type='file' />
+                            <Input name="Texto" type="file" onChange={handleChange} />
                         </InputContainer>
+                        <CadastrarButton type="submit">
+                            <p>Cadastrar Notícia</p>
+                        </CadastrarButton>
                     </form>
-                    <CadastrarButton type="submit">
-                        <p>Cadastrar Notícia</p>
-                    </CadastrarButton>
                 </Frame_2>
             </Modal>
         </Overlay>
     );
-};
+}
+
 export default ModalDeAdicionarlNoticias;

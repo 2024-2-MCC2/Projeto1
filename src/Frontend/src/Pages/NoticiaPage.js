@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
 import styled from "styled-components";
 import NoticiaDIV from "../Components/Noticia";
-import axios from 'axios';
+import { getAllNoticias} from '../Service/NoticiasAPI';
 
 import Noticia_1 from "../Assets/Fotos_Noticias/Noticia_1.jpg"
 import Noticia_2 from "../Assets/Fotos_Noticias/Noticia_2.jpg"
@@ -36,8 +36,15 @@ width: 100%;
 
 function NoticiaPage() {
 
-  const { id } = useParams(); // Pegando o ID da temporada da URL
-  const navigate = useNavigate();
+  const [noticias, setNoticias] = useState([]);
+
+    useEffect(() => {
+        const fetchNoticias = async () => {
+            const data = await getAllNoticias();
+            setNoticias(data);
+        };
+        fetchNoticias();
+    }, []);
 
   useEffect(() => {
     window.scrollTo(
@@ -48,7 +55,7 @@ function NoticiaPage() {
         });
 }, []);
 
-
+/*ARRAY
   const Noticias = {
     1: {
       Titulo: "Navio do Greenpeace resgata baleia presa em equipamentos de pesca",
@@ -172,20 +179,12 @@ function NoticiaPage() {
     }
   };
   const Noticia = Noticias[id]
-
+*/
 
   return (
     <Container>
       <NoticiaDIV
-        Titulo={Noticia.Titulo}
-        Entidade={Noticia.Entidade}
-        Autor={Noticia.Autor}
-        Data={Noticia.Data}
-        TempoDeLeitura={Noticia.TempoDeLeitura}
-        Chamada={Noticia.Chamada}
-        Imagem = {Noticia.Imagem}
-        Referencia={Noticia.Referencia}
-        Texto = {Noticia.Texto}
+      noticias = {noticias}
       />
     </Container>
   )

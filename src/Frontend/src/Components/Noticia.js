@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+
 const NoticiaContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -84,8 +85,12 @@ const Frame3 = styled.div`
     padding-right: 10px;
   }
 `;
-function Noticia({ Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, Imagem, Referencia, Texto }) {
-  const [textoParaCopiar, setTextoParaCopiar] = useState(Referencia);
+function Noticia({ noticias }) {
+  const { id } = useParams(); // Captura o ID da URL
+  const noticia = noticias.find((noticia) => noticia.id === parseInt(id)); // Busca a notícia pelo ID
+
+  const [textoParaCopiar, setTextoParaCopiar] = useState(noticia?.Referencia || '');
+  const [conteudo, setConteudo] = useState('');
 
   const copiarTexto = () => {
     navigator.clipboard.writeText(textoParaCopiar)
@@ -97,47 +102,57 @@ function Noticia({ Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, Image
       });
   };
 
-  const [conteudo, setConteudo] = useState('');
-
   useEffect(() => {
-    // Fetch the content of the imported text file
-    fetch(Texto)
-      .then(response => response.text())
-      .then(text => {
-        setConteudo(text);
-      })
-      .catch(err => console.error('Erro ao carregar o arquivo:', err));
-  }, []);
+    if (noticia?.Texto) {
+      // Busca o conteúdo do arquivo de texto associado à notícia
+      fetch(`http://localhost:3000/${noticia.Texto}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Erro ao carregar o arquivo');
+          }
+          return response.text();
+        })
+        .then(text => {
+          setConteudo(text);
+        })
+        .catch(err => console.error('Erro ao carregar o arquivo:', err));
+    }
+  }, [noticia]);
 
+  if (!noticia) {
+    return <p>Notícia não encontrada!</p>;
+  }
 
   return (
     <NoticiaContainer>
       <Frame1>
-        <h1 href="titulo">{Titulo || "Titulo da Notícia"}</h1>
+        <h1>{noticia.Titulo || "Título da Notícia"}</h1>
         <Frame1_1>
-          <p>{Entidade || "Entidade"}</p>
+          <p>{noticia.Entidade || "Entidade"}</p>
           <p>•</p>
-          <p>{Autor || "Autor"}</p>
+          <p>{noticia.Autor || "Autor"}</p>
           <p>•</p>
-          <p>{Data}</p>
+          <p>{noticia.Data}</p>
           <p>•</p>
-          <p>{TempoDeLeitura || "x"} min</p>
+          <p>{noticia.TempoDeLeitura || "x"} min</p>
         </Frame1_1>
-        <p>{Chamada || "BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA"}</p>
+        <p>{noticia.Chamada || "Chamada da notícia não disponível."}</p>
       </Frame1>
       <Frame2>
-        <img src={Imagem} />
-        <pre>{conteudo}</pre>
+        <img
+          src={`http://localhost:3000/${noticia.Imagem}`}
+          alt={noticia.Titulo}
+        />
+        <pre>{conteudo || "Texto da notícia não disponível."}</pre>
       </Frame2>
       <Frame3>
-        <p>{Referencia || "Referencia Bibliografica ABNT"}</p>
+        <p>{noticia.Referencia || "Referência Bibliográfica ABNT"}</p>
         <button onClick={copiarTexto}>
-          <span class="material-symbols-outlined">content_copy</span>
+          <span className="material-symbols-outlined">content_copy</span>
         </button>
       </Frame3>
     </NoticiaContainer>
   );
-
 }
 
 export default Noticia;

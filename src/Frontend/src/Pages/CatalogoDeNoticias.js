@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react'
 import styled from "styled-components";
 import NoticiasList from "../Components/NoticiasList";
+import { getAllNoticias} from '../Service/NoticiasAPI';
 
 import Noticia_1 from "../Assets/Fotos_Noticias/Noticia_1.jpg"
 import Noticia_2 from "../Assets/Fotos_Noticias/Noticia_2.jpg"
@@ -36,6 +37,16 @@ width: 100%;
 
 function CatalogoDeNoticias() {
 
+    const [noticias, setNoticias] = useState([]);
+
+    useEffect(() => {
+        const fetchNoticias = async () => {
+            const data = await getAllNoticias();
+            setNoticias(data);
+        };
+        fetchNoticias();
+    }, []);
+
     useEffect(() => {
         // Rola para o topo da página quando o componente é montado
         window.scrollTo(
@@ -46,6 +57,7 @@ function CatalogoDeNoticias() {
             });
     }, []);
 
+    /*ARRAY
     const Noticias = [
         {
             id: 1,
@@ -178,13 +190,11 @@ function CatalogoDeNoticias() {
             Texto: TextoNoticia_10
         }
     ];
+*/
 
-
-
-
-    return (
+return (
         <Container>
-            <NoticiasList NoticiasData={Noticias} />
+            <NoticiasList NoticiasData={noticias} />
         </Container>
     )
 }

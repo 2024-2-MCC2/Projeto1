@@ -2,8 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const noticiasRoutes = require('./routes/noticias');
-//const noticiasRoutes = require("./routes/NoticiasRoutes");
+const noticiasRoutes = require('./routes/NoticiasRoutes');
 
 const app = express();
 const port = process.env.PORT || 5000;

@@ -78,26 +78,25 @@ p{
 }
 `
 
-function NoticiasTopic( {Imagem, Titulo, Chamada, Fonte, Data, TempoDeLeitura, onClick}){
-    
+function NoticiasTopic( {noticia, onClick}){
     
     return(
         <ContainerNoticiasTopic onClick ={onClick}>
             <Frame1>
-                <img src={Imagem || "https://placehold.co/250x200/000000/FFF"}/>
+                <img src={`http://localhost:3000/${noticia.Imagem}`}/>
             </Frame1>
             <Frame2>
                 <Frame2_1>
                     <p className="tipo">blog • #hashtag #hashtag #hashtag</p>
                 </Frame2_1>
                 <Frame2_2>
-                    <h2 className="Titulo">{Titulo || "Titulo da Notícia"}</h2>
+                    <h2 className="Titulo">{noticia.Titulo || "Titulo da Notícia"}</h2>
                 </Frame2_2>
                 <Frame2_3>
-                    <p>{Chamada ||"blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla..."}</p>
+                    <p>{noticia.Chamada ||"blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla..."}</p>
                 </Frame2_3>
                 <Frame2_4>
-                    <p>{Fonte || "fonte"} • {Data || "01 de janeiro de 2024"} • {TempoDeLeitura || "x"} min</p>
+                    <p>{noticia.Fonte || "fonte"} • {noticia.Data || "01 de janeiro de 2024"} • {noticia.TempoDeLeitura || "x"} min</p>
                 </Frame2_4>
             </Frame2>
         </ContainerNoticiasTopic>

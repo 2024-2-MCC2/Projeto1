@@ -9,14 +9,11 @@ import AnimaisPage from "./Pages/AnimaisPage";
 import LoginPage from "./Pages/LoginPage";
 import CadastroPage from "./Pages/CadastroPage";
 import SobreNosPage from "./Pages/SobreNosPage";
-import NoticiaPagedb from "./Pages/NoticiaPagedb";
 import NoticiaPage from "./Pages/NoticiaPage";
 import CatalogoDeNoticias from "./Pages/CatalogoDeNoticias";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import ONGsPage from "./Pages/ONGsPage";
-import TestePage from "./Pages/TestePage";
-import TesteListPage from "./Pages/TesteListPage";
 import DescricaoONGs from "./Pages/DescricaoONG";
 import ADMPage from "./Pages/ADMPage";
 
@@ -34,14 +31,11 @@ function App() {
           <Route path="/Login" element={<LoginPage />} />
           <Route path="/SobreNos" element={<SobreNosPage />} />
           <Route path="/Noticia/:id" element={<NoticiaPage />} />
-          <Route path="/Noticiadb/:id" element={<NoticiaPagedb />} />
           <Route path="/Animais" element={<AnimaisPage />} />
           <Route path="/CatalogoDeNoticias" element={<CatalogoDeNoticias />} />
           <Route path="/ONGsParceiras" element={<ONGsPage/>} />
           <Route path="/AreaDoAdministrador" element={<ADMPage/>} />
-          <Route path="ONGs/:id" element={<DescricaoONGs/>}/>       
-          <Route path="/TesteList" element={<TesteListPage/>} /> 
-          <Route path="/Teste/:id" element={<TestePage/>} />   
+          <Route path="ONGs/:id" element={<DescricaoONGs/>}/>         
         </Routes>
       </main>
       <Footer />

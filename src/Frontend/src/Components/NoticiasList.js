@@ -35,12 +35,7 @@ function NoticiasList({NoticiasData}) {
                 {NoticiasData.map((Noticia) => (
                     <NoticiasTopic 
                         onClick={() => navigate(`/Noticia/${Noticia.id}`)}
-                        Imagem={Noticia.Imagem}
-                        Titulo={Noticia.Titulo}
-                        Chamada={Noticia.Chamada}
-                        Fonte={Noticia.Entidade}
-                        Data={Noticia.Data}
-                        TempoDeLeitura={Noticia.tempoDeLeitura}
+                        noticia = {Noticia}
                     />
                 ))}
             </ListaDeNoticias>

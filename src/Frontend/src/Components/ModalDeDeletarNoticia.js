@@ -85,7 +85,12 @@ gap: 20px;
 
 
 
-function ModalDeDeletarlNoticias({ currentNoticia, isOpen, onClose }) {
+function ModalDeDeletarlNoticias({ currentNoticia, isOpen, onClose, onDelete }) {
+
+    const handleDelete = () => {
+        onDelete(currentNoticia.id); // Chama a função de exclusão passada via props
+    };
+
     return (
         <Overlay isOpen={isOpen}>
             <Modal>
@@ -95,7 +100,7 @@ function ModalDeDeletarlNoticias({ currentNoticia, isOpen, onClose }) {
                     <p>Deseja continuar?</p>
                 </Frame_1>
                 <Frame_2>
-                    <ButtonSim key={currentNoticia?.id}>
+                    <ButtonSim onClick={() => handleDelete(currentNoticia.id)}>
                         <p>sim</p>
                     </ButtonSim>
                     <ButtonNao onClick={onClose}>

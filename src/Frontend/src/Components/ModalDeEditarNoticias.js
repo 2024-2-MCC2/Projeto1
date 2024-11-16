@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 const Overlay = styled.div`
 position: fixed;
@@ -137,7 +138,47 @@ span{
 `
 
 
-function ModaDeEditarlNoticias({ currentNoticia, onClose }) {
+function ModaDeEditarlNoticias({ currentNoticia, onClose, onUpdate }) {
+
+    const [formData, setFormData] = useState({
+        Titulo: currentNoticia?.Titulo || '',
+        Entidade: currentNoticia?.Entidade || '',
+        Autor: currentNoticia?.Autor || '',
+        Data: currentNoticia?.Data || '',
+        TempoDeLeitura: currentNoticia?.TempoDeLeitura || '',
+        Chamada: currentNoticia?.Chamada || '',
+        LinkURL: currentNoticia?.LinkURL || '',
+        Referencia: currentNoticia?.Referencia || '',
+        Imagem: null, // Para arquivos
+        Texto: null // Para arquivos
+    });
+
+
+    const handleChange = (e) => {
+        const { name, value, files } = e.target;
+
+        if (files) {
+            // Atualiza arquivos (Imagem ou Texto)
+            setFormData({ ...formData, [name]: files[0] });
+        } else {
+            // Atualiza campos de texto
+            setFormData({ ...formData, [name]: value });
+        }
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Converte os dados para FormData se houver arquivos
+        const data = new FormData();
+        Object.entries(formData).forEach(([key, value]) => {
+            data.append(key, value);
+        });
+
+        // Chama a função passada por props
+        onUpdate(currentNoticia.id, data);
+    };
+
     return (
         <Overlay isOpen={!!currentNoticia}>
             <Modal>
@@ -153,51 +194,51 @@ function ModaDeEditarlNoticias({ currentNoticia, onClose }) {
                         <h2 className='Conteudo'>{currentNoticia.id}</h2>
                     </Frame_2_1>
                     <Frame_2_2>
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <InputContainer>
                                 <label>Título:</label>
-                                <Input defaultValue={currentNoticia?.Titulo} />
+                                <Input defaultValue={currentNoticia?.Titulo} name="Titulo" value={formData.Titulo} onChange={handleChange} />
                             </InputContainer>
                             <InputContainer>
                                 <label>Entidade:</label>
-                                <Input defaultValue={currentNoticia?.Entidade} />
+                                <Input defaultValue={currentNoticia?.Entidade} name="Entidade" value={formData.Entidade} onChange={handleChange} />
                             </InputContainer>
                             <InputContainer>
                                 <label>Autor:</label>
-                                <Input defaultValue={currentNoticia?.Autor} />
+                                <Input defaultValue={currentNoticia?.Autor} name="Autor" value={formData.Autor} onChange={handleChange} />
                             </InputContainer>
                             <InputContainer>
                                 <label>Data:</label>
-                                <Input defaultValue={currentNoticia?.Data} />
+                                <Input defaultValue={currentNoticia?.Data} name="Data" value={formData.Data} onChange={handleChange} />
                             </InputContainer>
                             <InputContainer>
                                 <label>Tempo de Leitura:</label>
-                                <Input defaultValue={currentNoticia?.TempoDeLeitura} />
+                                <Input defaultValue={currentNoticia?.TempoDeLeitura} name="TempoDeLeitura" value={formData.TempoDeLeitura} onChange={handleChange} />
                             </InputContainer>
                             <InputContainer>
                                 <label>Chamada:</label>
-                                <Input defaultValue={currentNoticia?.Chamada} />
+                                <Input defaultValue={currentNoticia?.Chamada} name="Chamada" value={formData.Chamada} onChange={handleChange} />
                             </InputContainer>
                             <InputContainer>
                                 <label>LinkL:</label>
-                                <Input defaultValue={currentNoticia?.LinkURL} />
+                                <Input defaultValue={currentNoticia?.LinkURL} name="LinkURL" value={formData.LinkURL} onChange={handleChange} />
                             </InputContainer>
                             <InputContainer>
                                 <label>Referência:</label>
-                                <Input defaultValue={currentNoticia?.Referencia} />
+                                <Input defaultValue={currentNoticia?.Referencia} name="Referencia" value={formData.Referencia} onChange={handleChange} />
                             </InputContainer>
                             <InputContainer>
                                 <label>Imagem</label>
-                                <Input type='file' />
+                                <Input name="Imagem" type="file" onChange={handleChange} />
                             </InputContainer>
                             <InputContainer>
                                 <label>Texto</label>
-                                <Input type='file' />
+                                <Input name="Texto" type="file" onChange={handleChange} />
                             </InputContainer>
+                            <AtualizarButton type="submit">
+                                <p>Atualizar Notícia</p>
+                            </AtualizarButton>
                         </form>
-                        <AtualizarButton type="submit">
-                            <p>Atualizar Notícia</p>
-                        </AtualizarButton>
                     </Frame_2_2>
                 </Frame_2>
             </Modal>
