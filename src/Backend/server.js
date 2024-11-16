@@ -1,24 +1,25 @@
-require("dotenv").config();
-const express = require("express");
-const cors = require("cors");
-const db = require("./db"); // Configuração do banco de dados
-const noticiasRoutes = require("./Routes/noticiasRoutes"); // Importa o arquivo de rotas
-
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const path = require('path');
+const noticiasRoutes = require('./routes/noticias');
+//const noticiasRoutes = require("./routes/NoticiasRoutes");
 
 const app = express();
-const PORT = 5000;
+const port = process.env.PORT || 5000;
 
+app.get('/', (req, res) => {
+    res.send('Servidor funcionando!');
+});
+
+// Middlewares
 app.use(cors());
 app.use(express.json());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Servir arquivos estáticos
 
-// Usar as rotas de notícias
-app.use("/Noticias", noticiasRoutes);
-app.get("/", (req, res) => {
-    res.send("Servidor funcionando!");
+// Rotas
+app.use('/api/noticias', noticiasRoutes);
+
+app.listen(port, () => {
+    console.log(`Servidor rodando na porta ${port}`);
 });
-
-app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
-});
-
-

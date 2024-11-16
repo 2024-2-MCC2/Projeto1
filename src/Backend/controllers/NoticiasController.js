@@ -1,26 +1,45 @@
-const express = require("express");
-const router = express.Router();
-const db = require("../db"); // Caminho para o arquivo de configuração do banco de dados
+const db = require('../db');
 
-// Rota para buscar todas as notícias
-router.get("/Noticias", (req, res) => {
-    db.query("SELECT * FROM Noticias", (err, results) => {
-        if (err) {
-            return res.status(500).send(err);
-        }
-        res.json(results);
-    });
-});
+exports.getAllNoticias = async (req, res) => {
+    try {
+        const [noticias] = await db.query('SELECT * FROM Noticias');
+        res.status(200).json(noticias);
+    } catch (error) {
+        console.error('Erro ao buscar notícias:', error);
+        res.status(500).send('Erro no servidor');
+    }
+};
 
-// Rota para buscar uma notícia específica
-router.get("/Noticias/:id", (req, res) => {
+exports.getNoticiaById = async (req, res) => {
     const { id } = req.params;
-    db.query("SELECT * FROM Noticias WHERE id = ?", [id], (err, result) => {
-        if (err) {
-            return res.status(500).send(err);
+    try {
+        const [noticia] = await db.query('SELECT * FROM Noticias WHERE id = ?', [id]);
+        if (noticia.length > 0) {
+            res.status(200).json(noticia[0]);
+        } else {
+            res.status(404).send('Notícia não encontrada');
         }
-        res.json(result[0]);
-    });
-});
+    } catch (error) {
+        console.error('Erro ao buscar notícia:', error);
+        res.status(500).send('Erro no servidor');
+    }
+};
 
-module.exports = router;
+exports.createNoticia = async (req, res) => {
+    const { Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL } = req.body;
+
+    // Arquivo de imagem e texto
+    const Imagem = req.file && req.file.mimetype.startsWith('image/') ? req.file.filename : null;
+    const Texto = req.file && req.file.mimetype === 'text/plain' ? req.file.filename : null;
+
+    try {
+        const [result] = await db.query(
+            'INSERT INTO Noticias (Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Imagem, Texto) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            [Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Imagem, Texto]
+        );
+        res.status(201).send(`Notícia criada com ID: ${result.insertId}`);
+    } catch (error) {
+        console.error('Erro ao criar notícia:', error);
+        res.status(500).send('Erro no servidor');
+    }
+};

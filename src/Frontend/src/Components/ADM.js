@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import styled from "styled-components";
 import { useState } from "react";
-import ModalDeEdicao from "./ModalDeEditarNoticias"
-import ModalDeAdicao from './ModalDeAdicionarNoticia';
+import ModalDeEditar from "./ModalDeEditarNoticias"
+import ModalDeAdicionar from './ModalDeAdicionarNoticia';
+import ModalDeDeletar from './ModalDeDeletarNoticia';
 
 
 const MulterContainer = styled.div`
@@ -172,7 +173,6 @@ p{
 
 function ADM({ NoticiasData }) {
 
-    const [isActive, setIsActive] = useState(false);
     const [openDiv, setOpenDiv] = useState(null);
     const [modalState, setModalState] = useState(null); // null, "edit", ou "add"
     const [currentNoticia, setCurrentNoticia] = useState(null);
@@ -252,7 +252,7 @@ function ADM({ NoticiasData }) {
                             </Text>
                         </Frame2>
                         <Frame3>
-                            <ActionButton>
+                            <ActionButton onClick={() => openModal("delete", Noticia)}>
                                 <span class="material-symbols-outlined">delete</span>
                             </ActionButton>
                             <ActionButton key={Noticia.id} onClick={() => openModal("edit", Noticia)}>
@@ -264,7 +264,7 @@ function ADM({ NoticiasData }) {
             </FrameRetratil>
             {/* Modal de Edição */}
             {modalState === "edit" && (
-                <ModalDeEdicao
+                <ModalDeEditar
                     currentNoticia={currentNoticia}
                     onClose={closeModal}
                 />
@@ -272,9 +272,17 @@ function ADM({ NoticiasData }) {
 
             {/* Modal de Adição */}
             {modalState === "add" && (
-                <ModalDeAdicao
+                <ModalDeAdicionar
                     isOpen={modalState === "add"}
                     onClose={closeModal} />
+            )}
+            {/* Modal de Deletar */}
+            {modalState === "delete" && (
+                <ModalDeDeletar
+                currentNoticia={currentNoticia}
+                isOpen={modalState === "delete"}
+                onClose={closeModal}
+                />
             )}
 
         </MulterContainer>

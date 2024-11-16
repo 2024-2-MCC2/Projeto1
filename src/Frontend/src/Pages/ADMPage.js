@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
 import ADM from "../Components/ADM";
 import styled from "styled-components";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import api from '../Service/api';
 
 import Noticia_1 from "../Assets/Fotos_Noticias/Noticia_1.jpg"
 import Noticia_2 from "../Assets/Fotos_Noticias/Noticia_2.jpg"
@@ -34,6 +36,31 @@ width: 100%;
 
 function ADMPage(){
 
+    const [noticias, setNoticias] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchNoticias = async () => {
+            try {
+                const response = await axios.get('http://localhost:5000/api/noticias'); // Altere para o URL do seu backend
+                setNoticias(response.data);
+            } catch (error) {
+                console.error('Erro ao buscar notícias:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchNoticias();
+    }, []);
+
+    useEffect(() => {
+        // Rola para o topo da página quando o componente é montado
+        window.scrollTo(0, 0);
+    }, []);
+
+    if (loading) return <p>Carregando...</p>;
+/*
     const Noticias = [
         {
             id: 1,
@@ -166,15 +193,10 @@ function ADMPage(){
             Texto: TextoNoticia_10
         }
     ];
-
-    useEffect(() => {
-        // Rola para o topo da página quando o componente é montado
-        window.scrollTo(0, 0);
-      }, []);
-
+*/
     return(
         <Container>
-            <ADM NoticiasData={Noticias}/>
+            <ADM NoticiasData={noticias}/>
         </Container>
     )
 }
