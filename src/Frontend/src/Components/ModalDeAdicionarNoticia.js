@@ -206,7 +206,7 @@ function ModalDeAdicionarlNoticias({ isOpen, onClose, onCreate }) {
                         </InputContainer>
                         <InputContainer>
                             <label>Referência:</label>
-                            <Input type="text" name="Referencia" value={formData.Referencia} onChange={handleChange} placeholder="Referência" />
+                            <Input type="text" name="Referencia" value={formData.Referencia} onChange={handleChange} placeholder="Referência Bibliografica segundo a norma ABNT" />
                         </InputContainer>
                         <InputContainer>
                             <label>Imagem:</label>
