@@ -14,6 +14,7 @@ z-index: 1000;
 `
 const Modal = styled.div`
 display: flex;
+flex-direction: column;
 background: white;
 padding: 20px;
 max-width: 1920px;
@@ -26,13 +27,34 @@ gap: 25px;
   width: 10px;
 }
 `
-const Frame_3_1 = styled.div`
+const Frame_1 = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+padding: 10px;
+border-bottom: 1px solid #0460C9;
+`
+const Frame_2 = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 20px;
+`
+const Frame_2_1 = styled.div`
 display: flex;
 justify-content: flex-end;
 align-items: flex-start;
 gap: 10px;
 `
-const Text = styled.div`
+const Frame_2_2 = styled.div`
+display: inline-block;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width:100%;
+height: 100%;
+`
+const InputContainer = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
@@ -51,15 +73,13 @@ label{
     font-size: 15px;
     color: #0460C9;
 }
+&:focus-within {
+    border-color: #05C7F2;
+    label{
+        color: #05C7F2;
+    }
+  }
 `;
-const Frame_3_2 = styled.div`
-display: inline-block;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-width:100%;
-height: 100%;
-`
 const Input = styled.input`
 display: inline-block;
 width: 100%;
@@ -73,14 +93,25 @@ overflow-wrap: break-word; /* Comportamento semelhante, padrão moderno */
     outline: none;
 }
 `
-const Frame_3_3 = styled.div`
+const AtualizarButton = styled.button`
 display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: flex-end;
-width: 5%;
-min-height: 100%;
-
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 100%;
+border: none;
+border-radius: 5px;
+background-color: #154F91;
+padding: 10px;
+margin: 10px 0;
+&:hover{
+    background-color: #2575CF;
+}
+p{
+    color: #fff;
+    font-weight: bold;
+    padding: 0 5px;
+}
 `
 const CloseButton = styled.button`
 display: flex;
@@ -104,84 +135,71 @@ span{
     }
 }
 `
-const AtualizarButton = styled.button`
-display: flex;
-justify-content: center;
-align-items: center;
-width: 100%;
-height: 100%;
-border: none;
-border-radius: 5px;
-background-color: #154F91;
-padding: 10px;
-margin: 10px 0;
-&:hover{
-    background-color: #2575CF;
-}
-p{
-    color: #fff;
-    font-weight: bold;
-    padding: 0 5px;
-}
-`
+
 
 function ModaDeEditarlNoticias({ currentNoticia, onClose }) {
     return (
         <Overlay isOpen={!!currentNoticia}>
             <Modal>
-                <Frame_3_1>
-                    <h2 className='Topico'>id: </h2>
-                    <h2 className='Conteudo'>{currentNoticia.id}</h2>
-                </Frame_3_1>
-                <Frame_3_2>
-                    <form>
-                        <Text>
-                            <label>Título:</label>
-                            <Input defaultValue={currentNoticia?.Titulo} />
-                        </Text>
-                        <Text>
-                            <label>Entidade:</label>
-                            <Input defaultValue={currentNoticia?.Entidade} />
-                        </Text>
-                        <Text>
-                            <label>Autor:</label>
-                            <Input defaultValue={currentNoticia?.Autor} />
-                        </Text>
-                        <Text>
-                            <label>Data:</label>
-                            <Input defaultValue={currentNoticia?.Data} />
-                        </Text>
-                        <Text>
-                            <label>Tempo de Leitura:</label>
-                            <Input defaultValue={currentNoticia?.TempoDeLeitura} />
-                        </Text>
-                        <Text>
-                            <label>Chamada:</label>
-                            <Input defaultValue={currentNoticia?.Chamada} />
-                        </Text>
-                        <Text>
-                            <label>LinkL:</label>
-                            <Input defaultValue={currentNoticia?.LinkURL} />
-                        </Text>
-                        <Text>
-                            <label>Referência:</label>
-                            <Input defaultValue={currentNoticia?.Referencia} />
-                        </Text>
-                        <label>Imagem</label>
-                        <Input type='file' />
-                        <label>Texto</label>
-                        <Input type='file' />
-                    </form>
-                    <AtualizarButton type="submit">
-                        <p>Atualizar Notícia</p>
-                    </AtualizarButton>
-                </Frame_3_2>
-                <Frame_3_3>
+                <Frame_1>
+                    <h2>Atualizar Notícia</h2>
                     <CloseButton onClick={onClose}>
                         <span class="material-symbols-outlined">close</span>
                     </CloseButton>
-
-                </Frame_3_3>
+                </Frame_1>
+                <Frame_2>
+                    <Frame_2_1>
+                        <h2 className='Topico'>id: </h2>
+                        <h2 className='Conteudo'>{currentNoticia.id}</h2>
+                    </Frame_2_1>
+                    <Frame_2_2>
+                        <form>
+                            <InputContainer>
+                                <label>Título:</label>
+                                <Input defaultValue={currentNoticia?.Titulo} />
+                            </InputContainer>
+                            <InputContainer>
+                                <label>Entidade:</label>
+                                <Input defaultValue={currentNoticia?.Entidade} />
+                            </InputContainer>
+                            <InputContainer>
+                                <label>Autor:</label>
+                                <Input defaultValue={currentNoticia?.Autor} />
+                            </InputContainer>
+                            <InputContainer>
+                                <label>Data:</label>
+                                <Input defaultValue={currentNoticia?.Data} />
+                            </InputContainer>
+                            <InputContainer>
+                                <label>Tempo de Leitura:</label>
+                                <Input defaultValue={currentNoticia?.TempoDeLeitura} />
+                            </InputContainer>
+                            <InputContainer>
+                                <label>Chamada:</label>
+                                <Input defaultValue={currentNoticia?.Chamada} />
+                            </InputContainer>
+                            <InputContainer>
+                                <label>LinkL:</label>
+                                <Input defaultValue={currentNoticia?.LinkURL} />
+                            </InputContainer>
+                            <InputContainer>
+                                <label>Referência:</label>
+                                <Input defaultValue={currentNoticia?.Referencia} />
+                            </InputContainer>
+                            <InputContainer>
+                                <label>Imagem</label>
+                                <Input type='file' />
+                            </InputContainer>
+                            <InputContainer>
+                                <label>Texto</label>
+                                <Input type='file' />
+                            </InputContainer>
+                        </form>
+                        <AtualizarButton type="submit">
+                            <p>Atualizar Notícia</p>
+                        </AtualizarButton>
+                    </Frame_2_2>
+                </Frame_2>
             </Modal>
         </Overlay>
     );
