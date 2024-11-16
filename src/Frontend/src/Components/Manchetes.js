@@ -65,7 +65,7 @@ function Manchete({Noticias}){
         {Noticias.map((Noticia, index) => (
         <MancheteContainer key={index} onClick={() => navigate(`/Noticia/${Noticia.id}`)}>
             <Frame1>
-                <img className="capa" src = {Noticia.Imagem}></img>
+                <img className="capa" src={`http://localhost:3000/${Noticia.Imagem}`}></img>
             </Frame1>
             <Frame2 className="frame2">
                 <Frame2_1>

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Manchete from "./Manchetes";
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import { getAllNoticias} from '../Service/NoticiasAPI';
 
 import Noticia_1 from "../Assets/Fotos_Noticias/Noticia_1.jpg"
 import Noticia_2 from "../Assets/Fotos_Noticias/Noticia_2.jpg"
@@ -73,6 +74,48 @@ width: 1280px;
 
 function QuadroDeManchetes() {
 
+    const [Noticias, setNoticias] = useState([]);
+    const [highlightedNoticias, setHighlightedNoticias] = useState([]);
+
+    useEffect(() => {
+        const fetchNoticias = async () => {
+            const data = await getAllNoticias();
+            setNoticias(data);
+        };
+        fetchNoticias();
+    }, []);
+
+    useEffect(() => {
+        if (Noticias.length >= 4) {
+            const randomIndex = Math.floor(Math.random() * (Noticias.length - 3));
+            setHighlightedNoticias(Noticias.slice(randomIndex, randomIndex + 4));
+        } else {
+            setHighlightedNoticias(Noticias);
+        }
+    }, [Noticias]);
+
+    return (
+        <QuadroDeManchetesContainer>
+            <Frame1>
+                <Frame1_1>
+                    <h1>Fique por dentro</h1>
+                </Frame1_1>
+                <Frame1_2>
+                    <Link to="/CatalogoDeNoticias" className="link-style-button">
+                        <p>Veja todas as notícias</p>
+                    </Link>
+                </Frame1_2>
+            </Frame1>
+            <Frame2>
+                <Manchete Noticias={highlightedNoticias} />
+            </Frame2>
+        </QuadroDeManchetesContainer>
+    );
+}
+
+export default QuadroDeManchetes;
+
+/*
     const Noticias = [
         {
             id: 1,
@@ -205,33 +248,4 @@ function QuadroDeManchetes() {
             Texto: TextoNoticia_10
         }
     ];
-
-    const [highlightedNoticias, setHighlightedNoticias] = useState([]);
-
-    useEffect(() => {
-        if (Noticias.length > 0) {
-            const randomIndex = Math.floor(Math.random() * (Noticias.length - 3));
-            setHighlightedNoticias(Noticias.slice(randomIndex, randomIndex + 4));
-        }
-    }, [0]);
-
-    return (
-        <QuadroDeManchetesContainer>
-            <Frame1>
-                <Frame1_1>
-                    <h1>Fique por dentro</h1>
-                </Frame1_1>
-                <Frame1_2>
-                    <Link to="/CatalogoDeNoticias" className="link-style-button">
-                        <p>veja todas as noticias</p>
-                    </Link>
-                </Frame1_2>
-            </Frame1>
-            <Frame2>
-                <Manchete
-                    Noticias={highlightedNoticias} />
-            </Frame2>
-        </QuadroDeManchetesContainer>
-    )
-}
-export default QuadroDeManchetes;
+*/
