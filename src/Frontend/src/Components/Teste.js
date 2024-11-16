@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import styled from "styled-components";
-import api from "../Service/api"
+import api from "../Service/api";
 
 const NoticiaContainer = styled.div`
   display: flex;
@@ -11,6 +11,7 @@ const NoticiaContainer = styled.div`
   gap: 25px;
   padding: 20px 50px;
 `;
+
 const Frame1 = styled.div`
   display: flex;
   flex-direction: column;
@@ -28,6 +29,7 @@ const Frame1 = styled.div`
     font-weight: bold;
   }
 `;
+
 const Frame1_1 = styled.div`
   display: flex;
   align-items: center;
@@ -38,6 +40,7 @@ const Frame1_1 = styled.div`
     font-weight: bold;
   }
 `;
+
 const Frame2 = styled.div`
   display: flex;
   flex-direction: column;
@@ -53,12 +56,13 @@ const Frame2 = styled.div`
     word-wrap: break-word;
     text-indent: 2em;
   }
-  img{
+  img {
     width: 100%;
     border: 10px solid #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   }
 `;
+
 const Frame3 = styled.div`
   display: flex;
   justify-content: space-between;
@@ -75,14 +79,13 @@ const Frame3 = styled.div`
     background-color: #84BEFF;
     border: none;
   }
-  p{
+  p {
     border-right: 1px solid #000000;
     padding-right: 10px;
   }
-  `;
+`;
 
 function Teste() {
-
   const { id } = useParams();
   const [Noticia, setNoticia] = useState(null);
   const [Conteudo, setConteudo] = useState(null);
@@ -91,50 +94,43 @@ function Teste() {
   // Buscar os detalhes da notícia
   useEffect(() => {
     api.get(`/Noticias/${id}`)
-      .then((response) => setNoticia(response.data))
+      .then((response) => {
+        console.log("Detalhes da Notícia:", response.data); // Log de depuração
+        setNoticia(response.data);
+      })
       .catch((error) => {
-        console.error(error);
+        console.error("Erro ao carregar os detalhes da notícia:", error);
         setErro("Erro ao carregar os detalhes da notícia.");
       });
   }, [id]);
 
-  useEffect(() => {
-    // Consome a rota do backend para obter o conteúdo do arquivo
-    api.get(`/Noticias/${id}/conteudo`)
-      .then((response) => setConteudo(response.data.content))
-      .catch((error) => {
-        console.error("Erro ao carregar o conteúdo:", error);
-        setErro("Erro ao carregar o conteúdo da notícia.");
-      });
-  }, [id]);
 
   if (Erro) return <p>{Erro}</p>;
-  if (!Noticia || !Conteudo) return <p>Carregando...</p>;
+  if (!Noticia) return <p>Carregando...</p>;
 
   return (
     <NoticiaContainer>
       <Frame1>
-        <h1 href="titulo">{Noticia.Titulo || "Titulo da Notícia"}</h1>
+        <h1>{Noticia.Titulo || "Título da Notícia"}</h1>
         <Frame1_1>
           <p>{Noticia.Entidade || "Entidade"}</p>
           <p>{Noticia.Autor || "Autor"}</p>
           <p>{Noticia.Data}</p>
           <p>{Noticia.TempoDeLeitura || "x"} min</p>
         </Frame1_1>
-        <p>{Noticia.Chamada || "BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA"}</p>
+        <p>{Noticia.Chamada || "Texto de chamada para a notícia"}</p>
       </Frame1>
       <Frame2>
-        <pre>{Conteudo}</pre>
+        <pre>{Noticia.Texto}</pre> {/* Renderiza o conteúdo do arquivo como texto */}
       </Frame2>
       <Frame3>
-        <p>{Noticia.Referencia || "Referencia Bibliografica ABNT"}</p>
+        <p>{Noticia.Referencia || "Referência Bibliográfica ABNT"}</p>
         <button>
-          <span class="material-symbols-outlined">content_copy</span>
+          <span className="material-symbols-outlined">content_copy</span>
         </button>
       </Frame3>
     </NoticiaContainer>
   );
-};
+}
 
 export default Teste;
-

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import MulterNoticias from "../Components/MulterNoticias";
+import ADM from "../Components/ADM";
 import styled from "styled-components";
 
 import Noticia_1 from "../Assets/Fotos_Noticias/Noticia_1.jpg"
@@ -32,7 +32,7 @@ margin-top: 75px;
 width: 100%;
 `;
 
-function MulterNoticiasPage(){
+function ADMPage(){
 
     const Noticias = [
         {
@@ -174,9 +174,9 @@ function MulterNoticiasPage(){
 
     return(
         <Container>
-            <MulterNoticias NoticiasData={Noticias}/>
+            <ADM NoticiasData={Noticias}/>
         </Container>
     )
 }
 
-export default MulterNoticiasPage;
+export default ADMPage;

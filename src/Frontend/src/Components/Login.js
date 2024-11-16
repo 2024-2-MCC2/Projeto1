@@ -108,7 +108,7 @@ function Login() {
                     </ShowButton>
                 </InputContainer>
             </FormsContainer>
-            <Link to="/Multer" className="no-link-style">
+            <Link to="/AreaDoAdministrador" className="no-link-style">
                 <Button type="submit">Entrar</Button>
             </Link>
             <Link to="/Cadastro" className="no-link-style">
