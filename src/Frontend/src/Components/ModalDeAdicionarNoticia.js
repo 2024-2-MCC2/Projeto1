@@ -190,7 +190,7 @@ function ModalDeAdicionarlNoticias({ isOpen, onClose, onCreate }) {
                         </InputContainer>
                         <InputContainer>
                             <label>Data:</label>
-                            <Input type="text" name="Data" value={formData.Data} onChange={handleChange} placeholder="Data" />
+                            <Input type="date" name="Data" value={formData.Data} onChange={handleChange} placeholder="Data" />
                         </InputContainer>
                         <InputContainer>
                             <label>Tempo de Leitura:</label>
