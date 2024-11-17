@@ -83,7 +83,7 @@ function NoticiasTopic( {noticia, onClick}){
     return(
         <ContainerNoticiasTopic onClick ={onClick}>
             <Frame1>
-                <img src={`http://localhost:3000/${noticia.Imagem}`}/>
+                <img src={`http://localhost:5000/uploads/ImagensNoticias/${noticia.Imagem}`}/>
             </Frame1>
             <Frame2>
                 <Frame2_1>

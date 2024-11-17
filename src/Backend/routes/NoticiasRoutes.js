@@ -1,27 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
-const path = require('path');
 const noticiasController = require("../controllers/NoticiasController");
-
-// Configuração de upload para imagens
-const imageStorage = multer.diskStorage({
-    destination: './uploads/ImagensNoticias',
-    filename: (req, file, cb) => {
-        cb(null, `${Date.now()}_${file.originalname}`);
-    }
-});
-
-// Configuração de upload para textos
-const textStorage = multer.diskStorage({
-    destination: './uploads/TextosNoticias',
-    filename: (req, file, cb) => {
-        cb(null, `${Date.now()}_${file.originalname}`);
-    }
-});
-
-const uploadImage = multer({ storage: imageStorage });
-const uploadText = multer({ storage: textStorage });
+const uploadImage = require('../config/multerConfig');
+const uploadText = require('../config/multerConfig');
 
 // Rotas
 router.get('/', noticiasController.getAllNoticias);

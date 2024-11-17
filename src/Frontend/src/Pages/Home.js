@@ -2,7 +2,6 @@ import styled from "styled-components";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carrossel from "../Components/Carrossel";
 import QuadroDeManchetes from "../Components/QuadroDeManchetes";
-import Enfrentamos from "../Components/Enfrentamos";
 import React, { useEffect } from 'react';
 import SobreNos from "../Components/SobreNos";
 

@@ -1,13 +1,22 @@
 const multer = require('multer')
 const path = require('path')
 
-const storage = multer.diskStorage({
-    destination: function(req, file, cb){
-        cb(null, '../Frontend/public/uplouds')
-    },
-    filename: function(req, file,cb){
-        cb(null, `${Date.now()}${path.extname(file.originalname)}`)
+// Configuração de upload para imagens
+const imageStorage = multer.diskStorage({
+    destination: './uploads/ImagensNoticias',
+    filename: (req, file, cb) => {
+        cb(null, `${Date.now()}_${file.originalname}`);
     }
-})
-const upload = multer({storage: storage})
-module.exports = upload
+});
+
+// Configuração de upload para textos
+const textStorage = multer.diskStorage({
+    destination: './uploads/TextosNoticias',
+    filename: (req, file, cb) => {
+        cb(null, `${Date.now()}_${file.originalname}`);
+    }
+});
+const uploadImage = multer({ storage: imageStorage });
+const uploadText = multer({ storage: textStorage });
+module.exports = uploadImage
+module.exports = uploadText

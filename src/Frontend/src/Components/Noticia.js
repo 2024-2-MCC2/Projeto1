@@ -105,7 +105,7 @@ function Noticia({ noticias }) {
   useEffect(() => {
     if (noticia?.Texto) {
       // Busca o conteúdo do arquivo de texto associado à notícia
-      fetch(`http://localhost:3000/${noticia.Texto}`)
+      fetch(`http://localhost:5000/uploads/TextosNoticias/${noticia.Texto}`)
         .then(response => {
           if (!response.ok) {
             throw new Error('Erro ao carregar o arquivo');
@@ -140,7 +140,7 @@ function Noticia({ noticias }) {
       </Frame1>
       <Frame2>
         <img
-          src={`http://localhost:3000/${noticia.Imagem}`}
+          src={`http://localhost:5000/uploads/ImagensNoticias/${noticia.Imagem}`}
           alt={noticia.Titulo}
         />
         <pre>{conteudo || "Texto da notícia não disponível."}</pre>
