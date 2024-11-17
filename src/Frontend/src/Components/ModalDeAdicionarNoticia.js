@@ -178,45 +178,92 @@ function ModalDeAdicionarlNoticias({ isOpen, onClose, onCreate }) {
                     <form onSubmit={handleSubmit}>
                         <InputContainer>
                             <label>Título:</label>
-                            <Input type="text" name="Titulo" value={formData.Titulo} onChange={handleChange} placeholder="Título" />
+                            <Input
+                                type="text"
+                                name="Titulo"
+                                value={formData.Titulo}
+                                onChange={handleChange}
+                                placeholder="Título" />
                         </InputContainer>
                         <InputContainer>
                             <label>Entidade:</label>
-                            <Input type="text" name="Entidade" value={formData.Entidade} onChange={handleChange} placeholder="Entidade" />
+                            <Input
+                                type="text"
+                                name="Entidade"
+                                value={formData.Entidade}
+                                onChange={handleChange}
+                                placeholder="Entidade" />
                         </InputContainer>
                         <InputContainer>
                             <label>Autor:</label>
-                            <Input type="text" name="Autor" value={formData.Autor} onChange={handleChange} placeholder="Autor" />
+                            <Input
+                                type="text"
+                                name="Autor"
+                                value={formData.Autor}
+                                onChange={handleChange}
+                                placeholder="Autor" />
                         </InputContainer>
                         <InputContainer>
                             <label>Data:</label>
-                            <Input type="date" name="Data" value={formData.Data} onChange={handleChange} placeholder="Data" />
+                            <Input
+                                type="date"
+                                name="Data"
+                                value={formData.Data}
+                                onChange={handleChange}
+                                placeholder="Data" />
                         </InputContainer>
                         <InputContainer>
                             <label>Tempo de Leitura:</label>
-                            <Input type="text" name="TempoDeLeitura" value={formData.TempoDeLeitura} onChange={handleChange} placeholder="Tempo de Leitura" />
+                            <Input
+                                type="number"
+                                name="TempoDeLeitura"
+                                value={formData.TempoDeLeitura}
+                                onChange={handleChange}
+                                placeholder="Tempo de Leitura" />
                         </InputContainer>
                         <InputContainer>
                             <label>Chamada:</label>
-                            <Input type="text" name="Chamada" value={formData.Chamada} onChange={handleChange} placeholder="Chamada" />
+                            <Input
+                                type="text"
+                                name="Chamada"
+                                value={formData.Chamada}
+                                onChange={handleChange}
+                                placeholder="Chamada" />
                         </InputContainer>
                         <InputContainer>
                             <label>Link:</label>
-                            <Input type="text" name="LinkURL" value={formData.LinkURL} onChange={handleChange} placeholder="Link ou URL" />
+                            <Input
+                                type="text"
+                                name="LinkURL"
+                                value={formData.LinkURL}
+                                onChange={handleChange}
+                                placeholder="Link ou URL" />
                         </InputContainer>
                         <InputContainer>
                             <label>Referência:</label>
-                            <Input type="text" name="Referencia" value={formData.Referencia} onChange={handleChange} placeholder="Referência Bibliografica segundo a norma ABNT" />
+                            <Input
+                                type="text"
+                                name="Referencia"
+                                value={formData.Referencia}
+                                onChange={handleChange}
+                                placeholder="Referência Bibliografica segundo a norma ABNT" />
                         </InputContainer>
                         <InputContainer>
                             <label>Imagem:</label>
-                            <Input name="Imagem" type="file" onChange={handleChange} />
+                            <Input
+                                name="Imagem"
+                                type="file"
+                                onChange={handleChange} />
                         </InputContainer>
                         <InputContainer>
                             <label>Texto:</label>
-                            <Input name="Texto" type="file" onChange={handleChange} />
+                            <Input
+                                name="Texto"
+                                type="file"
+                                onChange={handleChange} />
                         </InputContainer>
-                        <CadastrarButton type="submit">
+                        <CadastrarButton
+                            type="submit">
                             <p>Cadastrar Notícia</p>
                         </CadastrarButton>
                     </form>
