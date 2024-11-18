@@ -68,19 +68,48 @@ Não há instalação! Encontre o index.html na pasta executáveis e execute-o c
 
 ## 💻 Configuração para Desenvolvimento
 
-Para abrir este projeto você necessita das seguintes ferramentas: Visual Studio Code, Node.js.
+Para abrir este projeto você necessita das seguintes ferramentas:
 
 -<a href="https://code.visualstudio.com">VSCode</a>
 
 -<a href="https://nodejs.org/pt">Node.js</a>
+
+-<a href="https://www.mysql.com/products/workbench/">MySQL workbench</a>
+
+Como acessar o projeto
+1. Baixe o arquivo desse repositório que virá como arquivo .zip ou .rar para ser descopactado
+2. No Visual Studio Code, abra a pasta src
+3. Abra um novo terminal e digite os seguintes códigos
 ```bash
-Dentro da pasta Backend:
-npm install
-npx nodemon server.js
-Dentro da pasta Frontend:
-npm install
+cd ../Frontend
+```
+certifique-se de que entrou na pasta Frontend, depois digite...
+```bash
+npm install 
+```
+espere a pasta node_modules ser instalada dentro da pasta Frontend, depois digite ...
+```bash
+cd Backend
+```
+certifique-se de que entrou na pasta Backend, depois digite...
+```bash
+npm install 
+```
+espere a pasta node_modules ser instalada dentro da pasta Backend, depois digite ...
+```bash
+npm server.js
+```
+deve aparecer uma mensagem "Servidor rodando na porta 5000" <br>
+nesse momento, provavlemente, seja necessario abrir um novo terminal<br>
+feito isso digite ...
+```bash
+cd Frontend
+```
+certifique-se de que entrou na pasta Frontend, depois digite...
+```bash
 npm start
 ```
+o site dever abrir no navegador pronto para ser explorado
 
 ## 📋 Licença/License
 Aliança Oceânica © 2024 by FECAP, Caroliny Rossi Bittencourt, Duda Lucena Miguel, Rafael Alves dos Santos Guimarães, Rafael Moraes Marques is licensed under CC BY-SA 4.0 
