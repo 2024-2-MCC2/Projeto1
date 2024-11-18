@@ -129,7 +129,7 @@ Aliança Oceânica © 2024 by FECAP, Caroliny Rossi Bittencourt, Duda Lucena Mig
 
 Aqui estão as referências usadas no projeto.
 
-### ONGs e Iniciativas para a Conservação Marinha
+### ONGs e Iniciativas para a Conservação na Água
 
 1. **[Ocean Conservancy](https://oceanconservancy.org)** 
 
@@ -169,6 +169,10 @@ Aqui estão as referências usadas no projeto.
 
 19. **[Reef Check Foundation](https://www.reefcheck.org)**
 
-20. **[Save Our Seas Foundation](https://saveourseas.com)** 
+20. **[Save Our Seas Foundation](https://saveourseas.com)**
+
+### Plataformas e Bibliotecas de códigos:
+1. OpenAI. Biblioteca de códigos do ChatGPT. Plataforma de inteligência artificial para geração de códigos e assistência técnica. Disponível em: https://openai.com.
+2. Blackbox AI. Biblioteca de códigos do Blackbox. Ferramenta de inteligência artificial para automação e geração de códigos. Disponível em: https://www.blackbox.ai. 
 
 
