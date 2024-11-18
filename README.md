@@ -70,10 +70,6 @@
 <br><br>
 
 ## 🛠 Instalação
-HTML:
-
-Não há instalação! Encontre o index.html na pasta executáveis e execute-o como uma página WEB (através de algum browser).
-
 
 ## 💻 Configuração para Desenvolvimento
 
