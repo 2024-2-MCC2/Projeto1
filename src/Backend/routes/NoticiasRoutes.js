@@ -26,10 +26,17 @@ router.post(
         { name: 'Texto', maxCount: 1 }
     ]),
     (req, res, next) => {
-        console.log('Arquivos recebidos:', req.files);
-        console.log('Dados do corpo:', req.body);
-        if (!req.files || (!req.files.Imagem && !req.files.Texto)) {
-            console.warn('Arquivos ausentes ou não processados corretamente.');
+        if (req.files) {
+            console.log('Arquivos recebidos:');
+            if (req.files.Imagem) {
+                console.log('Imagem:', req.files.Imagem[0]);
+            }
+            if (req.files.Texto) {
+                console.log('Texto:', req.files.Texto[0]);
+            }
+        }
+        if (!req.body.Titulo) {
+            console.warn('Campo Titulo ausente.');
         }
         next();
     },
@@ -44,7 +51,9 @@ router.put(
     ]),
     (req, res, next) => {
         console.log(`Atualizando notícia com ID: ${req.params.id}`);
-        console.log('Arquivos recebidos:', req.files);
+        if (req.files) {
+            console.log('Arquivos recebidos:', req.files);
+        }
         console.log('Dados do corpo:', req.body);
         if (!req.files || (!req.files.Imagem && !req.files.Texto)) {
             console.warn('Arquivos ausentes ou não processados corretamente.');
@@ -65,20 +74,6 @@ router.use((err, req, res, next) => {
     console.error('Stack trace:', err.stack);
     res.status(err.status || 500).json({ error: err.message || 'Erro interno do servidor' });
 });
-
-if (req.files) {
-    console.log('Arquivos recebidos:');
-    if (req.files.Imagem) {
-        console.log('Imagem:', req.files.Imagem[0]);
-    }
-    if (req.files.Texto) {
-        console.log('Texto:', req.files.Texto[0]);
-    }
-}
-if (!req.body.Titulo) {
-    console.warn('Campo Titulo ausente.');
-}
-
 
 module.exports = router;
 
