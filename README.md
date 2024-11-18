@@ -60,13 +60,27 @@ Há também 3 pastas que seguem da seguinte forma:
 
 <b>src</b>: Pasta que contém o código fonte.
 
+## 🛠 Instalação
+HTML:
+
+Não há instalação! Encontre o index.html na pasta executáveis e execute-o como uma página WEB (através de algum browser).
+
 
 ## 💻 Configuração para Desenvolvimento
 
-Para abrir este projeto você necessita das seguintes ferramentas: Visual Studio Code, Node.js, 
+Para abrir este projeto você necessita das seguintes ferramentas: Visual Studio Code, Node.js.
 
+-<a href="https://code.visualstudio.com">VSCode</a>
 
-
+-<a href="https://nodejs.org/pt">Node.js</a>
+```bash
+Dentro da pasta Backend:
+npm install
+npx nodemon server.js
+Dentro da pasta Frontend:
+npm install
+npm start
+```
 
 ## 📋 Licença/License
 Aliança Oceânica © 2024 by FECAP, Caroliny Rossi Bittencourt, Duda Lucena Miguel, Rafael Alves dos Santos Guimarães, Rafael Moraes Marques is licensed under CC BY-SA 4.0 
@@ -74,4 +88,47 @@ Aliança Oceânica © 2024 by FECAP, Caroliny Rossi Bittencourt, Duda Lucena Mig
 ## 🎓 Referências
 
 Aqui estão as referências usadas no projeto.
+
+### ONGs e Iniciativas para a Conservação Marinha
+
+1. **[Ocean Conservancy](https://oceanconservancy.org)** 
+
+2. **[Sea Shepherd](https://seashepherd.org)** 
+
+3. **[Surfrider Foundation](https://www.surfrider.org)** 
+
+4. **[Oceana](https://oceana.org)** 
+
+5. **[The Ocean Cleanup](https://theoceancleanup.com)** 
+
+6. **[Projeto Tamar](https://www.tamar.org.br)** 
+
+7. **[Instituto Baleia Jubarte](https://baleiajubarte.org.br)**
+
+8. **[Instituto Mar Adentro](https://www.maradentro.org.br)** 
+
+9. **[Instituto Ilhabela Sustentável](https://ilhabelasustentavel.org.br)** 
+
+10. **[Instituto Ecológico Aqualung](https://institutoaqualung.com.br)** 
+
+11. **[Projeto Coral Vivo](https://www.coralvivo.org.br)** 
+
+12. **[Marine Conservation Institute](https://marine-conservation.org)** 
+
+13. **[Blue Marine Foundation](https://www.bluemarinefoundation.com)** 
+
+14. **[Project AWARE](https://www.projectaware.org)**
+
+15. **[Coral Restoration Foundation](https://www.coralrestoration.org)** 
+
+16. **[Mission Blue](https://mission-blue.org)** 
+
+17. **[Plastic Pollution Coalition](https://www.plasticpollutioncoalition.org)**
+
+18. **[Wildlife Conservation Society (WCS) - Marine Conservation](https://www.wcs.org/our-work/oceans)**
+
+19. **[Reef Check Foundation](https://www.reefcheck.org)**
+
+20. **[Save Our Seas Foundation](https://saveourseas.com)** 
+
 
