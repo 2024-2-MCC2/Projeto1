@@ -32,33 +32,44 @@
 ## 🛠 Estrutura de pastas
 
 -Raiz<br>
-|-->documentos<br>
-&emsp;|-->Entrega 1<br>
-&emsp;|-->Entrega 2<br>
-&emsp;|-->Entrega 3<br>
-&emsp;|-->Entrega 4<br>
-|-->imagens<br>
-|-->src<br>
-&emsp;|-->Backend<br>
-&emsp;|-->Frontend<br>
-&emsp;&emsp;|-->public<br>
-&emsp;&emsp;|-->src<br>
-&emsp;&emsp;&emsp;|-->Assets<br>
-&emsp;&emsp;&emsp;|-->Components<br>
-&emsp;&emsp;&emsp;|-->Pages<br>
+
+|-->Projeto1-main<br>
+&emsp;|-->documentos<br>
+&emsp;&emsp;|-->Entrega 1<br>
+&emsp;&emsp;&emsp;|-->Banco de Dados<br>
+&emsp;&emsp;&emsp;|-->Cálculo II<br>
+&emsp;&emsp;|-->Entrega 2<br>
+&emsp;&emsp;&emsp;|-->Banco de dados<br>
+&emsp;&emsp;|-->Entrega 3<br>
+&emsp;&emsp;&emsp;|-->Banco de Dados<br>
+&emsp;&emsp;&emsp;|-->Cálculo II<br>
+&emsp;&emsp;|-->Entrega 4<br>
+&emsp;&emsp;&emsp;|-->Banco de Dados<br>
+&emsp;|-->imagens<br>
+&emsp;|-->src<br>
+&emsp;&emsp;|-->Backend<br>
+&emsp;&emsp;&emsp;|-->config<br>
+&emsp;&emsp;&emsp;|-->controllers<br>
+&emsp;&emsp;&emsp;|-->middleware<br>
+&emsp;&emsp;&emsp;|-->routes<br>
+&emsp;&emsp;&emsp;|-->uploads<br>
+&emsp;&emsp;&emsp;&emsp;|-->ImagensNoticias<br>
+&emsp;&emsp;&emsp;&emsp;|-->TextosNoticias<br>
+&emsp;&emsp;|-->Frontend<br>
+&emsp;&emsp;&emsp;|-->public<br>
+&emsp;&emsp;&emsp;|-->src<br>
+&emsp;&emsp;&emsp;&emsp;|-->Assets<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;|-->Fotos_Animal<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;|-->Fotos_Habitat<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;|-->Fotos_Noticias<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;|-->Texto_Noticias<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;|-->Video_Carrossel<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;|-->imgsOngs<br>
+&emsp;&emsp;&emsp;&emsp;|-->Components<br>
+&emsp;&emsp;&emsp;&emsp;|-->Pages<br>
+&emsp;&emsp;&emsp;&emsp;|-->Service<br>
 |readme.md<br>
-
 <br><br>
-
-<b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
-
-Há também 3 pastas que seguem da seguinte forma:
-
-<b>documentos</b>: Toda a documentação estará nesta pasta.
-
-<b>imagens</b>: Imagens do sistema
-
-<b>src</b>: Pasta que contém o código fonte.
 
 ## 🛠 Instalação
 HTML:
