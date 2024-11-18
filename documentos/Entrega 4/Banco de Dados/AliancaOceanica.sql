@@ -28,10 +28,11 @@ CREATE TABLE Usuarios (
     Rua VARCHAR(255),
     Complemento VARCHAR(255),
     Bairro VARCHAR(255),
-    Celular VARCHAR(15) NOT NULL, 
+    Celular VARCHAR(20) NOT NULL, 
     Email VARCHAR(255) NOT NULL UNIQUE, 
     Senha VARCHAR(255) NOT NULL
 );
+
 
 INSERT INTO Noticias (Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia, Texto, Imagem) VALUES
 (
@@ -155,8 +156,11 @@ INSERT INTO Noticias (Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, Li
     "Noticia10.jpg"
 );
 
-INSERT INTO Noticias (Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia, Imagem, Texto)
-VALUES ('Título Teste', 'Entidade Teste', 'Autor Teste', '2024-11-17', 5, 'Chamada Teste', 'https://link.com', "Referencia Teste", 'imagem.jpg', 'texto.txt');
-
+INSERT INTO Usuarios (Nome, Sobrenome, DataDeNascimento, RG, CPF, CEP, Estado, Cidade, Rua, Complemento, Bairro, Celular, Email, Senha)
+VALUES 
+('João', 'Silva', '1990-05-15', '12.345.678-9', '123.456.789-00', '12345-678', 'SP', 'São Paulo', 'Rua das Flores', 'Apt 101', 'Jardim Paulista', '11 98765-4321', 'joao.silva@example.com', '$2a$10$wCj7Lf0HsmJ.aFES9rwlyuwvj1.HHh9zhcHGd.iGix8aTGG7mJ3y2'),
+('Maria', 'Oliveira', '1985-10-25', '98.765.432-1', '987.654.321-00', '54321-987', 'RJ', 'Rio de Janeiro', 'Avenida Atlântica', 'Cobertura', 'Copacabana', '21 91234-5678', 'maria.oliveira@example.com', '$2a$10$XcG96yp9Q03pTROfCJbbpu9afgF.AoRfJ3LT9DfsrH57g/AkMuLAO'),
+('Pedro', 'Santos', '1995-03-10', '56.789.012-3', '456.789.012-34', '67890-123', 'MG', 'Belo Horizonte', 'Rua do Sol', NULL, 'Centro', '31 98765-4321', 'pedro.santos@example.com', '$2a$10$UjMSgAD9LbphSCzMTnNy.uTiOCn/mk/yWqGVJMP11aYvQpW7ohTnG'),
+('Ana', 'Costa', '2000-07-20', '34.567.890-1', '345.678.901-23', '11223-445', 'PR', 'Curitiba', 'Rua das Palmeiras', 'Casa 2', 'Água Verde', '41 95678-1234', 'ana.costa@example.com', '$2a$10$MhX8KiNfwih4cpeRWoHZae6SiZG45dCQRoiKL4p8vY72ubfWl9WxS');
 
 
