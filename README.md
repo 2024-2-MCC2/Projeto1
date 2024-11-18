@@ -86,7 +86,7 @@ Para abrir este projeto você necessita das seguintes ferramentas:
 -<a href="https://www.mysql.com/products/workbench/">MySQL workbench</a>
 
 <br>
-Como acessar/rodar o Banco de Dados:
+## Como acessar/rodar o Banco de Dados:
 1. Baixe o script.sql localizado em:
 
 ```bash
@@ -94,7 +94,7 @@ Como acessar/rodar o Banco de Dados:
 ```
 2. Abra o MySQL workbench e execute o arquivo acima
 
-Como acessar o projeto:
+## Como acessar o projeto REACT:
 1. Baixe o arquivo desse repositório que virá como arquivo .zip ou .rar para ser descopactado
 2. No Visual Studio Code, abra a pasta src
 3. Abra um novo terminal e digite os seguintes códigos
