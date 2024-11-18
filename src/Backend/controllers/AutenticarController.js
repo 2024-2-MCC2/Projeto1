@@ -15,7 +15,6 @@ exports.register = async (req, res) => {
     }
 };
 
-
 // Função de login sem geração de token
 exports.login = async (req, res) => {
     const { Email, Senha } = req.body;

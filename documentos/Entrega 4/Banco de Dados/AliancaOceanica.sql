@@ -2,36 +2,37 @@ create DATABASE AliancaOceanica;
 use AliancaOceanica;
 
 create table Noticias(
-id INT primary key AUTO_INCREMENT,
-Titulo varchar(400) not null,
-Entidade varchar(400) not null,
-Autor varchar(400) not null,
-Data varchar(20) not null,
-TempoDeLeitura int not null,
-Chamada varchar(400) not null,
-LinkURL varchar(400) not null,
-Referencia varchar(400) not null,
-Texto varchar(400) not null,
-Imagem varchar(400) not null
+	id INT primary key AUTO_INCREMENT,
+	Titulo varchar(400) not null,
+	Entidade varchar(400) not null,
+	Autor varchar(400) not null,
+	Data varchar(20) not null,
+	TempoDeLeitura int not null,
+	Chamada varchar(400) not null,
+	LinkURL varchar(400) not null,
+	Referencia varchar(400) not null,
+	Texto varchar(400) not null,
+	Imagem varchar(400) not null
 );
 
-create table Usuarios(
-id INT primary key AUTO_INCREMENT,
-Nome varchar(255) not null,
-Sobrenome varchar(255),
-DataDeNascimento varchar(255),
-RG varchar(9),
-CPF varchar(11),
-CEP varchar(9),
-Estado varchar(10),
-Cidade varchar(255),
-Rua varchar(255),
-Complemento varchar(255),
-Bairro varchar(255),
-Celular varchar(11) not null,
-Email varchar(255) not null,
-Senha varchar(255) not null
+CREATE TABLE Usuarios (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(255) NOT NULL,
+    Sobrenome VARCHAR(255),
+    DataDeNascimento DATE, 
+    RG VARCHAR(12), 
+    CPF VARCHAR(14), 
+    CEP VARCHAR(9),
+    Estado VARCHAR(10),
+    Cidade VARCHAR(255),
+    Rua VARCHAR(255),
+    Complemento VARCHAR(255),
+    Bairro VARCHAR(255),
+    Celular VARCHAR(15) NOT NULL, 
+    Email VARCHAR(255) NOT NULL UNIQUE, 
+    Senha VARCHAR(255) NOT NULL
 );
+
 INSERT INTO Noticias (Titulo, Entidade, Autor, Data, TempoDeLeitura, Chamada, LinkURL, Referencia, Texto, Imagem) VALUES
 (
     "Navio do Greenpeace resgata baleia presa em equipamentos de pesca",

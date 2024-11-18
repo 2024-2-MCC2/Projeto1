@@ -34,7 +34,7 @@ function App() {
           <Route path="/Animais" element={<AnimaisPage />} />
           <Route path="/CatalogoDeNoticias" element={<CatalogoDeNoticias />} />
           <Route path="/ONGsParceiras" element={<ONGsPage/>} />
-          <Route path="/AreaDoAdministrador" element={<ADMPage/>} />
+          <Route path="/ADM" element={<ADMPage/>} />
           <Route path="ONGs/:id" element={<DescricaoONGs/>}/>         
         </Routes>
       </main>

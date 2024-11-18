@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { login } from '../Service/LoginAPI'; // Importe a função de login da API
 
 const Frame1 = styled.div`
 display: flex;
@@ -85,36 +86,64 @@ color: #0460C9;
 border: none;
 `
 function Login() {
-
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate(); // Para redirecionar após o login
 
     const togglePasswordVisibility = () => {
         setShowPassword(prevState => !prevState);
     };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await login(email, senha);
+            console.log(response.message); // Sucesso: exibe mensagem no console
+            navigate('/ADM'); // Redireciona para a área do administrador
+        } catch (error) {
+            setErrorMessage(error.response?.data?.message || 'Erro ao realizar login.');
+        }
+    };
+
     return (
         <Frame1>
             <h2>Login</h2>
-            <FormsContainer>
+            {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>} {/* Exibe erros */}
+            <FormsContainer onSubmit={handleSubmit}>
                 <InputContainer>
                     <label>E-mail:</label>
-                    <input type="email" />
+                    <input 
+                        type="email" 
+                        value={email} 
+                        onChange={(e) => setEmail(e.target.value)} 
+                        required 
+                    />
                 </InputContainer>
                 <InputContainer>
                     <p>Senha:</p>
-                    <input type={showPassword ? "text" : "password"} />
+                    <input 
+                        type={showPassword ? "text" : "password"} 
+                        value={senha} 
+                        onChange={(e) => setSenha(e.target.value)} 
+                        required 
+                    />
                     <ShowButton type="button" onClick={togglePasswordVisibility}>
-                        {showPassword ? <span class="material-symbols-outlined">visibility</span> : <span class="material-symbols-outlined">visibility_off</span>}
+                        {showPassword ? (
+                            <span className="material-symbols-outlined">visibility</span>
+                        ) : (
+                            <span className="material-symbols-outlined">visibility_off</span>
+                        )}
                     </ShowButton>
                 </InputContainer>
-            </FormsContainer>
-            <Link to="/AreaDoAdministrador" className="no-link-style">
                 <Button type="submit">Entrar</Button>
-            </Link>
+            </FormsContainer>
             <Link to="/Cadastro" className="no-link-style">
-                <p className="FacaCadastro" >Não tem conta? Cadastre-se</p>
+                <p className="FacaCadastro">Não tem conta? Cadastre-se</p>
             </Link>
         </Frame1>
-    )
+    );
 }
-export default Login
+
+export default Login;

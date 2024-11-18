@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import Cleave from 'cleave.js/react';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { register } from '../Service/CadastroAPI';
 
 const Frame1 = styled.div`
 display: flex;
@@ -90,66 +91,121 @@ background-color: #F2C538;
     background-color: #FDDE7D;
 }
 `
-const ShowButton = styled.button`
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: none;
-color: #0460C9;
-border: none;
-`
 
-const SenharContainer =styled.div`
+const SenharContainer = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
 height: 100%;
 width: 100%;
 `
-function Cadastro({toggleForm}){
-    
-    const [showPassword, setShowPassword] = useState(false);  // Estado para o campo de senha
-    const [showConfirmPassword, setShowConfirmPassword] = useState(false);  // Estado para o campo de confirmação de senha
+function Cadastro() {
 
-    const togglePasswordVisibility = () => {
-        setShowPassword(prevState => !prevState);
+    const [formData, setFormData] = useState({
+        Nome: '',
+        Sobrenome: '',
+        DataDeNascimento: '',
+        RG: '',
+        CPF: '',
+        CEP: '',
+        Estado: '',
+        Cidade: '',
+        Rua: '',
+        Numero: '',
+        Complemento: '',
+        Bairro: '',
+        Celular: '',
+        Email: '',
+        Senha: '',
+        ConfirmarSenha: '',
+    });
+    const [errorMessage, setErrorMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
+    const navigate = useNavigate();
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
     };
 
-    const toggleConfirmPasswordVisibility = () => {
-        setShowConfirmPassword(prevState => !prevState);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setErrorMessage('');
+        setSuccessMessage('');
+
+        // Validação de senha
+        if (formData.Senha !== formData.ConfirmarSenha) {
+            setErrorMessage('As senhas não coincidem.');
+            return;
+        }
+
+        try {
+            const { ConfirmarSenha, ...userData } = formData; // Remove o campo de confirmação antes de enviar
+            const response = await register(userData);
+            setSuccessMessage(response.message);
+            navigate('/Login'); // Redireciona para a página de login após o cadastro
+        } catch (error) {
+            setErrorMessage(error.response?.data?.error || 'Erro ao cadastrar o usuário.');
+        }
     };
 
-    return(
+    return (
         <Frame1>
             <h2>Cadastre-se</h2>
-            <FormsContainer>
+            {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>} {/* Exibe erros */}
+            {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>} {/* Exibe sucesso */}
+            <FormsContainer onSubmit={handleSubmit}>
                 <Form_Frame>
                     <InputContainer>
                         <label>Nome:</label>
-                        <input type="text"/>
+                        <input
+                            type="text"
+                            name="Nome"
+                            value={formData.Nome}
+                            onChange={handleInputChange}
+                            required
+                        />
                     </InputContainer>
                     <InputContainer>
                         <label>Sobrenome:</label>
-                        <input type="text"/>
-                   </InputContainer>
+                        <input
+                            type="text"
+                            name="Sobrenome"
+                            value={formData.Sobrenome}
+                            onChange={handleInputChange}
+                            required
+                        />
+                    </InputContainer>
                 </Form_Frame>
                 <Form_Frame>
                     <InputContainer>
-                        <label>Data de Nacimento:</label>
-                        <input type="date" placeholder="dd/mm/aaaa"/>
+                        <label>Data de Nascimento:</label>
+                        <input
+                            type="date"
+                            name="DataDeNascimento"
+                            value={formData.DataDeNascimento}
+                            onChange={handleInputChange}
+                            required
+                        />
                     </InputContainer>
                     <InputContainer>
                         <label>RG:</label>
                         <Cleave
-                        options={{ blocks: [2, 3, 3, 1], delimiters: ['.', '.', '-'] }}
-                        placeholder="00.000.000-0"
+                            options={{ blocks: [2, 3, 3, 1], delimiters: ['.', '.', '-'] }}
+                            placeholder="00.000.000-0"
+                            name="RG"
+                            value={formData.RG}
+                            onChange={(e) => handleInputChange({ target: { name: 'RG', value: e.target.rawValue } })}
                         />
                     </InputContainer>
                     <InputContainer>
                         <label>CPF:</label>
                         <Cleave
-                        options={{ blocks: [3, 3, 3, 2], delimiters: ['.', '.', '-'] }}
-                        placeholder="000.000.000-00"
+                            options={{ blocks: [3, 3, 3, 2], delimiters: ['.', '.', '-'] }}
+                            placeholder="000.000.000-00"
+                            name="CPF"
+                            value={formData.CPF}
+                            onChange={(e) => handleInputChange({ target: { name: 'CPF', value: e.target.rawValue } })}
                         />
                     </InputContainer>
                 </Form_Frame>
@@ -159,102 +215,156 @@ function Cadastro({toggleForm}){
                         <label>CEP:</label>
                         <Cleave
                             options={{ blocks: [5, 3], delimiters: ['-'] }}
-                            placeholder="000000-000"
-                            />
+                            placeholder="00000-000"
+                            name="CEP"
+                            value={formData.CEP}
+                            onChange={(e) => handleInputChange({ target: { name: 'CEP', value: e.target.rawValue } })}
+                        />
                     </InputContainer>
                     <InputContainer>
                         <label>Estado:</label>
-                            <input list="Estados" ID="Estado-input" name="Estado"/>
-                            <datalist id="Estados">
-                                <option value="AC"></option>
-                                <option value="AL"></option>
-                                <option value="AP"></option>
-                                <option value="AM"></option>
-                                <option value="BA"></option>
-                                <option value="CE"></option>
-                                <option value="DF"></option>
-                                <option value="ES"></option>
-                                <option value="GO"></option>
-                                <option value="MA"></option>
-                                <option value="MT"></option>
-                                <option value="MS"></option>
-                                <option value="MG"></option>
-                                <option value="PA"></option>
-                                <option value="PB"></option>
-                                <option value="PR"></option>
-                                <option value="PE"></option>
-                                <option value="PI"></option>
-                                <option value="RJ"></option>
-                                <option value="RN"></option>
-                                <option value="RS"></option>
-                                <option value="RO"></option>
-                                <option value="RR"></option>
-                                <option value="SC"></option>
-                                <option value="SP"></option>
-                                <option value="SE"></option>
-                                <option value="TO"></option>
+                        <input
+                            list="Estados"
+                            name="Estado"
+                            value={formData.Estado}
+                            onChange={handleInputChange}
+                            required
+                        />
+                        <datalist id="Estados">
+                            <option value="AC" />
+                            <option value="AL" />
+                            <option value="AP" />
+                            <option value="AM" />
+                            <option value="BA" />
+                            <option value="CE" />
+                            <option value="DF" />
+                            <option value="ES" />
+                            <option value="GO" />
+                            <option value="MA" />
+                            <option value="MT" />
+                            <option value="MS" />
+                            <option value="MG" />
+                            <option value="PA" />
+                            <option value="PB" />
+                            <option value="PR" />
+                            <option value="PE" />
+                            <option value="PI" />
+                            <option value="RJ" />
+                            <option value="RN" />
+                            <option value="RS" />
+                            <option value="RO" />
+                            <option value="RR" />
+                            <option value="SC" />
+                            <option value="SP" />
+                            <option value="SE" />
+                            <option value="TO" />
                         </datalist>
                     </InputContainer>
                     <InputContainer>
                         <label>Cidade:</label>
-                        <input type="text"/>
+                        <input
+                            type="text"
+                            name="Cidade"
+                            value={formData.Cidade}
+                            onChange={handleInputChange}
+                            required
+                        />
                     </InputContainer>
                 </Form_Frame>
                 <InputContainer>
                     <label>Rua:</label>
-                    <input type="text"/>
+                    <input
+                        type="text"
+                        name="Rua"
+                        value={formData.Rua}
+                        onChange={handleInputChange}
+                        required
+                    />
                 </InputContainer>
                 <Form_Frame>
                     <InputContainer>
-                        <label>Numero:</label>
-                        <input type="number"/>
+                        <label>Número:</label>
+                        <input
+                            type="number"
+                            name="Numero"
+                            value={formData.Numero}
+                            onChange={handleInputChange}
+                            required
+                        />
                     </InputContainer>
                     <InputContainer>
                         <label>Complemento:</label>
-                        <input type="text"/>
+                        <input
+                            type="text"
+                            name="Complemento"
+                            value={formData.Complemento}
+                            onChange={handleInputChange}
+                        />
                     </InputContainer>
                     <InputContainer>
                         <label>Bairro:</label>
-                        <input type="text"/>
+                        <input
+                            type="text"
+                            name="Bairro"
+                            value={formData.Bairro}
+                            onChange={handleInputChange}
+                            required
+                        />
                     </InputContainer>
                 </Form_Frame>
-                <p>Informações de contato:</p>
+                <p>Informações de Contato:</p>
                 <InputContainer>
                     <label>Celular:</label>
                     <Cleave
-                        options={{blocks: [0, 2, 1, 4, 4], delimiters: ['(', ') ', ' ', '-']}}
+                        options={{ blocks: [0, 2, 1, 4, 4], delimiters: ['(', ') ', ' ', '-'] }}
                         placeholder="(00) 0 0000-0000"
-                        />
+                        name="Celular"
+                        value={formData.Celular}
+                        onChange={(e) => handleInputChange({ target: { name: 'Celular', value: e.target.rawValue } })}
+                    />
                 </InputContainer>
                 <InputContainer>
                     <label>E-mail:</label>
-                    <input type="email"/>
+                    <input
+                        type="email"
+                        name="Email"
+                        value={formData.Email}
+                        onChange={handleInputChange}
+                        required
+                    />
                 </InputContainer>
                 <p>Escolha uma senha:</p>
                 <InputContainer>
                     <label>Senha:</label>
                     <SenharContainer>
-                        <input type={showPassword ? "text" : "password"} />  
-                        <ShowButton type="button" onClick={togglePasswordVisibility}>
-                            {showPassword ? <span class="material-symbols-outlined">visibility</span> : <span class="material-symbols-outlined">visibility_off</span>} 
-                        </ShowButton>
+                        <input
+                            type="password"
+                            name="Senha"
+                            value={formData.Senha}
+                            onChange={handleInputChange}
+                            required
+                        />
                     </SenharContainer>
                 </InputContainer>
                 <InputContainer>
                     <label>Confirme sua senha:</label>
                     <SenharContainer>
-                        <input type={showConfirmPassword ? "text" : "password"} />  
-                        <ShowButton type="button" onClick={toggleConfirmPasswordVisibility}>
-                            {showConfirmPassword ? <span className="material-symbols-outlined">visibility</span> : <span className="material-symbols-outlined">visibility_off</span>}
-                        </ShowButton>
+                        <input
+                            type="password"
+                            name="ConfirmarSenha"
+                            value={formData.ConfirmarSenha}
+                            onChange={handleInputChange}
+                            required
+                        />
                     </SenharContainer>
                 </InputContainer>
+                <Button type="submit">Cadastre-se</Button>
             </FormsContainer>
-            <Button type ="submit">Cadastre-se</Button>
-                <Link to="/Login" className="no-link-style">
-                    <p className="FacaLogin">Já tem conta? Faça Login</p>
-                </Link>
+            <Link to="/Login" className="no-link-style">
+                <p className="FacaLogin">Já tem conta? Faça Login</p>
+            </Link>
         </Frame1>
-    )
+    );
+
 }
 export default Cadastro
