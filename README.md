@@ -129,7 +129,7 @@ Aliança Oceânica © 2024 by FECAP, Caroliny Rossi Bittencourt, Duda Lucena Mig
 
 Aqui estão as referências usadas no projeto.
 
-### ONGs e Iniciativas para a Conservação Marinha
+### ONGs e Iniciativas para a Conservação na Água
 
 1. **[Ocean Conservancy](https://oceanconservancy.org)** 
 
