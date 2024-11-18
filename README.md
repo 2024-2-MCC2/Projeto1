@@ -24,8 +24,6 @@
 <br><br>
 
 ## <img src="https://img.icons8.com/?size=100&id=zfHRZ6i1Wg0U&format=png&color=000000" width="20" height="20"/> PROTÓTIPO NO FIGMA 
-
-
  <a href = "https://www.figma.com/design/IsuMlfoVd8VCWlWo8kVclq/Alian%C3%A7a-Oce%C3%A2nica---Prot%C3%B3tipo?node-id=52-917&t=jZHCTz42k0mQOkIo-1">Projeto</a>
  <br>
  <a href = "https://www.figma.com/proto/IsuMlfoVd8VCWlWo8kVclq/Alian%C3%A7a-Oce%C3%A2nica---Prot%C3%B3tipo?node-id=52-918&node-type=frame&t=HdW5qPesPOIsPtyW-1&scaling=min-zoom&content-scaling=fixed&page-id=52%3A917">Navegavel</a>
@@ -87,7 +85,16 @@ Para abrir este projeto você necessita das seguintes ferramentas:
 
 -<a href="https://www.mysql.com/products/workbench/">MySQL workbench</a>
 
-Como acessar o projeto
+<br>
+Como acessar/rodar o Banco de Dados:
+1. Baixe o script.sql localizado em:
+
+```bash
+[npm install ](https://github.com/2024-2-MCC2/Projeto1/blob/main/documentos/Entrega%204/Banco%20de%20Dados/AliancaOceanica.sql)
+```
+2. Abra o MySQL workbench e execute o arquivo acima
+<br>
+Como acessar o projeto:
 1. Baixe o arquivo desse repositório que virá como arquivo .zip ou .rar para ser descopactado
 2. No Visual Studio Code, abra a pasta src
 3. Abra um novo terminal e digite os seguintes códigos
