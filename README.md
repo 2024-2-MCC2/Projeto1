@@ -70,10 +70,6 @@
 <br><br>
 
 ## 🛠 Instalação
-HTML:
-
-Não há instalação! Encontre o index.html na pasta executáveis e execute-o como uma página WEB (através de algum browser).
-
 
 ## 💻 Configuração para Desenvolvimento
 
@@ -89,7 +85,7 @@ Para abrir este projeto você necessita das seguintes ferramentas:
 1. Baixe o script.sql localizado em:
 
 ```bash
-[npm install ](https://github.com/2024-2-MCC2/Projeto1/blob/main/documentos/Entrega%204/Banco%20de%20Dados/AliancaOceanica.sql)
+(https://github.com/2024-2-MCC2/Projeto1/blob/main/documentos/Entrega%204/Banco%20de%20Dados/AliancaOceanica.sql)
 ```
 2. Abra o MySQL workbench e execute o arquivo acima
 
