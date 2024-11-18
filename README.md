@@ -93,7 +93,7 @@ Como acessar/rodar o Banco de Dados:
 [npm install ](https://github.com/2024-2-MCC2/Projeto1/blob/main/documentos/Entrega%204/Banco%20de%20Dados/AliancaOceanica.sql)
 ```
 2. Abra o MySQL workbench e execute o arquivo acima
-<br>
+
 Como acessar o projeto:
 1. Baixe o arquivo desse repositório que virá como arquivo .zip ou .rar para ser descopactado
 2. No Visual Studio Code, abra a pasta src
